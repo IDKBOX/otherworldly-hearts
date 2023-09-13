@@ -1,27 +1,68 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogueRunner : MonoBehaviour
 {
-    public string[] dialogueArray;
+    public ScriptableDialogue[] dialogueData;
+    private bool isDialogueRunnerRunning;
+    private int index = 0;
 
-    public GameObject descriptionDialogue;
-    public PortraitDialogueScript portraitDialogue;
+    [Header("Prerequisites")]
+    public DescriptionDialogueScript descriptionDialoguePrefab;
+    public PortraitDialogueScript portraitDialoguePrefab;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Q) && portraitDialogue.isDialogueRunning == false)
+        if (Input.GetKey(KeyCode.Q) && isDialogueRunnerRunning == false)
         {
-            portraitDialogue.gameObject.SetActive(true);
-            portraitDialogue.GetComponent<PortraitDialogueScript>().StartDialogue();
+            index = 0;
+            isDialogueRunnerRunning = true;
+
+            StartDialogueRunner();
+        }
+
+        if (dialogueData[index].isDescriptionDialogue)
+        {
+            if (!descriptionDialoguePrefab.isActiveAndEnabled && isDialogueRunnerRunning)
+            {
+                if (index < dialogueData.Length - 1)
+                {
+                    index++;
+                    StartDialogueRunner();
+                }
+                else
+                {
+                    isDialogueRunnerRunning = false;
+                }
+            }
+        }
+        else if (dialogueData[index].isPortraitDialogue)
+        {
+            if (!portraitDialoguePrefab.isActiveAndEnabled && isDialogueRunnerRunning)
+            {
+                if (index < dialogueData.Length - 1)
+                {
+                    index++;
+                    StartDialogueRunner();
+                }
+                else
+                {
+                    isDialogueRunnerRunning = false;
+                }
+            }
+        }
+    }
+
+    private void StartDialogueRunner()
+    {
+        if (dialogueData[index].isDescriptionDialogue)
+        {
+            descriptionDialoguePrefab.gameObject.SetActive(true);
+            descriptionDialoguePrefab.StartDialogue(dialogueData[index]);
+        }
+        else if (dialogueData[index].isPortraitDialogue)
+        {
+            portraitDialoguePrefab.gameObject.SetActive(true);
+            portraitDialoguePrefab.StartDialogue(dialogueData[index]);
         }
     }
 }

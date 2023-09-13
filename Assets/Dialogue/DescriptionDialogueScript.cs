@@ -1,50 +1,42 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class PortraitDialogueScript : MonoBehaviour
+public class DescriptionDialogueScript : MonoBehaviour
 {
     private TextMeshProUGUI textComponent;
-    public Image characterImage;
+    [HideInInspector] public ScriptableDialogue dialogueData;
 
-    public ScriptableCharacter characterData;
-    public string[] lines, emotion;
     public float textSpeed = 0.05f;
     [HideInInspector] public bool isDialogueRunning = false;
 
     private int index;
-    public GameObject choiceOption;
 
     private void Awake()
     {
         textComponent = GetComponentInChildren<TextMeshProUGUI>();
     }
 
-/*    void Start()
-    {
-        StartDialogue();
-    }*/
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (textComponent.text == lines[index])
+            if (textComponent.text == dialogueData.lines[index])
             {
                 NextLine();
             }
             else
             {
                 StopAllCoroutines();
-                textComponent.text = lines[index];
+                textComponent.text = dialogueData.lines[index];
             }
         }
     }
 
-    public void StartDialogue()
+    public void StartDialogue(ScriptableDialogue _dialogueData)
     {
+        dialogueData = _dialogueData;
         isDialogueRunning = true;
         index = 0;
         textComponent.text = string.Empty;
@@ -53,9 +45,7 @@ public class PortraitDialogueScript : MonoBehaviour
 
     IEnumerator TypeLine()
     {
-        EmotionChecker(emotion[index]);
-
-        foreach (char c in lines[index].ToCharArray())
+        foreach (char c in dialogueData.lines[index].ToCharArray())
         {
             textComponent.text += c;
 
@@ -65,7 +55,7 @@ public class PortraitDialogueScript : MonoBehaviour
 
     void NextLine()
     {
-        if (index < lines.Length - 1)
+        if (index < dialogueData.lines.Length - 1)
         {
             index++;
             textComponent.text = string.Empty;
@@ -75,27 +65,6 @@ public class PortraitDialogueScript : MonoBehaviour
         {
             isDialogueRunning = false;
             gameObject.SetActive(false);
-        }
-    }
-
-    void EmotionChecker(string emotionIndex)
-    {
-        if (emotionIndex == "Smile")
-        {
-            characterImage.sprite = characterData.smileSprite;
-        }
-        else if (emotionIndex == "Sad")
-        {
-            characterImage.sprite = characterData.sadSprite;
-        }
-        else if (emotionIndex == "Choice")
-        {
-            choiceOption.SetActive(true);
-            gameObject.SetActive(false);
-        }
-        else
-        {
-            characterImage.sprite = characterData.defaultSprite;
         }
     }
 }

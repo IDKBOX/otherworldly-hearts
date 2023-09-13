@@ -4,6 +4,11 @@ using UnityEngine;
 public class ScriptableCharacter : ScriptableObject
 {
     public string characterName;
-    public Sprite[] sprites;
+
+    [Header("Sprites")]
+    public Sprite defaultSprite;
+    public Sprite smileSprite;
+    public Sprite sadSprite;
+
     public AudioSource[] audioClips;
 }

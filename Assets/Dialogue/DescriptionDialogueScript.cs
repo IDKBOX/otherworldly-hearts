@@ -20,7 +20,7 @@ public class DescriptionDialogueScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && dialogueData.isDescriptionDialogue)
         {
             if (textComponent.text == dialogueData.lines[index])
             {

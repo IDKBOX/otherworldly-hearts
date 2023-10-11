@@ -1,65 +1,62 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DialogueScript : MonoBehaviour
+public class DescriptionDialogueScript : MonoBehaviour
 {
     private TextMeshProUGUI textComponent;
-    public string[] lines;
-    public float textSpeed = 0.5f;
+    [HideInInspector] public ScriptableDialogue dialogueData;
+
+    public float textSpeed = 0.05f;
+    public AudioSource dialogueSound;
+    [HideInInspector] public bool isDialogueRunning = false;
 
     private int index;
-    [HideInInspector] public bool isDialogueRunning = false;
 
     private void Awake()
     {
         textComponent = GetComponentInChildren<TextMeshProUGUI>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        textComponent.text = string.Empty;
-        StartDialogue();
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && dialogueData.isDescriptionDialogue)
         {
-            if (textComponent.text == lines[index])
+            if (textComponent.text == dialogueData.lines[index])
             {
                 NextLine();
             }
             else
             {
                 StopAllCoroutines();
-                textComponent.text = lines[index];
+                textComponent.text = dialogueData.lines[index];
             }
         }
     }
 
-    void StartDialogue()
+    public void StartDialogue(ScriptableDialogue _dialogueData)
     {
+        dialogueData = _dialogueData;
         isDialogueRunning = true;
         index = 0;
+        textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
     }
 
     IEnumerator TypeLine()
     {
-        foreach (char c in lines[index].ToCharArray())
+        foreach (char c in dialogueData.lines[index].ToCharArray())
         {
             textComponent.text += c;
+            dialogueSound.Play();
+
             yield return new WaitForSeconds(textSpeed);
         }
     }
 
     void NextLine()
     {
-        if (index < lines.Length - 1)
+        if (index < dialogueData.lines.Length - 1)
         {
             index++;
             textComponent.text = string.Empty;

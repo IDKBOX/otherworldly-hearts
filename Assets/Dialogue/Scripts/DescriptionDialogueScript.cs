@@ -8,7 +8,7 @@ public class DescriptionDialogueScript : MonoBehaviour
     [HideInInspector] public ScriptableDialogue dialogueData;
 
     public float textSpeed = 0.05f;
-    public AudioSource dialogueSound;
+    public AudioClip dialogueSound;
     [HideInInspector] public bool isDialogueRunning = false;
 
     private int index;
@@ -48,7 +48,7 @@ public class DescriptionDialogueScript : MonoBehaviour
         foreach (char c in dialogueData.lines[index].ToCharArray())
         {
             textComponent.text += c;
-            dialogueSound.Play();
+            SoundManager.Instance.PlaySound(dialogueSound);
 
             yield return new WaitForSeconds(textSpeed);
         }

@@ -59,6 +59,8 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
+    //One Way Platform mechanic
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("OneWayPlatform"))

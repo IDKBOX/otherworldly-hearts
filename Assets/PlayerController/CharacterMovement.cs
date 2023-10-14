@@ -16,7 +16,7 @@ public class CharacterMovement : MonoBehaviour
 
     private GameObject currentOneWayPlatform;
 
-    [SerializeField] BoxCollider2D playerCollider;
+    [SerializeField] CapsuleCollider2D playerCollider;
 
     // Update is called once per frame
     void Update()

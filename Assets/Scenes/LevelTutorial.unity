@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 766407663}
   - component: {fileID: 766407662}
   - component: {fileID: 766407661}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: One Way Platform
   m_TagString: OneWayPlatform
   m_Icon: {fileID: 0}
@@ -822,7 +822,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 148.22
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 0
@@ -8063,7 +8063,7 @@ GameObject:
   - component: {fileID: 1370150984}
   - component: {fileID: 1370150983}
   - component: {fileID: 1370150982}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13776,14 +13776,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 776099685071903940, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
-      propertyPath: wallLayer.m_Bits
-      value: 72
-      objectReference: {fileID: 0}
-    - target: {fileID: 3660804160548226018, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.277
-      objectReference: {fileID: 0}
     - target: {fileID: 7096036585311225186, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
       propertyPath: m_Name
       value: Character

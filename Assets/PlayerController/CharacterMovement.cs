@@ -47,6 +47,7 @@ public class CharacterMovement : MonoBehaviour
         if (IsGrounded())
         {
             coyoteTimeCounter = coyoteTime;
+            doubleJump = false;
         }
         else
         {
@@ -62,20 +63,15 @@ public class CharacterMovement : MonoBehaviour
             jumpBufferCounter -= Time.deltaTime;
         }
 
-        if (IsGrounded() && !Input.GetButtonDown("Jump"))
-        {
-            doubleJump = false;
-        }
-
         // Jump Button Mechanic 
 
-        if (jumpBufferCounter > 0f && coyoteTimeCounter > 0f || doubleJump)
+        if (jumpBufferCounter > 0f && coyoteTimeCounter > 0f || !doubleJump && Input.GetButtonDown("Jump") && !IsWalled())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
             jumpBufferCounter = 0f;
 
-            doubleJump = !doubleJump;
+            doubleJump = true;
         }
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
@@ -107,7 +103,7 @@ public class CharacterMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
     }
 
     private void Flip()

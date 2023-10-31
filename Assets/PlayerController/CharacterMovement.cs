@@ -11,6 +11,14 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 16f;
     private bool isFacingRight = true;
 
+    private float coyoteTime = 0.2f;
+    private float coyoteTimeCounter;
+
+    private float jumpBufferTime = 0.2f;
+    private float jumpBufferCounter;
+
+    private bool doubleJump;
+
     private bool isWallSliding;
     private float wallSlidingSpeed = 2f;
 
@@ -36,15 +44,47 @@ public class CharacterMovement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (IsGrounded())
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            jumpBufferCounter = jumpBufferTime;
+        }
+        else
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+
+        if (IsGrounded() && !Input.GetButtonDown("Jump"))
+        {
+            doubleJump = false;
+        }
+
+        // Jump Button Mechanic 
+
+        if (jumpBufferCounter > 0f && coyoteTimeCounter > 0f || doubleJump)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+
+            jumpBufferCounter = 0f;
+
+            doubleJump = !doubleJump;
         }
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+
+            coyoteTimeCounter = 0f;
         }
+
         OneWay();
 
         WallSlide();

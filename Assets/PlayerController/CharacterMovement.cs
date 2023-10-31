@@ -39,6 +39,11 @@ public class CharacterMovement : MonoBehaviour
 
     [SerializeField] CapsuleCollider2D playerCollider;
 
+    //Unlock Player Abilities
+    [Header("Unlock Player Abilities")]
+    [SerializeField] private bool doubleJumpUnlocked = false;
+
+
     // Update is called once per frame
     void Update()
     {
@@ -65,7 +70,7 @@ public class CharacterMovement : MonoBehaviour
 
         // Jump Button Mechanic 
 
-        if (jumpBufferCounter > 0f && coyoteTimeCounter > 0f || !doubleJump && Input.GetButtonDown("Jump") && !IsWalled())
+        if (jumpBufferCounter > 0f && coyoteTimeCounter > 0f || !doubleJump && Input.GetButtonDown("Jump") && !IsWalled() && doubleJumpUnlocked)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 

@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
+    public GameObject ExitConfirmOverlay;
+
     public void LoadScene(string levelSceneName)
     {
         if(levelSceneName != null)
@@ -20,7 +22,17 @@ public class MainMenuScript : MonoBehaviour
         Application.OpenURL("https://youtu.be/xvFZjo5PgG0?si=8dOssogQQS_YhlaO");
     }
 
-    public void ExitButton()
+    public void ExitConfirm()
+    {
+        ExitConfirmOverlay.SetActive(true);
+    }
+
+    public void ExitConfirmCancel()
+    {
+        ExitConfirmOverlay.SetActive(false);
+    }
+
+    public void ExitGame()
     {
         Application.Quit();
     }

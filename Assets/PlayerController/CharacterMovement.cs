@@ -43,6 +43,8 @@ public class CharacterMovement : MonoBehaviour
     [Header("Unlock Player Abilities")]
     [SerializeField] private bool doubleJumpUnlocked = false;
 
+    //Player check point
+    public Transform SpawnPoint;
 
     // Update is called once per frame
     void Update()
@@ -129,6 +131,14 @@ public class CharacterMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("OneWayPlatform"))
         {
             currentOneWayPlatform = collision.gameObject;
+        }
+
+        // check dead
+        if(collision.gameObject.name == "Dead")
+        {
+            // Get Checkpoint script
+            CheckPoint checkPointScript = FindObjectOfType<CheckPoint>();
+            checkPointScript.spawnPlayer();
         }
     }
 

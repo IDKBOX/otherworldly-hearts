@@ -3,7 +3,24 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
+    public GameObject MainMenuOverlay;
     public GameObject ExitConfirmOverlay;
+    public GameObject CreditsOverlay;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (ExitConfirmOverlay.activeSelf)
+            {
+                ExitConfirmCancel();
+            }
+            else if (CreditsOverlay.activeSelf)
+            {
+                HideCredits();
+            }
+        }
+    }
 
     public void LoadScene(string levelSceneName)
     {
@@ -15,6 +32,18 @@ public class MainMenuScript : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+    }
+
+    public void ShowCredits()
+    {
+        CreditsOverlay.SetActive(true);
+        MainMenuOverlay.SetActive(false);
+    }
+
+    public void HideCredits()
+    {
+        CreditsOverlay.SetActive(false);
+        MainMenuOverlay.SetActive(true);
     }
 
     public void RickRoll()

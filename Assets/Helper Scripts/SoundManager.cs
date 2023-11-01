@@ -42,4 +42,16 @@ public class SoundManager : MonoBehaviour
             Debug.LogWarning("No Audio Clip!");
         }
     }
+
+    public void PlayMusic(AudioClip _clip)
+    {
+        if (_clip != null)
+        {
+            _musicSource.clip = _clip;
+        }
+        else
+        {
+            Debug.LogWarning("No Audio Clip!");
+        }
+    }
 }

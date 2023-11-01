@@ -6,6 +6,7 @@ public class PauseManager : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject pauseFirstButton;
+    public GameObject mainMenuConfirmOverlay;
     [HideInInspector] public static bool isPaused;
 
     void Start()
@@ -17,7 +18,14 @@ public class PauseManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PausePressed();
+            if (mainMenuConfirmOverlay.activeSelf)
+            {
+                CancelReturnToTitleScreen();
+            }
+            else
+            {
+                PausePressed();
+            }
         }
     }
 
@@ -50,6 +58,16 @@ public class PauseManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+    }
+
+    public void ConfirmReturnToTitleScreen()
+    {
+        mainMenuConfirmOverlay.SetActive(true);
+    }
+
+    public void CancelReturnToTitleScreen()
+    {
+        mainMenuConfirmOverlay.SetActive(false);
     }
 
     public void ReturnToTitleScreen()

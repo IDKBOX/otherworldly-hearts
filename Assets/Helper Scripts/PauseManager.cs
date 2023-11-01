@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.EventSystems;
-using Unity.VisualScripting;
 
 public class PauseManager : MonoBehaviour
 {
@@ -53,21 +51,7 @@ public class PauseManager : MonoBehaviour
         isPaused = false;
     }
 
-    public void RestartButton()
-    {
-        Time.timeScale = 1f;
-        isPaused = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public void ExitButton()
-    {
-        Time.timeScale = 1f;
-        isPaused = false;
-        Application.Quit();
-    }
-
-    public void ReturnToLevelScreen()
+    public void ReturnToTitleScreen()
     {
         Time.timeScale = 1f;
         isPaused = false;

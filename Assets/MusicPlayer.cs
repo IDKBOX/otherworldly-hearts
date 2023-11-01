@@ -6,6 +6,9 @@ public class MusicPlayer : MonoBehaviour
 
     void Start()
     {
-        SoundManager.Instance.PlayMusic(musicToPlay);
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlayMusic(musicToPlay);
+        }
     }
 }

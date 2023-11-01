@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -122.91687, y: -141}
-  m_SizeDelta: {x: 228.36731, y: 167.44379}
+  m_AnchoredPosition: {x: -114.2301, y: -107.71857}
+  m_SizeDelta: {x: 204.8899, y: 150.2297}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &85034699
 MonoBehaviour:
@@ -976,8 +976,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 119, y: -141}
-  m_SizeDelta: {x: 228.36731, y: 167.44379}
+  m_AnchoredPosition: {x: 102.81653, y: -107.71857}
+  m_SizeDelta: {x: 204.8899, y: 150.2297}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &552341635
 MonoBehaviour:
@@ -4888,7 +4888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5882353}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5043,8 +5043,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 85}
-  m_SizeDelta: {x: 716.86, y: 525.614}
+  m_AnchoredPosition: {x: 0, y: 96}
+  m_SizeDelta: {x: 570.7655, y: 418.495}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1111858669
 MonoBehaviour:
@@ -15495,7 +15495,7 @@ GameObject:
   - component: {fileID: 1802115345}
   - component: {fileID: 1802115344}
   m_Layer: 5
-  m_Name: PauseMenu (1)
+  m_Name: UI_RuleOfThirds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

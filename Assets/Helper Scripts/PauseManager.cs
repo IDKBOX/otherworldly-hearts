@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class PauseManager : MonoBehaviour
 {
@@ -38,9 +39,9 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
 
-/*        //clear selected object
+        //clear selected object
         EventSystem.current.SetSelectedGameObject(null);
-        //set a new selected object
+/*        //set a new selected object
         EventSystem.current.SetSelectedGameObject(pauseFirstButton);*/
     }
 

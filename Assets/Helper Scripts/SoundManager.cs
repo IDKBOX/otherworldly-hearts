@@ -48,6 +48,7 @@ public class SoundManager : MonoBehaviour
         if (_clip != null)
         {
             _musicSource.clip = _clip;
+            _musicSource.Play();
         }
         else
         {

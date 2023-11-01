@@ -55,4 +55,15 @@ public class SoundManager : MonoBehaviour
             Debug.LogWarning("No Audio Clip!");
         }
     }
+
+    public void ChangeMusicVolume(float value)
+    {
+       _musicSource.volume = value;
+    }
+
+    public void ChangeSFXVolume(float value)
+    {
+        _effectSource.volume = value;
+        _overlapEffectSource.volume = value;
+    }
 }

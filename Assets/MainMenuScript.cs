@@ -3,9 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
-    public GameObject MainMenuOverlay;
+    public GameObject mainMenuScreen;
     public GameObject ExitConfirmOverlay;
-    public GameObject CreditsOverlay;
+    public GameObject creditsScreen;
+    public GameObject settingsScreen;
+    public GameObject controlsScreen;
 
     private void Update()
     {
@@ -15,7 +17,7 @@ public class MainMenuScript : MonoBehaviour
             {
                 ExitConfirmCancel();
             }
-            else if (CreditsOverlay.activeSelf)
+            else if (creditsScreen.activeSelf)
             {
                 HideCredits();
             }
@@ -34,16 +36,43 @@ public class MainMenuScript : MonoBehaviour
         }
     }
 
+    //credits screen
     public void ShowCredits()
     {
-        CreditsOverlay.SetActive(true);
-        MainMenuOverlay.SetActive(false);
+        creditsScreen.SetActive(true);
+        mainMenuScreen.SetActive(false);
     }
 
     public void HideCredits()
     {
-        CreditsOverlay.SetActive(false);
-        MainMenuOverlay.SetActive(true);
+        creditsScreen.SetActive(false);
+        mainMenuScreen.SetActive(true);
+    }
+
+    //settings screen
+    public void ShowSettings()
+    {
+        settingsScreen.SetActive(true);
+        mainMenuScreen.SetActive(false);
+    }
+
+    public void HideSettings()
+    {
+        settingsScreen.SetActive(false);
+        mainMenuScreen.SetActive(true);
+    }
+
+    //controls screen
+    public void ShowControls()
+    {
+        settingsScreen.SetActive(false);
+        controlsScreen.SetActive(true);
+    }
+    
+    public void HideControls()
+    {
+        settingsScreen.SetActive(true);
+        controlsScreen.SetActive(false);
     }
 
     public void RickRoll()

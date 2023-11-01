@@ -21,6 +21,14 @@ public class MainMenuScript : MonoBehaviour
             {
                 HideCredits();
             }
+            else if (settingsScreen.activeSelf)
+            {
+                HideSettings();
+            }
+            else if (controlsScreen.activeSelf)
+            {
+                HideControls();
+            }
         }
     }
 

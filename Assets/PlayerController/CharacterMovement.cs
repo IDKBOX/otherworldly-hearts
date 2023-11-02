@@ -1,7 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour

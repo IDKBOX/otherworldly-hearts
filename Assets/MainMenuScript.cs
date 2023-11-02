@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,9 @@ public class MainMenuScript : MonoBehaviour
     public GameObject creditsScreen;
     public GameObject settingsScreen;
     public GameObject controlsScreen;
+
+    [Header("Transition")]
+    public Animator transition;
 
     private void Update()
     {
@@ -34,7 +38,15 @@ public class MainMenuScript : MonoBehaviour
 
     public void LoadScene(string levelSceneName)
     {
-        if(levelSceneName != null)
+        StartCoroutine(StartTransition(levelSceneName));
+    }
+
+    IEnumerator StartTransition(string levelSceneName)
+    {
+        transition.SetTrigger("StartTransition");
+        yield return new WaitForSeconds(1f);
+
+        if (levelSceneName != null)
         {
             SceneManager.LoadScene(levelSceneName);
         }
@@ -81,11 +93,6 @@ public class MainMenuScript : MonoBehaviour
     {
         settingsScreen.SetActive(true);
         controlsScreen.SetActive(false);
-    }
-
-    public void RickRoll()
-    {
-        Application.OpenURL("https://youtu.be/xvFZjo5PgG0?si=8dOssogQQS_YhlaO");
     }
 
     public void ExitConfirm()

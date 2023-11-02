@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using System.Collections;
 
 public class PauseManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PauseManager : MonoBehaviour
     public GameObject pauseFirstButton;
     public GameObject mainMenuConfirmOverlay;
     [HideInInspector] public static bool isPaused;
+    public Animator transition;
 
     void Start()
     {
@@ -72,6 +74,14 @@ public class PauseManager : MonoBehaviour
 
     public void ReturnToTitleScreen()
     {
+        StartCoroutine(StartTransition());
+    }
+
+    IEnumerator StartTransition()
+    { 
+        transition.SetTrigger("StartTransition");
+        yield return new WaitForSecondsRealtime(1f);
+
         Time.timeScale = 1f;
         isPaused = false;
         SceneManager.LoadScene(0);

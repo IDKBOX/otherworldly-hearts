@@ -474,19 +474,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144938374}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 901033943}
   - {fileID: 629796695}
-  m_Father: {fileID: 1321393292}
+  m_Father: {fileID: 1088367962}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -240.05713}
-  m_SizeDelta: {x: -300, y: -710.1143}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 285}
+  m_SizeDelta: {x: 1620, y: 369.88568}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &144938376
 MonoBehaviour:
@@ -616,6 +616,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148209454}
+  m_CullTransparentMesh: 1
+--- !u!1 &155891715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 155891716}
+  - component: {fileID: 155891718}
+  - component: {fileID: 155891717}
+  m_Layer: 5
+  m_Name: BackupDialogueBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &155891716
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155891715}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1088367962}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 285}
+  m_SizeDelta: {x: 1620, y: 369.88568}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &155891717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155891715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 574bcdcb856fcd34fa27edc1f66c2292, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &155891718
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155891715}
   m_CullTransparentMesh: 1
 --- !u!1 &167777731
 GameObject:
@@ -931,6 +1006,7 @@ GameObject:
   - component: {fileID: 236044795}
   - component: {fileID: 236044794}
   - component: {fileID: 236044796}
+  - component: {fileID: 236044797}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -983,6 +1059,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicToPlay: {fileID: 8300000, guid: c7f343c438eb16d458546e94132fd5ae, type: 3}
+--- !u!114 &236044797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236044793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08d7818ecf1b68146ada14586afe19fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - {fileID: 11400000, guid: 4b48aa39e0e224a4083316ecde562f2d, type: 2}
+  - {fileID: 11400000, guid: 3fe0f092247e7834da7851a4b2573c9a, type: 2}
+  DialogueUIPrefab: {fileID: 1088367961}
+  descriptionDialoguePrefab: {fileID: 144938376}
+  portraitDialoguePrefab: {fileID: 1869310689}
 --- !u!1 &301704293
 GameObject:
   m_ObjectHideFlags: 0
@@ -5748,9 +5842,8 @@ GameObject:
   - component: {fileID: 1088367962}
   - component: {fileID: 1088367965}
   - component: {fileID: 1088367964}
-  - component: {fileID: 1088367963}
   m_Layer: 5
-  m_Name: PortraitDialogue
+  m_Name: DialogueUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5768,6 +5861,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 155891716}
+  - {fileID: 144938375}
   - {fileID: 1869310686}
   m_Father: {fileID: 1321393292}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5776,23 +5871,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1088367963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088367961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5d9465c847d44849b373c4510d2cf8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterImage: {fileID: 703019339}
-  dialogueData: {fileID: 0}
-  textSpeed: 0.05
-  dialogueSound: {fileID: 8300000, guid: 84df00189eec4f24db596b024ea43ffc, type: 3}
-  isDialogueRunning: 0
 --- !u!114 &1088367964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10039,7 +10117,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1538686483}
-  - {fileID: 144938375}
   - {fileID: 1088367962}
   - {fileID: 971051737}
   - {fileID: 2051469850}
@@ -16742,13 +16819,14 @@ GameObject:
   - component: {fileID: 1869310686}
   - component: {fileID: 1869310688}
   - component: {fileID: 1869310687}
+  - component: {fileID: 1869310689}
   m_Layer: 5
   m_Name: PortraitDialogueBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1869310686
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16809,6 +16887,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869310685}
   m_CullTransparentMesh: 1
+--- !u!114 &1869310689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869310685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d9465c847d44849b373c4510d2cf8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterImage: {fileID: 703019339}
+  dialogueData: {fileID: 0}
+  textSpeed: 0.05
+  dialogueSound: {fileID: 8300000, guid: 84df00189eec4f24db596b024ea43ffc, type: 3}
+  isDialogueRunning: 0
 --- !u!1 &1905886816
 GameObject:
   m_ObjectHideFlags: 0

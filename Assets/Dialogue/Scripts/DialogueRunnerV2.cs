@@ -2,57 +2,84 @@ using UnityEngine;
 
 public class DialogueRunnerV2 : MonoBehaviour
 {
-    public ScriptableDialogue[] dialogueData;
+    ScriptableDialogue[] dialogueData;
     private bool isDialogueRunnerRunning;
     private int index = 0;
+    public static DialogueRunnerV2 Instance;
 
     [Header("Prerequisites")]
     public GameObject DialogueUIPrefab;
     public DescriptionDialogueScript descriptionDialoguePrefab;
     public PortraitDialogueScript portraitDialoguePrefab;
 
-    void Update()
+    private void Awake()
     {
-        if (Input.GetKey(KeyCode.Q) && isDialogueRunnerRunning == false)
+        if (Instance == null)
         {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void TriggerDialogue(ScriptableDialogue[] _dialogueData)
+    {
+        if (isDialogueRunnerRunning == false)
+        {
+            dialogueData = _dialogueData;
+
             index = 0;
             isDialogueRunnerRunning = true;
 
             StartDialogueRunner();
         }
+    }
 
-        if (dialogueData[index].isDescriptionDialogue)
+    private void Update()
+    {
+        if (isDialogueRunnerRunning)
         {
-            if (!descriptionDialoguePrefab.isActiveAndEnabled && isDialogueRunnerRunning)
+            if (dialogueData[index].isDescriptionDialogue)
             {
-                if (index < dialogueData.Length - 1)
+                if (!descriptionDialoguePrefab.isActiveAndEnabled && isDialogueRunnerRunning)
                 {
-                    index++;
-                    StartDialogueRunner();
+                    if (index < dialogueData.Length - 1)
+                    {
+                        index++;
+                        StartDialogueRunner();
+                    }
+                    else
+                    {
+                        OnDialogueFinished();
+                    }
                 }
-                else
+            }
+            else if (dialogueData[index].isPortraitDialogue)
+            {
+                if (!portraitDialoguePrefab.isActiveAndEnabled && isDialogueRunnerRunning)
                 {
-                    isDialogueRunnerRunning = false;
-                    DialogueUIPrefab.SetActive(false);
+                    if (index < dialogueData.Length - 1)
+                    {
+                        index++;
+                        StartDialogueRunner();
+                    }
+                    else
+                    {
+                        OnDialogueFinished();
+                    }
                 }
             }
         }
-        else if (dialogueData[index].isPortraitDialogue)
-        {
-            if (!portraitDialoguePrefab.isActiveAndEnabled && isDialogueRunnerRunning)
-            {
-                if (index < dialogueData.Length - 1)
-                {
-                    index++;
-                    StartDialogueRunner();
-                }
-                else
-                {
-                    isDialogueRunnerRunning = false;
-                    DialogueUIPrefab.SetActive(false);
-                }
-            }
-        }
+    }
+
+    private void OnDialogueFinished()
+    {
+        isDialogueRunnerRunning = false;
+        DialogueUIPrefab.SetActive(false);
+        FindObjectOfType<CharacterMovement>().isDisabled = false;
     }
 
     private void StartDialogueRunner()

@@ -10,12 +10,14 @@ public class VolumeSlider : MonoBehaviour
     {
         if (isMusicSlider)
         {
-            SoundManager.Instance.ChangeMusicVolume(_slider.value);
+            SoundManager.Instance.ChangeMusicVolume(PlayerPrefs.GetFloat("MusicVolume", _slider.value));
+            _slider.value = PlayerPrefs.GetFloat("MusicVolume", _slider.value);
             _slider.onValueChanged.AddListener(val => SoundManager.Instance.ChangeMusicVolume(val));
         }
         else
         {
-            SoundManager.Instance.ChangeSFXVolume(_slider.value);
+            SoundManager.Instance.ChangeSFXVolume(PlayerPrefs.GetFloat("SFXVolume", _slider.value));
+            _slider.value = PlayerPrefs.GetFloat("SFXVolume", _slider.value);
             _slider.onValueChanged.AddListener(val => SoundManager.Instance.ChangeSFXVolume(val));
         }
     }

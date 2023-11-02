@@ -59,11 +59,13 @@ public class SoundManager : MonoBehaviour
     public void ChangeMusicVolume(float value)
     {
        _musicSource.volume = value;
+       PlayerPrefs.SetFloat("MusicVolume", value);
     }
 
     public void ChangeSFXVolume(float value)
     {
         _effectSource.volume = value;
         _overlapEffectSource.volume = value;
+        PlayerPrefs.SetFloat("SFXVolume", value);
     }
 }

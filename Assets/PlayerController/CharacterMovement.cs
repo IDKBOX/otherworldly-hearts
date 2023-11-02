@@ -28,7 +28,7 @@ public class CharacterMovement : MonoBehaviour
 
     [HideInInspector] public bool isDisabled;
 
-    [SerializeField] private Rigidbody2D rb;
+    public Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform wallCheck;

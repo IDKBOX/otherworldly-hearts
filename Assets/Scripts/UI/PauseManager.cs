@@ -50,6 +50,7 @@ public class PauseManager : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        FindObjectOfType<CharacterMovement>().isDisabled = true;
 
         //clear selected object
         EventSystem.current.SetSelectedGameObject(null);
@@ -62,6 +63,7 @@ public class PauseManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        FindObjectOfType<CharacterMovement>().isDisabled = false;
     }
 
     public void ConfirmReturnToTitleScreen()

@@ -6,10 +6,12 @@ using System.Collections;
 public class PauseManager : MonoBehaviour
 {
     public GameObject pauseMenu;
-    public GameObject pauseFirstButton;
+    private GameObject pauseFirstButton;
     public GameObject mainMenuConfirmOverlay;
     [HideInInspector] public static bool isPaused;
     public Animator transition;
+    public GameObject settingsScreen;
+    public GameObject controlsScreen;
 
     void Start()
     {
@@ -85,5 +87,31 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         SceneManager.LoadScene(0);
+    }
+
+    //settings screen
+    public void ShowSettings()
+    {
+        settingsScreen.SetActive(true);
+        pauseMenu.SetActive(false);
+    }
+
+    public void HideSettings()
+    {
+        settingsScreen.SetActive(false);
+        pauseMenu.SetActive(true);
+    }
+
+    //controls screen
+    public void ShowControls()
+    {
+        settingsScreen.SetActive(false);
+        controlsScreen.SetActive(true);
+    }
+
+    public void HideControls()
+    {
+        settingsScreen.SetActive(true);
+        controlsScreen.SetActive(false);
     }
 }

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class PauseManager : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class PauseManager : MonoBehaviour
     public Animator transition;
     public GameObject settingsScreen;
     public GameObject controlsScreen;
+
+    //audio lowpass filter
+    public AudioMixerSnapshot normalAudioSnapshot;
+    public AudioMixerSnapshot lowpassAudioSnapshot;
 
     void Start()
     {
@@ -48,6 +53,7 @@ public class PauseManager : MonoBehaviour
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
+        lowpassAudioSnapshot.TransitionTo(0f);
         Time.timeScale = 0f;
         isPaused = true;
         FindObjectOfType<CharacterMovement>().isDisabled = true;
@@ -64,6 +70,7 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         FindObjectOfType<CharacterMovement>().isDisabled = false;
+        normalAudioSnapshot.TransitionTo(0f);
     }
 
     public void ConfirmReturnToTitleScreen()

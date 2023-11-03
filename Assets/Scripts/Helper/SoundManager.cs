@@ -66,6 +66,7 @@ public class SoundManager : MonoBehaviour
     {
         _effectSource.volume = value;
         _overlapEffectSource.volume = value;
+        _ambientSource.volume = value;
         PlayerPrefs.SetFloat("SFXVolume", value);
     }
 }

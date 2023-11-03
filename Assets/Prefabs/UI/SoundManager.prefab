@@ -179,6 +179,7 @@ MonoBehaviour:
   _musicSource: {fileID: 1318309022414703640}
   _effectSource: {fileID: 8994628939306993086}
   _overlapEffectSource: {fileID: 3302900228488482809}
+  _ambientSource: {fileID: 7019392219415267701}
 --- !u!1 &2725890469747081080
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,7 +350,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ef1424a0617fa1944b63b06f6e68a86b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

@@ -1232,7 +1232,7 @@ GameObject:
   - component: {fileID: 236044795}
   - component: {fileID: 236044794}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: PauseManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1280,7 +1280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 238235037}
   m_Layer: 0
-  m_Name: ---------------------
+  m_Name: -----Below Load Additive Aja Nanti-----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18238,14 +18238,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 776099685071903940, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
-      propertyPath: dashUnlocked
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 776099685071903940, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
-      propertyPath: doubleJumpUnlocked
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7096036585311225186, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
       propertyPath: m_Name
       value: Character
@@ -18302,14 +18294,14 @@ SceneRoots:
   - {fileID: 1530740159}
   - {fileID: 528385661}
   - {fileID: 651301978}
-  - {fileID: 236044795}
   - {fileID: 2110568282}
+  - {fileID: 236044795}
   - {fileID: 1890787118}
   - {fileID: 63574390}
   - {fileID: 1321393292}
+  - {fileID: 7838459762393135252}
   - {fileID: 238235037}
   - {fileID: 1619845127}
-  - {fileID: 7838459762393135252}
   - {fileID: 1798305559}
   - {fileID: 137436189}
   - {fileID: 219137190}

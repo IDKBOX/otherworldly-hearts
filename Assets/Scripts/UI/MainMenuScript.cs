@@ -6,6 +6,7 @@ public class MainMenuScript : MonoBehaviour
 {
     public GameObject mainMenuScreen;
     public GameObject ExitConfirmOverlay;
+    public GameObject NewGameConfirmOverlay;
     public GameObject creditsScreen;
     public GameObject settingsScreen;
     public GameObject controlsScreen;
@@ -32,6 +33,10 @@ public class MainMenuScript : MonoBehaviour
             else if (controlsScreen.activeSelf)
             {
                 HideControls();
+            }
+            else if (NewGameConfirmOverlay.activeSelf)
+            {
+                NewGameConfirmCancel();
             }
         }
     }
@@ -95,6 +100,7 @@ public class MainMenuScript : MonoBehaviour
         controlsScreen.SetActive(false);
     }
 
+    //exit confirm overlay
     public void ExitConfirm()
     {
         ExitConfirmOverlay.SetActive(true);
@@ -103,6 +109,17 @@ public class MainMenuScript : MonoBehaviour
     public void ExitConfirmCancel()
     {
         ExitConfirmOverlay.SetActive(false);
+    }
+
+    //new game confirm overlay
+    public void NewGameConfirm()
+    {
+        NewGameConfirmOverlay.SetActive(true);
+    }
+
+    public void NewGameConfirmCancel()
+    {
+        NewGameConfirmOverlay.SetActive(false);
     }
 
     public void ExitGame()

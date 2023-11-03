@@ -86,6 +86,7 @@ public class PauseManager : MonoBehaviour
     public void ReturnToTitleScreen()
     {
         StartCoroutine(StartTransition());
+        SoundManager.Instance.FadeOut();
     }
 
     IEnumerator StartTransition()

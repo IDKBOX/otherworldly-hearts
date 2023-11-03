@@ -1,10 +1,16 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
 
     [SerializeField] private AudioSource _musicSource, _effectSource, _overlapEffectSource, _ambientSource;
+
+    //audio fade snapshots
+    public AudioMixerSnapshot normalAudioSnapshot;
+    public AudioMixerSnapshot noMusicAudioSnapshot;
 
     private void Awake()
     {
@@ -17,6 +23,12 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        ChangeMusicVolume(PlayerPrefs.GetFloat("MusicVolume", 1));
+        ChangeSFXVolume(PlayerPrefs.GetFloat("SFXVolume", 1));
     }
 
     public void PlaySound(AudioClip clip)
@@ -49,6 +61,7 @@ public class SoundManager : MonoBehaviour
         {
             _musicSource.clip = _clip;
             _musicSource.Play();
+            FadeIn();
         }
         else
         {
@@ -68,5 +81,15 @@ public class SoundManager : MonoBehaviour
         _overlapEffectSource.volume = value;
         _ambientSource.volume = value;
         PlayerPrefs.SetFloat("SFXVolume", value);
+    }
+
+    public void FadeIn()
+    {
+        normalAudioSnapshot.TransitionTo(1f);
+    }
+
+    public void FadeOut()
+    {
+        noMusicAudioSnapshot.TransitionTo(0.5f);
     }
 }

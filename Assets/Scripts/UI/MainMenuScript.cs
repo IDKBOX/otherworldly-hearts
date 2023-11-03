@@ -44,6 +44,7 @@ public class MainMenuScript : MonoBehaviour
     public void LoadScene(string levelSceneName)
     {
         StartCoroutine(StartTransition(levelSceneName));
+        SoundManager.Instance.FadeOut();
     }
 
     IEnumerator StartTransition(string levelSceneName)

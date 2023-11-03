@@ -4,7 +4,7 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
 
-    [SerializeField] private AudioSource _musicSource, _effectSource, _overlapEffectSource;
+    [SerializeField] private AudioSource _musicSource, _effectSource, _overlapEffectSource, _ambientSource;
 
     private void Awake()
     {

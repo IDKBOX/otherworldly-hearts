@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelTutorial.unity
     guid: 9dccd6f22461f6d4589e5dd2c65f2d5c
+  - enabled: 1
+    path: Assets/Scenes/CJExperimentalZone.unity
+    guid: df53c73269aac1d409d0474a1f730ac1
   m_configObjects: {}

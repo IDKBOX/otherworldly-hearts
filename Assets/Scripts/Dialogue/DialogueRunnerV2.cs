@@ -12,6 +12,8 @@ public class DialogueRunnerV2 : MonoBehaviour
     public DescriptionDialogueScript descriptionDialoguePrefab;
     public PortraitDialogueScript portraitDialoguePrefab;
 
+    [HideInInspector] public GameObject currentDialogueTrigger;
+
     private void Awake()
     {
         if (Instance == null)
@@ -80,6 +82,11 @@ public class DialogueRunnerV2 : MonoBehaviour
         isDialogueRunnerRunning = false;
         DialogueUIPrefab.SetActive(false);
         FindObjectOfType<CharacterMovement>().isDisabled = false;
+
+        if (currentDialogueTrigger != null)
+        {
+            Destroy(currentDialogueTrigger);
+        }
     }
 
     private void StartDialogueRunner()

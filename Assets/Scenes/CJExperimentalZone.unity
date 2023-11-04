@@ -158,6 +158,7 @@ MonoBehaviour:
   DialogueUIPrefab: {fileID: 1088367961}
   descriptionDialoguePrefab: {fileID: 144938376}
   portraitDialoguePrefab: {fileID: 1869310689}
+  currentDialogueTrigger: {fileID: 0}
 --- !u!114 &63574387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1161,6 +1162,12 @@ MonoBehaviour:
   dialogueData:
   - {fileID: 11400000, guid: 4b48aa39e0e224a4083316ecde562f2d, type: 2}
   - {fileID: 11400000, guid: 3fe0f092247e7834da7851a4b2573c9a, type: 2}
+  onTriggerEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  onDialogueComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &219137189
 BoxCollider2D:
   m_ObjectHideFlags: 0

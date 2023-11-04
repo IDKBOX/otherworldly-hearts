@@ -1162,7 +1162,7 @@ MonoBehaviour:
   dialogueData:
   - {fileID: 11400000, guid: 4b48aa39e0e224a4083316ecde562f2d, type: 2}
   - {fileID: 11400000, guid: 3fe0f092247e7834da7851a4b2573c9a, type: 2}
-  onTriggerEntered:
+  onDialogueTriggered:
     m_PersistentCalls:
       m_Calls: []
   onDialogueComplete:

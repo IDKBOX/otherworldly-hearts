@@ -15,7 +15,7 @@ public class IntroRunner : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public Image dialogueImageObject;
     public Image dialogueImageObjectBG;
-    private float textSpeed = 0.05f;
+    public float textSpeed = 0.05f;
     public AudioClip dialogueSound;
     [HideInInspector] public bool isDialogueRunning = false;
     public Animator transition;
@@ -113,7 +113,7 @@ public class IntroRunner : MonoBehaviour
     private void ChangeDialogueTween()
     {
         //0 opacity instantly then slowly fades back up
-        if (index != 3 && index != 6)
+        if (index != 1 && index != 3 && index != 5 && index != 7)
         {
             Sequence imageFade = DOTween.Sequence();
 
@@ -122,7 +122,7 @@ public class IntroRunner : MonoBehaviour
         }
 
         //enable image BG for seamless crossfade
-        if (index == 1 || index == 2 || index == 3)
+        if (index == 2 || index == 3)
         {
             dialogueImageObjectBG.color = new Color32(255, 255, 255, 255);
         }
@@ -141,7 +141,7 @@ public class IntroRunner : MonoBehaviour
             .Join(dialogueImageObjectBG.DOColor(new Color32(255, 255, 255, 0), 1.5f));
         }
 
-        if (index == 6)
+        if (index == 7)
         {
             dialogueImageObject.DOColor(new Color32(255, 255, 255, 125), 1.5f);
         }

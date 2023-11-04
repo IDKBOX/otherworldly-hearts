@@ -95,9 +95,10 @@ public class IntroRunner : MonoBehaviour
         StartDialogue();
     }
 
-    //load main menu
+    //load next scene
     private void LoadScene()
     {
+        DOTween.KillAll();
         StartCoroutine(StartTransition());
         SoundManager.Instance.FadeOut();
     }

@@ -919,7 +919,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: LevelTutorial
+          m_StringArgument: 000_Intro
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &442261890
@@ -1246,7 +1246,7 @@ GameObject:
   - component: {fileID: 469495201}
   - component: {fileID: 469495200}
   m_Layer: 5
-  m_Name: ExitGameText
+  m_Name: NewGameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16554,7 +16554,7 @@ GameObject:
   - component: {fileID: 1800781559}
   - component: {fileID: 1800781558}
   m_Layer: 5
-  m_Name: ExitConfirmationBox
+  m_Name: ConfirmationBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

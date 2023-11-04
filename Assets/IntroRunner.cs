@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class IntroRunner : MonoBehaviour
     public GameObject introCanvas;
     public TextMeshProUGUI textComponent;
     public Image dialogueImageObject;
+    public Image dialogueImageObjectBG;
     private float textSpeed = 0.05f;
     public AudioClip dialogueSound;
     [HideInInspector] public bool isDialogueRunning = false;
@@ -20,6 +22,7 @@ public class IntroRunner : MonoBehaviour
 
     private int index;
 
+    //dialogue code
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -47,8 +50,6 @@ public class IntroRunner : MonoBehaviour
 
     IEnumerator TypeLine()
     {
-        ImageChanger();
-
         foreach (char c in dialogueText[index].ToCharArray())
         {
             textComponent.text += c;
@@ -63,6 +64,8 @@ public class IntroRunner : MonoBehaviour
         if (index < dialogueText.Length - 1)
         {
             index++;
+            ImageChanger();
+            ChangeDialogueTween();
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
@@ -72,9 +75,15 @@ public class IntroRunner : MonoBehaviour
         }
     }
 
+    //image changing script
     void ImageChanger()
     {
         dialogueImageObject.sprite = dialogueImages[index];
+
+        if (index != 0)
+        {
+            dialogueImageObjectBG.sprite = dialogueImages[index - 1];
+        }
     }
 
 
@@ -82,11 +91,12 @@ public class IntroRunner : MonoBehaviour
     private IEnumerator Start()
     {
         yield return new WaitForSeconds(0.5f);
+        ChangeDialogueTween();
         StartDialogue();
     }
 
     //load main menu
-    public void LoadScene()
+    private void LoadScene()
     {
         StartCoroutine(StartTransition());
         SoundManager.Instance.FadeOut();
@@ -98,5 +108,42 @@ public class IntroRunner : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    private void ChangeDialogueTween()
+    {
+        //0 opacity instantly then slowly fades back up
+        if (index != 3 && index != 6)
+        {
+            Sequence imageFade = DOTween.Sequence();
+
+            imageFade.Append(dialogueImageObject.DOColor(new Color32(255, 255, 255, 0), 0f).SetEase(Ease.Linear))
+            .Append(dialogueImageObject.DOColor(new Color32(255, 255, 255, 255), 2.5f));
+        }
+
+        //enable image BG for seamless crossfade
+        if (index == 1 || index == 2 || index == 3)
+        {
+            dialogueImageObjectBG.color = new Color32(255, 255, 255, 255);
+        }
+        else
+        {
+            dialogueImageObjectBG.color = new Color32(255, 255, 255, 0);
+        }
+
+        //index 3 fade out
+        if (index == 3)
+        {
+            Sequence imageFade = DOTween.Sequence();
+
+            imageFade.Append(dialogueImageObject.DOColor(new Color32(255, 255, 255, 0), 0f).SetEase(Ease.Linear))
+            .Append(dialogueImageObject.DOColor(new Color32(255, 255, 255, 255), 1.5f))
+            .Join(dialogueImageObjectBG.DOColor(new Color32(255, 255, 255, 0), 1.5f));
+        }
+
+        if (index == 6)
+        {
+            dialogueImageObject.DOColor(new Color32(255, 255, 255, 125), 1.5f);
+        }
     }
 }

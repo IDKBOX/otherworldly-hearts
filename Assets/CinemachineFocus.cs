@@ -9,16 +9,16 @@ public class CinemachineFocus : MonoBehaviour
 
     [HideInInspector] public UnityEvent onFocusStarted, onFocusEnded;
 
+    //trigger system
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {
-            previousCamera.SetActive(false);
-            focusCamera.SetActive(true);
-            onFocusStarted?.Invoke();
+            StartCinemachineFocus();
         }
     }
 
+    //focus systems
     public void StartCinemachineFocus()
     {
         previousCamera.SetActive(false);

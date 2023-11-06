@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class SpiritOrb : MonoBehaviour
@@ -18,7 +19,8 @@ public class SpiritOrb : MonoBehaviour
             collectEffect.Play();
 
             //destroy when touched
-            Destroy(GetComponentInChildren<SpriteRenderer>().gameObject);
+            transform.DOScale(Vector3.zero, 0.5f);
+            Destroy(GetComponentInChildren<SpriteRenderer>().gameObject, 0.5f);
             Destroy(GetComponent<CircleCollider2D>());
             Destroy(gameObject, 3f);
         }

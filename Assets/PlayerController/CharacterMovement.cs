@@ -40,7 +40,8 @@ public class CharacterMovement : MonoBehaviour
 
     //Unlock Player Abilities
     [Header("Unlock Player Abilities")]
-    [SerializeField] private bool doubleJumpUnlocked = false;
+    [SerializeField] public bool doubleJumpUnlocked = false;
+    [SerializeField] public bool dashUnlocked = false;
 
 
     // Update is called once per frame

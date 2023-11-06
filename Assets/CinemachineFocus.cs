@@ -1,10 +1,15 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CinemachineFocus : MonoBehaviour
 {
     public GameObject previousCamera;
     public GameObject focusCamera;
+
+    [Header("Optional Events")]
+    [Space]
+    public UnityEvent onFocusStarted, onFocusEnded;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -12,10 +17,18 @@ public class CinemachineFocus : MonoBehaviour
         {
             previousCamera.SetActive(false);
             focusCamera.SetActive(true);
+            onFocusStarted?.Invoke();
         }
     }
 
-    public void StartCinemachineFocus(float _focusTime)
+    public void StartCinemachineFocus()
+    {
+        previousCamera.SetActive(false);
+        focusCamera.SetActive(true);
+        onFocusStarted?.Invoke();
+    }
+
+    public void StartTimedCinemachineFocus(float _focusTime)
     {
         StartCoroutine(TimedFocusCoroutine(_focusTime));
     }
@@ -24,6 +37,7 @@ public class CinemachineFocus : MonoBehaviour
     {
         previousCamera.SetActive(false);
         focusCamera.SetActive(true);
+        onFocusStarted?.Invoke();
         yield return new WaitForSecondsRealtime(_focusTime);
         EndCinemachineFocus();
     }
@@ -32,5 +46,6 @@ public class CinemachineFocus : MonoBehaviour
     {
         focusCamera.SetActive(false);
         previousCamera.SetActive(true);
+        onFocusEnded?.Invoke();
     }
 }

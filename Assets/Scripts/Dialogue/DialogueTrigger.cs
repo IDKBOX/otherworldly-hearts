@@ -7,6 +7,7 @@ public class DialogueTrigger : MonoBehaviour
     public bool interactionNeeded;
 
     [Header("Optional Events")]
+    [Space]
     public UnityEvent onDialogueTriggered, onDialogueComplete;
     private bool hasBeenTriggered;
 

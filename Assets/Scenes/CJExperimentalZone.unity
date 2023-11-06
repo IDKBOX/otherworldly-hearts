@@ -1419,7 +1419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a7fe58e0f0f6847bba99f798ef40e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomCamera: {fileID: 547117693}
+  previousCamera: {fileID: 0}
   focusCamera: {fileID: 1180956430}
 --- !u!1 &236044793
 GameObject:

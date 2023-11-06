@@ -24,14 +24,16 @@ public class StoryItem : MonoBehaviour
 
     private IEnumerator ItemCollected()
     {
+        //when first collected
         collectEffect.Play();
         animator.SetTrigger("Collected");
         Destroy(GetComponentInChildren<SpriteRenderer>().gameObject, 0.5f);
         Destroy(GetComponent<CircleCollider2D>());
-
         FindObjectOfType<ItemDisplay>().itemsToShow = ItemID;
         ItemFoundUI.SetActive(true);
         Time.timeScale = 0.15f;
+
+        //wait then run
         yield return new WaitForSecondsRealtime(4f);
         Time.timeScale = 1f;
         ItemFoundUI.SetActive(false);

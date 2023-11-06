@@ -7,7 +7,6 @@ using UnityEngine.Audio;
 public class PauseManager : MonoBehaviour
 {
     public GameObject pauseMenu;
-    private GameObject pauseFirstButton;
     public GameObject mainMenuConfirmOverlay;
     [HideInInspector] public static bool isPaused;
     public Animator transition;
@@ -30,6 +29,14 @@ public class PauseManager : MonoBehaviour
             if (mainMenuConfirmOverlay.activeSelf)
             {
                 CancelReturnToTitleScreen();
+            }
+            else if (settingsScreen.activeSelf)
+            {
+                HideSettings();
+            }
+            else if (controlsScreen.activeSelf)
+            {
+                HideControls();
             }
             else
             {
@@ -60,8 +67,6 @@ public class PauseManager : MonoBehaviour
 
         //clear selected object
         EventSystem.current.SetSelectedGameObject(null);
-/*        //set a new selected object
-        EventSystem.current.SetSelectedGameObject(pauseFirstButton);*/
     }
 
     public void ResumeGame()

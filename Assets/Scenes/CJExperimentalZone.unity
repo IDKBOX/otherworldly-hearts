@@ -19614,6 +19614,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemID: 1
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
   ItemFoundUI: {fileID: 1664959158}
   itemAnimator: {fileID: 3313996114037031889}
   UIAnimator: {fileID: 15527211}

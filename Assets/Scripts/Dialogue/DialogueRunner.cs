@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class DialogueRunnerV2 : MonoBehaviour
+public class DialogueRunner : MonoBehaviour
 {
     ScriptableDialogue[] dialogueData;
     private bool isDialogueRunnerRunning;
     private int index = 0;
-    public static DialogueRunnerV2 Instance;
+    public static DialogueRunner Instance;
 
     [Header("Prerequisites")]
     public GameObject DialogueUIPrefab;

@@ -15,8 +15,8 @@ public class DialogueTrigger : MonoBehaviour
             onDialogueTriggered?.Invoke();
             collision.GetComponent<CharacterMovement>().isDisabled = true;
             collision.GetComponent<CharacterMovement>().rb.velocity = Vector3.zero;
-            DialogueRunnerV2.Instance.TriggerDialogue(dialogueData);
-            DialogueRunnerV2.Instance.currentDialogueTrigger = gameObject;
+            DialogueRunner.Instance.TriggerDialogue(dialogueData);
+            DialogueRunner.Instance.currentDialogueTrigger = gameObject;
         }
     }
 

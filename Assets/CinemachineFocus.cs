@@ -13,17 +13,8 @@ public class CinemachineFocus : MonoBehaviour
             focusCamera.SetActive(true);
         }
     }
-/*
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player") && !other.isTrigger)
-        {
-            focusCamera.SetActive(false);
-            roomCamera.SetActive(true);
-        }
-    }*/
 
-    private void OnDestroy()
+    public void EndCinemachineFocus()
     {
         focusCamera.SetActive(false);
         roomCamera.SetActive(true);

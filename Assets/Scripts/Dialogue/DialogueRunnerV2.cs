@@ -87,7 +87,7 @@ public class DialogueRunnerV2 : MonoBehaviour
         {
             if (currentDialogueTrigger.GetComponent<CinemachineFocus>() != null)
             {
-                Destroy(currentDialogueTrigger.GetComponent<CinemachineFocus>());
+                currentDialogueTrigger.GetComponent<CinemachineFocus>().EndCinemachineFocus();
             }
             
             Destroy(currentDialogueTrigger, 1f);

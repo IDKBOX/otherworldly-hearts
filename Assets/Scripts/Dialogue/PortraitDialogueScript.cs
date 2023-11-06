@@ -22,7 +22,7 @@ public class PortraitDialogueScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && dialogueData.isPortraitDialogue)
+        if (Input.GetKeyDown(KeyCode.Space) && !dialogueData.isDescriptionDialogue)
         {
             if (textComponent.text == dialogueData.lines[index])
             {
@@ -82,11 +82,6 @@ public class PortraitDialogueScript : MonoBehaviour
         else if (emotionIndex == "Sad")
         {
             characterImage.sprite = dialogueData.characterData.sadSprite;
-        }
-        else if (emotionIndex == "Choice")
-        {
-            dialogueData.choiceOption.SetActive(true);
-            gameObject.SetActive(false);
         }
         else
         {

@@ -12,15 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438f31e55d066974aa7ad6e03ef03b6f, type: 3}
   m_Name: 004_Test
   m_EditorClassIdentifier: 
+  isDescriptionDialogue: 0
   lines:
   - WHOA?! IS THAT...?
   - MY OLD PHOTO!
   - I can't believe it's still here!
-  isDescriptionDialogue: 0
-  isPortraitDialogue: 1
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
   emotion:
   - 
   - 
-  - 
-  choiceOption: {fileID: 0}
+  - Sad

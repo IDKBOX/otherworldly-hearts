@@ -59,7 +59,7 @@ public class DialogueRunner : MonoBehaviour
                     }
                 }
             }
-            else if (dialogueData[index].isPortraitDialogue)
+            else if (!dialogueData[index].isDescriptionDialogue)
             {
                 if (!portraitDialoguePrefab.isActiveAndEnabled && isDialogueRunnerRunning)
                 {
@@ -106,7 +106,7 @@ public class DialogueRunner : MonoBehaviour
             descriptionDialoguePrefab.gameObject.SetActive(true);
             descriptionDialoguePrefab.StartDialogue(dialogueData[index]);
         }
-        else if (dialogueData[index].isPortraitDialogue)
+        else if (!dialogueData[index].isDescriptionDialogue)
         {
             portraitDialoguePrefab.gameObject.SetActive(true);
             portraitDialoguePrefab.StartDialogue(dialogueData[index]);

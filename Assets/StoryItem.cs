@@ -49,14 +49,14 @@ public class StoryItem : MonoBehaviour
         UIAnimator.SetTrigger("End");
         yield return new WaitForSecondsRealtime(1f);
         Time.timeScale = 1f;
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(1f);
         ItemFoundUI.SetActive(false);
         onComplete?.Invoke();
     }
 
     private void IDChecker()
     {
-        FindObjectOfType<ItemDisplay>().itemsToShow = ItemID;
+        FindAnyObjectByType<ItemDisplay>().itemsToShow = ItemID;
 
         switch (ItemID)
         {
@@ -64,13 +64,13 @@ public class StoryItem : MonoBehaviour
                 itemFoundText.text = "Ghost Found";
                 descriptionText.text = "Double Jump Unlocked";
                 itemImage.sprite = ghostSprite;
-                FindObjectOfType<CharacterMovement>().doubleJumpUnlocked = true;
+                FindAnyObjectByType<CharacterMovement>().doubleJumpUnlocked = true;
                 break;
             case 1:
                 itemFoundText.text = "Old Photo Found";
                 descriptionText.text = "Dash Unlocked";
                 itemImage.sprite = item1Sprite;
-                FindObjectOfType<CharacterMovement>().dashUnlocked = true;
+                FindAnyObjectByType<CharacterMovement>().dashUnlocked = true;
                 break;
             case 2:
                 itemFoundText.text = "Old Diary Found";

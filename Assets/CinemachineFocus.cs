@@ -14,6 +14,12 @@ public class CinemachineFocus : MonoBehaviour
         }
     }
 
+    public void StartCinemachineFocus()
+    {
+        roomCamera.SetActive(false);
+        focusCamera.SetActive(true);
+    }
+
     public void EndCinemachineFocus()
     {
         focusCamera.SetActive(false);

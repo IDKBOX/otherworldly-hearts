@@ -5,11 +5,13 @@ public class DialogueTrigger : MonoBehaviour
 {
     public ScriptableDialogue[] dialogueData;
     public UnityEvent onDialogueTriggered, onDialogueComplete;
+    private bool hasBeenTriggered;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !hasBeenTriggered)
         {
+            hasBeenTriggered = true;
             onDialogueTriggered?.Invoke();
             collision.GetComponent<CharacterMovement>().isDisabled = true;
             collision.GetComponent<CharacterMovement>().rb.velocity = Vector3.zero;

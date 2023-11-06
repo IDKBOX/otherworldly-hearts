@@ -49,9 +49,9 @@ public class StoryItem : MonoBehaviour
         UIAnimator.SetTrigger("End");
         yield return new WaitForSecondsRealtime(1f);
         Time.timeScale = 1f;
+        onComplete?.Invoke();
         yield return new WaitForSecondsRealtime(1f);
         ItemFoundUI.SetActive(false);
-        onComplete?.Invoke();
     }
 
     private void IDChecker()

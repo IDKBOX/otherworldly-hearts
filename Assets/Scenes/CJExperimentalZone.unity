@@ -1339,6 +1339,7 @@ MonoBehaviour:
   dialogueData:
   - {fileID: 11400000, guid: 4b48aa39e0e224a4083316ecde562f2d, type: 2}
   - {fileID: 11400000, guid: 3fe0f092247e7834da7851a4b2573c9a, type: 2}
+  interactionNeeded: 0
   onDialogueTriggered:
     m_PersistentCalls:
       m_Calls: []
@@ -19406,6 +19407,7 @@ GameObject:
   - component: {fileID: 231883534330324512}
   - component: {fileID: 4203482137710562235}
   - component: {fileID: 5738116989372114343}
+  - component: {fileID: 5738116989372114344}
   m_Layer: 0
   m_Name: Story_Item
   m_TagString: Untagged
@@ -19616,7 +19618,19 @@ MonoBehaviour:
   ItemID: 1
   onComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5738116989372114344}
+        m_TargetAssemblyTypeName: DialogueStarter, Assembly-CSharp
+        m_MethodName: StartDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ItemFoundUI: {fileID: 1664959158}
   itemAnimator: {fileID: 3313996114037031889}
   UIAnimator: {fileID: 15527211}
@@ -19627,6 +19641,26 @@ MonoBehaviour:
   item1Sprite: {fileID: 21300000, guid: fc838ff5d1048db4db534a8bf965362f, type: 3}
   item2Sprite: {fileID: 21300000, guid: 9fc6fc910ae7fb04cacaf422eab1a961, type: 3}
   item3Sprite: {fileID: 21300000, guid: 99536e20c833629448d9356e4064228b, type: 3}
+--- !u!114 &5738116989372114344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3286498424022620017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc854cb3f14856947bf680935acedaa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - {fileID: 11400000, guid: 4b48aa39e0e224a4083316ecde562f2d, type: 2}
+  onDialogueTriggered:
+    m_PersistentCalls:
+      m_Calls: []
+  onDialogueComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!198 &5820874976325415386
 ParticleSystem:
   m_ObjectHideFlags: 0

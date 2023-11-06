@@ -6,7 +6,7 @@ public class DialogueTrigger : MonoBehaviour
     public ScriptableDialogue[] dialogueData;
     public bool interactionNeeded;
     [Space]
-    public UnityEvent onDialogueTriggered, onDialogueComplete;
+    [HideInInspector] public UnityEvent onDialogueTriggered, onDialogueComplete;
     private bool hasBeenTriggered;
 
     private void OnTriggerEnter2D(Collider2D collision)

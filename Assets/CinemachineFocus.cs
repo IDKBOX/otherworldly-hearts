@@ -7,7 +7,7 @@ public class CinemachineFocus : MonoBehaviour
     public GameObject previousCamera;
     public GameObject focusCamera;
 
-    public UnityEvent onFocusStarted, onFocusEnded;
+    [HideInInspector] public UnityEvent onFocusStarted, onFocusEnded;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

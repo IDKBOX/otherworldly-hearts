@@ -5,8 +5,6 @@ public class DialogueTrigger : MonoBehaviour
 {
     public ScriptableDialogue[] dialogueData;
     public bool interactionNeeded;
-
-    [Header("Optional Events")]
     [Space]
     public UnityEvent onDialogueTriggered, onDialogueComplete;
     private bool hasBeenTriggered;
@@ -24,14 +22,14 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (interactionNeeded && !hasBeenTriggered && Input.GetKeyDown(KeyCode.E))
+        if (collision.CompareTag("Player") && interactionNeeded && !hasBeenTriggered && Input.GetKeyDown(KeyCode.E))
         {
             hasBeenTriggered = true;
             onDialogueTriggered?.Invoke();
-            FindAnyObjectByType<CharacterMovement>().isDisabled = true;
-            FindAnyObjectByType<CharacterMovement>().rb.velocity = Vector3.zero;
+            collision.GetComponent<CharacterMovement>().isDisabled = true;
+            collision.GetComponent<CharacterMovement>().rb.velocity = Vector3.zero;
             DialogueRunner.Instance.TriggerDialogue(dialogueData);
             DialogueRunner.Instance.currentDialogueTrigger = gameObject;
         }

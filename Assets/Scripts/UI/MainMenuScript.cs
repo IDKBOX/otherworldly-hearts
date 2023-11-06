@@ -52,13 +52,14 @@ public class MainMenuScript : MonoBehaviour
         transition.SetTrigger("StartTransition");
         yield return new WaitForSeconds(1f);
 
-        if (levelSceneName != null)
+        if (levelSceneName != null && levelSceneName != "001_Intro")
         {
-            SceneManager.LoadScene(levelSceneName);
+            SceneManager.LoadScene("Base");
+            SceneManager.LoadScene(levelSceneName, LoadSceneMode.Additive);
         }
         else
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(levelSceneName);
         }
     }
 

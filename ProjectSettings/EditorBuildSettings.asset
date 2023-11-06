@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/001_Intro.unity
     guid: 59a7e2bddb504864e9a41d7dd8b0ef17
   - enabled: 1
-    path: Assets/Scenes/CJExperimentalZone.unity
+    path: Assets/Scenes/ExampleLevel.unity
+    guid: 1121c10b9a023634cbc0a8d8c18c3023
+  - enabled: 1
+    path: Assets/Scenes/Base.unity
     guid: df53c73269aac1d409d0474a1f730ac1
   m_configObjects: {}

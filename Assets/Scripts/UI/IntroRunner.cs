@@ -108,7 +108,8 @@ public class IntroRunner : MonoBehaviour
         transition.SetTrigger("StartTransition");
         yield return new WaitForSeconds(1f);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Base");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Additive);
     }
 
     private void ChangeDialogueTween()

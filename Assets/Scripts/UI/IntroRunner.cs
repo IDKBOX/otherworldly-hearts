@@ -18,7 +18,6 @@ public class IntroRunner : MonoBehaviour
     public float textSpeed = 0.05f;
     public AudioClip dialogueSound;
     [HideInInspector] public bool isDialogueRunning = false;
-    public Animator transition;
 
     private int index;
 
@@ -105,9 +104,9 @@ public class IntroRunner : MonoBehaviour
 
     IEnumerator StartTransition()
     {
-        transition.SetTrigger("StartTransition");
-        yield return new WaitForSeconds(1f);
-
+        TransitionManager.Instance.StartTransition();
+        yield return new WaitForSeconds(1.25f);
+        TransitionManager.Instance.EndTransition();
         SceneManager.LoadScene("Base");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Additive);
     }

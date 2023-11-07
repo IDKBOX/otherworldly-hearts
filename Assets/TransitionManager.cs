@@ -20,11 +20,6 @@ public class TransitionManager : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
     }
 
-    private void Start()
-    {
-        EndTransition();
-    }
-
     public void StartTransition()
     {
         animator.SetTrigger("StartTransition");

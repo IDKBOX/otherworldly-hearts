@@ -47,7 +47,6 @@ public class CharacterMovement : MonoBehaviour
     public ParticleSystem starParticle;
 
     public GameObject bootsLight;
-    public GameObject ghostLight;
     public GhostFollow ghostFollow;
 
     private GameObject currentOneWayPlatform;
@@ -301,18 +300,16 @@ public class CharacterMovement : MonoBehaviour
         CinemachineShake.Instance.ShakeCamera(8, 0.1f);
         starParticle.Play();
         trailRenderer.emitting = true;
-        ghostLight.SetActive(false);
-        ghostFollow.moveSpeed *= 2f;
+        ghostFollow.DashUsedIndicator();
 
         yield return new WaitForSeconds(dashingTime);
 
         trailRenderer.emitting = false;
         rb.gravityScale = originalGravity;
         isDashing = false;
-        ghostFollow.moveSpeed /= 2f;
 
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
-        ghostLight.SetActive(true);
+        ghostFollow.DashRefreshIndicator();
     }
 }

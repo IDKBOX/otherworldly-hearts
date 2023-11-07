@@ -9906,7 +9906,7 @@ MonoBehaviour:
   m_LightType: 1
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.906
-  m_Color: {r: 0, g: 0.8984351, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.9372549, a: 1}
   m_Intensity: 35
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -9924,8 +9924,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0, y: 0.038599998, z: 0}
-    m_Extent: {x: 0.7463, y: 0.5539, z: 0}
+    m_Center: {x: -0.0092999935, y: 0.03639999, z: 0}
+    m_Extent: {x: 0.7487, y: 0.5581, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1
@@ -10074,7 +10074,6 @@ MonoBehaviour:
   moveDustParticle: {fileID: 6209449550066263689}
   starParticle: {fileID: 6550984041165654170}
   bootsLight: {fileID: 6559408147225844429}
-  ghostLight: {fileID: 0}
   ghostFollow: {fileID: 0}
   playerCollider: {fileID: 3755558825720814622}
   doubleJumpUnlocked: 1

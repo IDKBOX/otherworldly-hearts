@@ -1082,6 +1082,7 @@ MonoBehaviour:
   controlsScreen: {fileID: 1323775443}
   normalAudioSnapshot: {fileID: 24500006, guid: b6443362b99be184494a51b939200ca6, type: 2}
   lowpassAudioSnapshot: {fileID: 7644709922124287134, guid: b6443362b99be184494a51b939200ca6, type: 2}
+  dialogueUI: {fileID: 1088367961}
 --- !u!4 &236044795
 Transform:
   m_ObjectHideFlags: 0

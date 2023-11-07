@@ -16,6 +16,9 @@ public class PauseManager : MonoBehaviour
     public AudioMixerSnapshot normalAudioSnapshot;
     public AudioMixerSnapshot lowpassAudioSnapshot;
 
+    [Header("Prerequisites")]
+    public GameObject dialogueUI;
+
     void Start()
     {
         pauseMenu.SetActive(false);
@@ -46,7 +49,7 @@ public class PauseManager : MonoBehaviour
 
     public void PausePressed()
     {
-        if (!isPaused)
+        if (!isPaused && !dialogueUI.activeSelf)
         {
             PauseGame();
         }

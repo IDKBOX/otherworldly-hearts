@@ -9924,8 +9924,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0092999935, y: 0.03639999, z: 0}
-    m_Extent: {x: 0.7487, y: 0.5581, z: 0}
+    m_Center: {x: 0.0010499954, y: 0.032099992, z: 0}
+    m_Extent: {x: 0.74495, y: 0.5566, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1
@@ -10074,8 +10074,10 @@ MonoBehaviour:
   moveDustParticle: {fileID: 6209449550066263689}
   starParticle: {fileID: 6550984041165654170}
   bootsLight: {fileID: 6559408147225844429}
+  ghostCompanion: {fileID: 0}
   ghostFollow: {fileID: 0}
   playerCollider: {fileID: 3755558825720814622}
+  ghostCompanionUnlocked: 1
   doubleJumpUnlocked: 1
   dashUnlocked: 1
   SpawnPoint: {fileID: 0}

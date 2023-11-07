@@ -47,6 +47,7 @@ public class CharacterMovement : MonoBehaviour
     public ParticleSystem starParticle;
 
     public GameObject bootsLight;
+    public GameObject ghostCompanion;
     public GhostFollow ghostFollow;
 
     private GameObject currentOneWayPlatform;
@@ -55,8 +56,9 @@ public class CharacterMovement : MonoBehaviour
 
     //Unlock Player Abilities
     [Header("Unlock Player Abilities")]
-    [SerializeField] public bool doubleJumpUnlocked = false;
-    [SerializeField] public bool dashUnlocked = false;
+    public bool ghostCompanionUnlocked = false;
+    public bool doubleJumpUnlocked = false;
+    public bool dashUnlocked = false;
 
     //Player check point
     [HideInInspector] public Transform SpawnPoint;
@@ -64,13 +66,13 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isDashing)
-        {
-            return;
-        }
-
         if (!isDisabled)
         {
+            if (isDashing)
+            {
+                return;
+            }
+
             horizontal = Input.GetAxisRaw("Horizontal");
 
             if (IsGrounded())
@@ -146,7 +148,7 @@ public class CharacterMovement : MonoBehaviour
 
             WallJump();
 
-            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && dashUnlocked)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && dashUnlocked && ghostCompanionUnlocked)
             {
                 StartCoroutine(Dash());
             }
@@ -154,6 +156,20 @@ public class CharacterMovement : MonoBehaviour
             if (!isWallJumping)
             {
                 Flip();
+            }
+
+            if (ghostCompanionUnlocked)
+            {
+                ghostCompanion.SetActive(true);
+
+                if (!dashUnlocked)
+                {
+                    ghostFollow.ghostLight.SetActive(false);
+                }
+            }
+            else
+            {
+                ghostCompanion.SetActive(false);
             }
         }
     }
@@ -310,6 +326,20 @@ public class CharacterMovement : MonoBehaviour
 
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
+        ghostFollow.DashRefreshIndicator();
+    }
+
+
+    //unlock abilities
+    public void UnlockDoubleJump()
+    {
+        ghostCompanionUnlocked = true;
+        doubleJumpUnlocked = true;
+    }
+
+    public void UnlockDash()
+    {
+        dashUnlocked = true;
         ghostFollow.DashRefreshIndicator();
     }
 }

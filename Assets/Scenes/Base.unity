@@ -310,7 +310,7 @@ Canvas:
   m_GameObject: {fileID: 63574385}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 528385660}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -321,8 +321,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1982893279
+  m_SortingOrder: -10
   m_TargetDisplay: 0
 --- !u!224 &63574390
 RectTransform:
@@ -1082,7 +1082,6 @@ MonoBehaviour:
   controlsScreen: {fileID: 1323775443}
   normalAudioSnapshot: {fileID: 24500006, guid: b6443362b99be184494a51b939200ca6, type: 2}
   lowpassAudioSnapshot: {fileID: 7644709922124287134, guid: b6443362b99be184494a51b939200ca6, type: 2}
-  dialogueUI: {fileID: 1088367961}
 --- !u!4 &236044795
 Transform:
   m_ObjectHideFlags: 0

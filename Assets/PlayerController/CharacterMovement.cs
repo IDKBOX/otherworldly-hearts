@@ -46,7 +46,9 @@ public class CharacterMovement : MonoBehaviour
     bool moveDustPlaying;
     public ParticleSystem starParticle;
 
-    public GameObject glowingBoots;
+    public GameObject bootsLight;
+    public GameObject ghostLight;
+    public GhostFollow ghostFollow;
 
     private GameObject currentOneWayPlatform;
 
@@ -79,11 +81,11 @@ public class CharacterMovement : MonoBehaviour
 
                 if (doubleJumpUnlocked)
                 {
-                    glowingBoots.SetActive(true);
+                    bootsLight.SetActive(true);
                 }
                 else
                 {
-                    glowingBoots.SetActive(false);
+                    bootsLight.SetActive(false);
                 }
 
                 if (horizontal != 0 && !moveDustPlaying)
@@ -127,7 +129,7 @@ public class CharacterMovement : MonoBehaviour
                 jumpBufferCounter = 0f;
 
                 doubleJump = true;
-                glowingBoots.SetActive(false);
+                bootsLight.SetActive(false);
                 CinemachineShake.Instance.ShakeCamera(5, 0.1f);
                 starParticle.Play();
             }
@@ -299,14 +301,18 @@ public class CharacterMovement : MonoBehaviour
         CinemachineShake.Instance.ShakeCamera(8, 0.1f);
         starParticle.Play();
         trailRenderer.emitting = true;
+        ghostLight.SetActive(false);
+        ghostFollow.moveSpeed *= 2f;
 
         yield return new WaitForSeconds(dashingTime);
 
         trailRenderer.emitting = false;
         rb.gravityScale = originalGravity;
         isDashing = false;
+        ghostFollow.moveSpeed /= 2f;
 
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
+        ghostLight.SetActive(true);
     }
 }

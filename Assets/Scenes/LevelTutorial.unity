@@ -17494,14 +17494,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 776099685071903940, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
-      propertyPath: dashUnlocked
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 776099685071903940, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
-      propertyPath: doubleJumpUnlocked
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7096036585311225186, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
       propertyPath: m_Name
       value: Character
@@ -17512,7 +17504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8762681634357009590, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.749
+      value: -4.225
       objectReference: {fileID: 0}
     - target: {fileID: 8762681634357009590, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
       propertyPath: m_LocalPosition.z

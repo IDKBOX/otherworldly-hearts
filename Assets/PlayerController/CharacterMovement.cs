@@ -41,6 +41,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
     private TrailRenderer trailRenderer;
+    public GameObject glowingBoots;
 
     private GameObject currentOneWayPlatform;
 
@@ -70,6 +71,15 @@ public class CharacterMovement : MonoBehaviour
             {
                 coyoteTimeCounter = coyoteTime;
                 doubleJump = false;
+
+                if (doubleJumpUnlocked)
+                {
+                    glowingBoots.SetActive(true);
+                }
+                else
+                {
+                    glowingBoots.SetActive(false);
+                }
             }
             else
             {
@@ -87,13 +97,19 @@ public class CharacterMovement : MonoBehaviour
 
             // Jump Button Mechanic 
 
-            if (jumpBufferCounter > 0f && coyoteTimeCounter > 0f || !doubleJump && Input.GetButtonDown("Jump") && !IsWalled() && doubleJumpUnlocked)
+            if (jumpBufferCounter > 0f && coyoteTimeCounter > 0f)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
                 jumpBufferCounter = 0f;
+            }
+            else if (!doubleJump && Input.GetButtonDown("Jump") && !IsWalled() && doubleJumpUnlocked)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                jumpBufferCounter = 0f;
 
                 doubleJump = true;
+                glowingBoots.SetActive(false);
             }
 
             if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)

@@ -9168,7 +9168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSceneName: ExampleLevel
   nextSceneName: ExampleLevel
-  isLocked: 1
+  isLocked: 0
   interactPromptPrefab: {fileID: 136741736}
 --- !u!61 &1592192403
 BoxCollider2D:

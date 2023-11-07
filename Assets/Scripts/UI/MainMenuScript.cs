@@ -50,7 +50,13 @@ public class MainMenuScript : MonoBehaviour
     IEnumerator StartTransition(string levelSceneName)
     {
         transition.SetTrigger("StartTransition");
+
         yield return new WaitForSeconds(1f);
+
+        if (TransitionManager.Instance != null)
+        {
+            TransitionManager.Instance.StartTransition();
+        }
 
         if (levelSceneName != null && levelSceneName != "001_Intro")
         {

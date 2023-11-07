@@ -28,10 +28,11 @@ public class DoorScript : MonoBehaviour
 
     IEnumerator StartTransition()
     {
-        /*transition.SetTrigger("StartTransition");*/
+        TransitionManager.Instance.StartTransition();
         yield return new WaitForSeconds(1f);
         SceneManager.UnloadSceneAsync(currentSceneName);
         SceneManager.LoadScene(nextSceneName, LoadSceneMode.Additive);
+        TransitionManager.Instance.EndTransition();
     }
 
     private void Update()

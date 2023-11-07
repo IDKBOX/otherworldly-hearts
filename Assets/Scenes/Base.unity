@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &61142673
 Transform:
   m_ObjectHideFlags: 0
@@ -9962,13 +9962,13 @@ PrefabInstance:
       propertyPath: ghostFollow
       value: 
       objectReference: {fileID: 61142675}
+    - target: {fileID: 776099685071903940, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
+      propertyPath: ghostCompanion
+      value: 
+      objectReference: {fileID: 61142672}
     - target: {fileID: 7096036585311225186, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
       propertyPath: m_Name
       value: Character
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096036585311225186, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8762681634357009590, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
       propertyPath: m_LocalPosition.x

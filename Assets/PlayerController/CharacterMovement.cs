@@ -40,7 +40,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
-    private TrailRenderer trailRenderer;
+    [SerializeField] private TrailRenderer trailRenderer;
 
     public ParticleSystem moveDustParticle;
     bool moveDustPlaying;
@@ -298,11 +298,11 @@ public class CharacterMovement : MonoBehaviour
         rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
         CinemachineShake.Instance.ShakeCamera(8, 0.1f);
         starParticle.Play();
-        /*trailRenderer.emitting = true;*/
+        trailRenderer.emitting = true;
 
         yield return new WaitForSeconds(dashingTime);
 
-        /*trailRenderer.emitting = false;*/
+        trailRenderer.emitting = false;
         rb.gravityScale = originalGravity;
         isDashing = false;
 

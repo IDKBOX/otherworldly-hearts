@@ -44,6 +44,7 @@ public class CharacterMovement : MonoBehaviour
 
     public ParticleSystem moveDustParticle;
     bool moveDustPlaying;
+    public ParticleSystem starParticle;
 
     public GameObject glowingBoots;
 
@@ -128,6 +129,7 @@ public class CharacterMovement : MonoBehaviour
                 doubleJump = true;
                 glowingBoots.SetActive(false);
                 CinemachineShake.Instance.ShakeCamera(5, 0.1f);
+                starParticle.Play();
             }
 
             if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
@@ -295,6 +297,7 @@ public class CharacterMovement : MonoBehaviour
         rb.gravityScale = 0f;
         rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
         CinemachineShake.Instance.ShakeCamera(8, 0.1f);
+        starParticle.Play();
         /*trailRenderer.emitting = true;*/
 
         yield return new WaitForSeconds(dashingTime);

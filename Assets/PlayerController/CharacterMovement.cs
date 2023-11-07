@@ -1,7 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
@@ -29,7 +26,9 @@ public class CharacterMovement : MonoBehaviour
     private float wallJumpingDuration = 0.3f;
     private Vector2 wallJumpingPower = new Vector2(8f, 16f);
 
-    [SerializeField] private Rigidbody2D rb;
+    [HideInInspector] public bool isDisabled;
+
+    public Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform wallCheck;
@@ -41,7 +40,8 @@ public class CharacterMovement : MonoBehaviour
 
     //Unlock Player Abilities
     [Header("Unlock Player Abilities")]
-    [SerializeField] private bool doubleJumpUnlocked = false;
+    [SerializeField] public bool doubleJumpUnlocked = false;
+    [SerializeField] public bool dashUnlocked = false;
 
     //Player check point
     public Transform SpawnPoint;
@@ -49,60 +49,63 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-
-        if (IsGrounded())
+        if (!isDisabled)
         {
-            coyoteTimeCounter = coyoteTime;
-            doubleJump = false;
-        }
-        else
-        {
-            coyoteTimeCounter -= Time.deltaTime;
-        }
+            horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            jumpBufferCounter = jumpBufferTime;
-        }
-        else
-        {
-            jumpBufferCounter -= Time.deltaTime;
-        }
+            if (IsGrounded())
+            {
+                coyoteTimeCounter = coyoteTime;
+                doubleJump = false;
+            }
+            else
+            {
+                coyoteTimeCounter -= Time.deltaTime;
+            }
 
-        // Jump Button Mechanic 
+            if (Input.GetButtonDown("Jump"))
+            {
+                jumpBufferCounter = jumpBufferTime;
+            }
+            else
+            {
+                jumpBufferCounter -= Time.deltaTime;
+            }
 
-        if (jumpBufferCounter > 0f && coyoteTimeCounter > 0f || !doubleJump && Input.GetButtonDown("Jump") && !IsWalled() && doubleJumpUnlocked)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            // Jump Button Mechanic 
 
-            jumpBufferCounter = 0f;
+            if (jumpBufferCounter > 0f && coyoteTimeCounter > 0f || !doubleJump && Input.GetButtonDown("Jump") && !IsWalled() && doubleJumpUnlocked)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
-            doubleJump = true;
-        }
+                jumpBufferCounter = 0f;
 
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+                doubleJump = true;
+            }
 
-            coyoteTimeCounter = 0f;
-        }
+            if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
 
-        OneWay();
+                coyoteTimeCounter = 0f;
+            }
 
-        WallSlide();
+            OneWay();
 
-        WallJump();
+            WallSlide();
 
-        if (!isWallJumping)
-        {
-            Flip();
+            WallJump();
+
+            if (!isWallJumping)
+            {
+                Flip();
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        if (!isWallJumping)
+        if (!isWallJumping && !isDisabled)
         {
             rb.velocity = new Vector2(horizontal * movementSpeed, rb.velocity.y);
         }

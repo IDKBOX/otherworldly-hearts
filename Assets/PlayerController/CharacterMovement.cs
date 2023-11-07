@@ -26,6 +26,12 @@ public class CharacterMovement : MonoBehaviour
     private float wallJumpingDuration = 0.3f;
     private Vector2 wallJumpingPower = new Vector2(8f, 16f);
 
+    private bool canDash = true;
+    private bool isDashing;
+    private float dashingPower = 24f;
+    private float dashingTime = 0.2f;
+    private float dashingCooldown = 1f;
+
     [HideInInspector] public bool isDisabled;
 
     public Rigidbody2D rb;
@@ -33,6 +39,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
+    [SerializeField] private TrailRenderer tr;
 
     private GameObject currentOneWayPlatform;
 
@@ -49,6 +56,11 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDashing)
+        {
+            return;
+        }
+
         if (!isDisabled)
         {
             horizontal = Input.GetAxisRaw("Horizontal");
@@ -96,6 +108,11 @@ public class CharacterMovement : MonoBehaviour
 
             WallJump();
 
+            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+            {
+                StartCoroutine(Dash());
+            }
+
             if (!isWallJumping)
             {
                 Flip();
@@ -105,6 +122,10 @@ public class CharacterMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isDashing)
+        {
+            return;
+        }
         if (!isWallJumping && !isDisabled)
         {
             rb.velocity = new Vector2(horizontal * movementSpeed, rb.velocity.y);
@@ -229,5 +250,24 @@ public class CharacterMovement : MonoBehaviour
     private void StopWallJumping ()
     {
         isWallJumping = false;
+    }
+
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        tr.emitting = true;
+
+        yield return new WaitForSeconds(dashingTime);
+
+        tr.emitting = false;
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
     }
 }

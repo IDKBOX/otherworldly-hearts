@@ -41,6 +41,10 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
     private TrailRenderer trailRenderer;
+
+    public ParticleSystem moveDustParticle;
+    bool moveDustPlaying;
+
     public GameObject glowingBoots;
 
     private GameObject currentOneWayPlatform;
@@ -80,10 +84,23 @@ public class CharacterMovement : MonoBehaviour
                 {
                     glowingBoots.SetActive(false);
                 }
+
+                if (horizontal != 0 && !moveDustPlaying)
+                {
+                    moveDustPlaying = true;
+                    moveDustParticle.Play();
+                }
+                else if (horizontal == 0 && moveDustPlaying)
+                {
+                    moveDustPlaying = false;
+                    moveDustParticle.Stop();
+                }
             }
             else
             {
                 coyoteTimeCounter -= Time.deltaTime;
+                moveDustPlaying = false;
+                moveDustParticle.Stop();
             }
 
             if (Input.GetButtonDown("Jump"))

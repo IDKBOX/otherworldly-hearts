@@ -4,14 +4,17 @@ using Cinemachine;
 public class CinemachineShake : MonoBehaviour
 {
     public static CinemachineShake Instance {get; private set;}
-    public RectTransform GameUI;
     private CinemachineVirtualCamera cinemachineVirtualCamera;
     private float shakeTimer;
 
     //on awake, set this object as the cinemachineVirtualCamera
     private void Awake() {
-        Instance = this;
         cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
+    }
+
+    private void OnEnable()
+    {
+        Instance = this;
     }
 
     public void ShakeCamera(float intensity, float time)

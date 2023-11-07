@@ -26,13 +26,29 @@ public class CharacterMovement : MonoBehaviour
     private float wallJumpingDuration = 0.3f;
     private Vector2 wallJumpingPower = new Vector2(8f, 16f);
 
+    private bool canDash = true;
+    private bool isDashing;
+    [SerializeField] private float dashingPower = 24f;
+    private float dashingTime = 0.2f;
+    private float dashingCooldown = 1f;
+
     [HideInInspector] public bool isDisabled;
 
+    [Header("Prerequisites")]
     public Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
+    [SerializeField] private TrailRenderer trailRenderer;
+
+    public ParticleSystem moveDustParticle;
+    bool moveDustPlaying;
+    public ParticleSystem starParticle;
+
+    public GameObject bootsLight;
+    public GameObject ghostCompanion;
+    public GhostFollow ghostFollow;
 
     private GameObject currentOneWayPlatform;
 
@@ -40,25 +56,55 @@ public class CharacterMovement : MonoBehaviour
 
     //Unlock Player Abilities
     [Header("Unlock Player Abilities")]
-    [SerializeField] public bool doubleJumpUnlocked = false;
-    [SerializeField] public bool dashUnlocked = false;
+    public bool ghostCompanionUnlocked = false;
+    public bool doubleJumpUnlocked = false;
+    public bool dashUnlocked = false;
 
+    //Player check point
+    [HideInInspector] public Transform SpawnPoint;
 
     // Update is called once per frame
     void Update()
     {
         if (!isDisabled)
         {
+            if (isDashing)
+            {
+                return;
+            }
+
             horizontal = Input.GetAxisRaw("Horizontal");
 
             if (IsGrounded())
             {
                 coyoteTimeCounter = coyoteTime;
                 doubleJump = false;
+
+                if (doubleJumpUnlocked)
+                {
+                    bootsLight.SetActive(true);
+                }
+                else
+                {
+                    bootsLight.SetActive(false);
+                }
+
+                if (horizontal != 0 && !moveDustPlaying)
+                {
+                    moveDustPlaying = true;
+                    moveDustParticle.Play();
+                }
+                else if (horizontal == 0 && moveDustPlaying)
+                {
+                    moveDustPlaying = false;
+                    moveDustParticle.Stop();
+                }
             }
             else
             {
                 coyoteTimeCounter -= Time.deltaTime;
+                moveDustPlaying = false;
+                moveDustParticle.Stop();
             }
 
             if (Input.GetButtonDown("Jump"))
@@ -72,13 +118,21 @@ public class CharacterMovement : MonoBehaviour
 
             // Jump Button Mechanic 
 
-            if (jumpBufferCounter > 0f && coyoteTimeCounter > 0f || !doubleJump && Input.GetButtonDown("Jump") && !IsWalled() && doubleJumpUnlocked)
+            if (jumpBufferCounter > 0f && coyoteTimeCounter > 0f)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
                 jumpBufferCounter = 0f;
+            }
+            else if (!doubleJump && Input.GetButtonDown("Jump") && !IsWalled() && doubleJumpUnlocked)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                jumpBufferCounter = 0f;
 
                 doubleJump = true;
+                bootsLight.SetActive(false);
+                CinemachineShake.Instance.ShakeCamera(5, 0.1f);
+                starParticle.Play();
             }
 
             if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
@@ -94,15 +148,38 @@ public class CharacterMovement : MonoBehaviour
 
             WallJump();
 
+            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && dashUnlocked && ghostCompanionUnlocked)
+            {
+                StartCoroutine(Dash());
+            }
+
             if (!isWallJumping)
             {
                 Flip();
+            }
+
+            if (ghostCompanionUnlocked)
+            {
+                ghostCompanion.SetActive(true);
+
+                if (!dashUnlocked)
+                {
+                    ghostFollow.ghostLight.SetActive(false);
+                }
+            }
+            else
+            {
+                ghostCompanion.SetActive(false);
             }
         }
     }
 
     private void FixedUpdate()
     {
+        if (isDashing)
+        {
+            return;
+        }
         if (!isWallJumping && !isDisabled)
         {
             rb.velocity = new Vector2(horizontal * movementSpeed, rb.velocity.y);
@@ -132,6 +209,14 @@ public class CharacterMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("OneWayPlatform"))
         {
             currentOneWayPlatform = collision.gameObject;
+        }
+
+        // check dead
+        if(collision.gameObject.name == "Dead")
+        {
+            // Get Checkpoint script
+            CheckPoint checkPointScript = FindObjectOfType<CheckPoint>();
+            checkPointScript.spawnPlayer();
         }
     }
 
@@ -219,5 +304,42 @@ public class CharacterMovement : MonoBehaviour
     private void StopWallJumping ()
     {
         isWallJumping = false;
+    }
+
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        CinemachineShake.Instance.ShakeCamera(8, 0.1f);
+        starParticle.Play();
+        trailRenderer.emitting = true;
+        ghostFollow.DashUsedIndicator();
+
+        yield return new WaitForSeconds(dashingTime);
+
+        trailRenderer.emitting = false;
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
+        ghostFollow.DashRefreshIndicator();
+    }
+
+
+    //unlock abilities
+    public void UnlockDoubleJump()
+    {
+        ghostCompanionUnlocked = true;
+        doubleJumpUnlocked = true;
+    }
+
+    public void UnlockDash()
+    {
+        dashUnlocked = true;
+        ghostFollow.DashRefreshIndicator();
     }
 }

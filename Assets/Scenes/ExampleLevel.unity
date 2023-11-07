@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 167777732}
   - component: {fileID: 167777734}
   - component: {fileID: 167777733}
+  - component: {fileID: 167777735}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -307,6 +308,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &167777735
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167777731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 5
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &219137187
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,6 +515,7 @@ GameObject:
   - component: {fileID: 301704295}
   - component: {fileID: 301704294}
   - component: {fileID: 301704296}
+  - component: {fileID: 301704297}
   m_Layer: 0
   m_Name: vcam1
   m_TagString: Untagged
@@ -574,6 +593,18 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 1798305560}
   m_Damping: 0.5
   m_MaxWindowSize: -1
+--- !u!114 &301704297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301704293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320f25bf2fe35ec46a38d0d208a9267c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &342988323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7542589918612581326, guid: b48435b4624e3cd49b496977604ec5ef, type: 3}
@@ -590,6 +621,7 @@ GameObject:
   - component: {fileID: 547117696}
   - component: {fileID: 547117695}
   - component: {fileID: 547117694}
+  - component: {fileID: 547117697}
   m_Layer: 0
   m_Name: vcam2
   m_TagString: Untagged
@@ -667,6 +699,18 @@ Transform:
   - {fileID: 167777732}
   m_Father: {fileID: 137436189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &547117697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547117693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320f25bf2fe35ec46a38d0d208a9267c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &766407659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,7 +1102,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1008056431
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -4072,7 +4116,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 5ca8f5d7eda58ec4f930c2330e2d088b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8018,6 +8062,7 @@ GameObject:
   - component: {fileID: 1347479878}
   - component: {fileID: 1347479880}
   - component: {fileID: 1347479881}
+  - component: {fileID: 1347479882}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -8095,6 +8140,23 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!114 &1347479882
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347479877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 5
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1370150980
 GameObject:
   m_ObjectHideFlags: 0
@@ -8302,7 +8364,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1008056431
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -9009,7 +9071,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1008056431
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 99
   m_RenderMode: 0
   m_MeshDistribution: 0

@@ -127,6 +127,7 @@ public class CharacterMovement : MonoBehaviour
 
                 doubleJump = true;
                 glowingBoots.SetActive(false);
+                CinemachineShake.Instance.ShakeCamera(5, 0.1f);
             }
 
             if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
@@ -293,6 +294,7 @@ public class CharacterMovement : MonoBehaviour
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        CinemachineShake.Instance.ShakeCamera(8, 0.1f);
         /*trailRenderer.emitting = true;*/
 
         yield return new WaitForSeconds(dashingTime);

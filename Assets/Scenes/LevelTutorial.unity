@@ -955,6 +955,8 @@ MonoBehaviour:
   transition: {fileID: 1042636254}
   settingsScreen: {fileID: 2051469849}
   controlsScreen: {fileID: 1323775443}
+  normalAudioSnapshot: {fileID: 0}
+  lowpassAudioSnapshot: {fileID: 0}
 --- !u!4 &236044795
 Transform:
   m_ObjectHideFlags: 0
@@ -17494,7 +17496,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 776099685071903940, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
       propertyPath: dashUnlocked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 776099685071903940, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
       propertyPath: doubleJumpUnlocked

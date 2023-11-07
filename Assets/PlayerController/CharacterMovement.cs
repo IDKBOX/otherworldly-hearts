@@ -1,7 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
@@ -10,6 +7,14 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float movementSpeed = 8f;
     [SerializeField] private float jumpForce = 16f;
     private bool isFacingRight = true;
+
+    private float coyoteTime = 0.2f;
+    private float coyoteTimeCounter;
+
+    private float jumpBufferTime = 0.2f;
+    private float jumpBufferCounter;
+
+    private bool doubleJump;
 
     private bool isWallSliding;
     private float wallSlidingSpeed = 2f;
@@ -21,7 +26,9 @@ public class CharacterMovement : MonoBehaviour
     private float wallJumpingDuration = 0.3f;
     private Vector2 wallJumpingPower = new Vector2(8f, 16f);
 
-    [SerializeField] private Rigidbody2D rb;
+    [HideInInspector] public bool isDisabled;
+
+    public Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform wallCheck;
@@ -31,35 +38,72 @@ public class CharacterMovement : MonoBehaviour
 
     [SerializeField] CapsuleCollider2D playerCollider;
 
+    //Unlock Player Abilities
+    [Header("Unlock Player Abilities")]
+    [SerializeField] public bool doubleJumpUnlocked = false;
+    [SerializeField] public bool dashUnlocked = false;
+
+
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (!isDisabled)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        }
+            horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-        }
-        OneWay();
+            if (IsGrounded())
+            {
+                coyoteTimeCounter = coyoteTime;
+                doubleJump = false;
+            }
+            else
+            {
+                coyoteTimeCounter -= Time.deltaTime;
+            }
 
-        WallSlide();
+            if (Input.GetButtonDown("Jump"))
+            {
+                jumpBufferCounter = jumpBufferTime;
+            }
+            else
+            {
+                jumpBufferCounter -= Time.deltaTime;
+            }
 
-        WallJump();
+            // Jump Button Mechanic 
 
-        if (!isWallJumping)
-        {
-            Flip();
+            if (jumpBufferCounter > 0f && coyoteTimeCounter > 0f || !doubleJump && Input.GetButtonDown("Jump") && !IsWalled() && doubleJumpUnlocked)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+
+                jumpBufferCounter = 0f;
+
+                doubleJump = true;
+            }
+
+            if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+
+                coyoteTimeCounter = 0f;
+            }
+
+            OneWay();
+
+            WallSlide();
+
+            WallJump();
+
+            if (!isWallJumping)
+            {
+                Flip();
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        if (!isWallJumping)
+        if (!isWallJumping && !isDisabled)
         {
             rb.velocity = new Vector2(horizontal * movementSpeed, rb.velocity.y);
         }
@@ -67,7 +111,7 @@ public class CharacterMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
     }
 
     private void Flip()

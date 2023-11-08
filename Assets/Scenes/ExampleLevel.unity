@@ -14171,8 +14171,8 @@ PrefabInstance:
       value: StoryItem_Photo
       objectReference: {fileID: 0}
     - target: {fileID: 3204505721104904675, guid: e0d6d1e854daf2640ac1b08650c1cf81, type: 3}
-      propertyPath: ItemID
-      value: 1
+      propertyPath: linkedSpiritGate
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

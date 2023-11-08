@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class StoryItem : MonoBehaviour
 {
     public int ItemID;
+    public SpiritGate linkedSpiritGate;
     public UnityEvent onComplete;
 
     [Header("Prerequisites")]
@@ -83,6 +84,18 @@ public class StoryItem : MonoBehaviour
                 descriptionText.text = "Story Complete!";
                 itemImage.sprite = item3Sprite;
                 break;
+        }
+    }
+
+    public void OpenSpiritGate()
+    {
+        if (linkedSpiritGate != null)
+        {
+            linkedSpiritGate.spiritOrbsRequired--;
+        }
+        else
+        {
+            Debug.LogWarning("Spirit Gate not Linked to Story Item!");
         }
     }
 }

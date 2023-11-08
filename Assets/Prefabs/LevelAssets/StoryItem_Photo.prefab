@@ -5309,6 +5309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemID: 1
+  linkedSpiritGate: {fileID: 0}
   onComplete:
     m_PersistentCalls:
       m_Calls:
@@ -5354,7 +5355,19 @@ MonoBehaviour:
       m_Calls: []
   onDialogueComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3204505721104904675}
+        m_TargetAssemblyTypeName: StoryItem, Assembly-CSharp
+        m_MethodName: OpenSpiritGate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   hasBeenTriggered: 0
 --- !u!1 &2577259099726590154
 GameObject:

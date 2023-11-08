@@ -93,9 +93,5 @@ public class StoryItem : MonoBehaviour
         {
             linkedSpiritGate.spiritOrbsRequired--;
         }
-        else
-        {
-            Debug.LogWarning("Spirit Gate not Linked to Story Item!");
-        }
     }
 }

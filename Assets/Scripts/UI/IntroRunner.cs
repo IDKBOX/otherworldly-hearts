@@ -17,6 +17,7 @@ public class IntroRunner : MonoBehaviour
     public Image dialogueImageObjectBG;
     public float textSpeed = 0.05f;
     public AudioClip dialogueSound;
+    public GameObject dialogueTriangle;
     [HideInInspector] public bool isDialogueRunning = false;
 
     private int index;
@@ -36,6 +37,7 @@ public class IntroRunner : MonoBehaviour
             {
                 StopAllCoroutines();
                 textComponent.text = dialogueText[index];
+                dialogueTriangle.SetActive(true);
             }
         }
     }
@@ -58,6 +60,7 @@ public class IntroRunner : MonoBehaviour
 
             yield return new WaitForSeconds(textSpeed);
         }
+        dialogueTriangle.SetActive(true);
     }
 
     void NextLine()
@@ -69,6 +72,7 @@ public class IntroRunner : MonoBehaviour
             ChangeDialogueTween();
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
+            dialogueTriangle.SetActive(false);
         }
         else
         {

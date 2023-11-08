@@ -10,6 +10,7 @@ public class DoorScript : MonoBehaviour
 
     private bool inTrigger;
     private bool hasBeenTriggered;
+    private Animator animator;
 
     [Header("Prerequisites")]
     public GameObject interactPromptPrefab;
@@ -18,6 +19,15 @@ public class DoorScript : MonoBehaviour
     private void Awake()
     {
         dialogueStarter = GetComponent<DialogueStarter>();
+        animator = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        if (!isLocked)
+        {
+            animator.SetTrigger("Unlock");
+        }
     }
 
     public void LoadScene()
@@ -73,5 +83,9 @@ public class DoorScript : MonoBehaviour
         }
     }
 
-
+    public void UnlockDoor()
+    {
+        animator.SetTrigger("Unlock");
+        isLocked = false;
+    }
 }

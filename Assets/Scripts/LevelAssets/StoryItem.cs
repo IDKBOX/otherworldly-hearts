@@ -64,6 +64,7 @@ public class StoryItem : MonoBehaviour
                 itemFoundText.text = "Ghost Found";
                 descriptionText.text = "Double Jump Unlocked";
                 itemImage.sprite = ghostSprite;
+                FindAnyObjectByType<CharacterMovement>().ghostCompanionUnlocked = true;
                 FindAnyObjectByType<CharacterMovement>().doubleJumpUnlocked = true;
                 break;
             case 1:

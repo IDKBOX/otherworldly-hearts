@@ -66,11 +66,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BlendValue: 0.2
+    - _BlendValue: 0.3
     - _CellDensity: 1
+    - _Complexity: 1
     - _EnableExternalAlpha: 0
-    - _PixelateAmount: 16
+    - _PixelateAmount: 25
     - _Speed: 4
+    - _Strength: 0.2
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}

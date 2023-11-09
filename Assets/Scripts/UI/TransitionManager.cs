@@ -3,7 +3,7 @@ using UnityEngine;
 public class TransitionManager : MonoBehaviour
 {
     public static TransitionManager Instance;
-    public Animator animator;
+    private Animator animator;
 
     private void Awake()
     {

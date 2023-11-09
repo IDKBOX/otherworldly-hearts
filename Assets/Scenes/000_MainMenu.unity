@@ -11505,7 +11505,6 @@ MonoBehaviour:
   creditsScreen: {fileID: 1278249848}
   settingsScreen: {fileID: 195669110}
   controlsScreen: {fileID: 503312869}
-  transition: {fileID: 0}
 --- !u!4 &1697944591
 Transform:
   m_ObjectHideFlags: 0

@@ -5,31 +5,50 @@ public class DialogueTrigger : MonoBehaviour
 {
     public ScriptableDialogue[] dialogueData;
     public bool interactionNeeded;
+    public bool destroyOnComplete = true;
     [Space]
     [HideInInspector] public UnityEvent onDialogueTriggered, onDialogueComplete;
     private bool hasBeenTriggered;
+    private bool inTrigger;
+
+    [Header("Interaction Prerequisite (Optional)")]
+    public GameObject interactPromptPrefab;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && !hasBeenTriggered && !interactionNeeded)
+        if (collision.CompareTag("Player"))
         {
-            hasBeenTriggered = true;
-            onDialogueTriggered?.Invoke();
-            collision.GetComponent<CharacterMovement>().isDisabled = true;
-            collision.GetComponent<CharacterMovement>().rb.velocity = Vector3.zero;
-            DialogueRunner.Instance.TriggerDialogue(dialogueData);
-            DialogueRunner.Instance.currentDialogueTrigger = gameObject;
+            inTrigger = true;
+
+            if (!hasBeenTriggered && !interactionNeeded)
+            {
+                hasBeenTriggered = true;
+                onDialogueTriggered?.Invoke();
+                collision.GetComponent<CharacterMovement>().isDisabled = true;
+                collision.GetComponent<CharacterMovement>().rb.velocity = Vector3.zero;
+                DialogueRunner.Instance.TriggerDialogue(dialogueData);
+                DialogueRunner.Instance.currentDialogueTrigger = gameObject;
+            }
+            else if (!hasBeenTriggered && interactionNeeded && interactPromptPrefab != null)
+            {
+                interactPromptPrefab.SetActive(true);
+            }
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.CompareTag("Player") && interactionNeeded && !hasBeenTriggered && Input.GetKeyDown(KeyCode.E))
+        if (inTrigger && interactionNeeded && !hasBeenTriggered && Input.GetKeyDown(KeyCode.E))
         {
+            if (interactPromptPrefab != null)
+            {
+                interactPromptPrefab.SetActive(false);
+            }
+
             hasBeenTriggered = true;
             onDialogueTriggered?.Invoke();
-            collision.GetComponent<CharacterMovement>().isDisabled = true;
-            collision.GetComponent<CharacterMovement>().rb.velocity = Vector3.zero;
+            FindAnyObjectByType<CharacterMovement>().isDisabled = true;
+            FindAnyObjectByType<CharacterMovement>().rb.velocity = Vector3.zero;
             DialogueRunner.Instance.TriggerDialogue(dialogueData);
             DialogueRunner.Instance.currentDialogueTrigger = gameObject;
         }
@@ -39,7 +58,14 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            inTrigger = false;
             onDialogueComplete?.Invoke();
+            hasBeenTriggered = false;
+
+            if (interactPromptPrefab != null)
+            {
+                interactPromptPrefab.SetActive(false);
+            }
         }
     }
 }

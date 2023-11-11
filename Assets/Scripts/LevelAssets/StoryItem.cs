@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class StoryItem : MonoBehaviour
 {
     public int ItemID;
+    public SpiritGate linkedSpiritGate;
     public UnityEvent onComplete;
 
     [Header("Prerequisites")]
@@ -64,6 +65,7 @@ public class StoryItem : MonoBehaviour
                 itemFoundText.text = "Ghost Found";
                 descriptionText.text = "Double Jump Unlocked";
                 itemImage.sprite = ghostSprite;
+                FindAnyObjectByType<CharacterMovement>().ghostCompanionUnlocked = true;
                 FindAnyObjectByType<CharacterMovement>().doubleJumpUnlocked = true;
                 break;
             case 1:
@@ -82,6 +84,14 @@ public class StoryItem : MonoBehaviour
                 descriptionText.text = "Story Complete!";
                 itemImage.sprite = item3Sprite;
                 break;
+        }
+    }
+
+    public void OpenSpiritGate()
+    {
+        if (linkedSpiritGate != null)
+        {
+            linkedSpiritGate.spiritOrbsRequired--;
         }
     }
 }

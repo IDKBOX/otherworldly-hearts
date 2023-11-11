@@ -17,15 +17,17 @@ public class IntroRunner : MonoBehaviour
     public Image dialogueImageObjectBG;
     public float textSpeed = 0.05f;
     public AudioClip dialogueSound;
+    public GameObject dialogueTriangle;
     [HideInInspector] public bool isDialogueRunning = false;
-    public Animator transition;
 
     private int index;
+    private bool sceneLoaded;
+    private bool allowSkipDialogue = false;
 
     //dialogue code
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && allowSkipDialogue)
         {
             if (textComponent.text == dialogueText[index])
             {
@@ -35,6 +37,7 @@ public class IntroRunner : MonoBehaviour
             {
                 StopAllCoroutines();
                 textComponent.text = dialogueText[index];
+                dialogueTriangle.SetActive(true);
             }
         }
     }
@@ -57,6 +60,7 @@ public class IntroRunner : MonoBehaviour
 
             yield return new WaitForSeconds(textSpeed);
         }
+        dialogueTriangle.SetActive(true);
     }
 
     void NextLine()
@@ -68,10 +72,15 @@ public class IntroRunner : MonoBehaviour
             ChangeDialogueTween();
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
+            dialogueTriangle.SetActive(false);
         }
         else
         {
-            LoadScene();
+            if (!sceneLoaded)
+            {
+                sceneLoaded = true;
+                LoadScene();
+            }
         }
     }
 
@@ -90,9 +99,11 @@ public class IntroRunner : MonoBehaviour
     //start script
     private IEnumerator Start()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.65f);
         ChangeDialogueTween();
         StartDialogue();
+        yield return new WaitForSeconds(0.25f);
+        allowSkipDialogue = true;
     }
 
     //load next scene
@@ -105,11 +116,12 @@ public class IntroRunner : MonoBehaviour
 
     IEnumerator StartTransition()
     {
-        transition.SetTrigger("StartTransition");
+        TransitionManager.Instance.StartTransition();
         yield return new WaitForSeconds(1f);
-
+        TransitionManager.Instance.EndTransition();
         SceneManager.LoadScene("Base");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Additive);
+        
     }
 
     private void ChangeDialogueTween()

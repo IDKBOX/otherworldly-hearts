@@ -10027,7 +10027,7 @@ PrefabInstance:
       objectReference: {fileID: 61142675}
     - target: {fileID: 776099685071903940, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
       propertyPath: dashUnlocked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 776099685071903940, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
       propertyPath: ghostCompanion
@@ -10035,11 +10035,11 @@ PrefabInstance:
       objectReference: {fileID: 61142672}
     - target: {fileID: 776099685071903940, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
       propertyPath: doubleJumpUnlocked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 776099685071903940, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
       propertyPath: ghostCompanionUnlocked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7096036585311225186, guid: 32a5a899fb5f8bf42baa1064241cde40, type: 3}
       propertyPath: m_Name

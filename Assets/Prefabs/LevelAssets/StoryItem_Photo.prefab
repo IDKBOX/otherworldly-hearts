@@ -5208,6 +5208,7 @@ GameObject:
   - component: {fileID: 6242718250225425939}
   - component: {fileID: 5861486501379674719}
   - component: {fileID: 3204505721104904675}
+  - component: {fileID: 2110144617392535393}
   m_Layer: 0
   m_Name: StoryItem_Photo
   m_TagString: Untagged
@@ -5308,9 +5309,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemID: 1
+  linkedSpiritGate: {fileID: 0}
   onComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2110144617392535393}
+        m_TargetAssemblyTypeName: DialogueStarter, Assembly-CSharp
+        m_MethodName: StartDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ItemFoundUI: {fileID: 6139199920957319418}
   itemAnimator: {fileID: 6264104189910874144}
   UIAnimator: {fileID: 7902583563096832053}
@@ -5321,6 +5335,40 @@ MonoBehaviour:
   item1Sprite: {fileID: 21300000, guid: fc838ff5d1048db4db534a8bf965362f, type: 3}
   item2Sprite: {fileID: 21300000, guid: 9fc6fc910ae7fb04cacaf422eab1a961, type: 3}
   item3Sprite: {fileID: 21300000, guid: 99536e20c833629448d9356e4064228b, type: 3}
+--- !u!114 &2110144617392535393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2390127669778062904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc854cb3f14856947bf680935acedaa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - {fileID: 11400000, guid: d424e54c21cc15e49926d8ea04ca285a, type: 2}
+  destroyOnComplete: 1
+  onDialogueTriggered:
+    m_PersistentCalls:
+      m_Calls: []
+  onDialogueComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3204505721104904675}
+        m_TargetAssemblyTypeName: StoryItem, Assembly-CSharp
+        m_MethodName: OpenSpiritGate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  hasBeenTriggered: 0
 --- !u!1 &2577259099726590154
 GameObject:
   m_ObjectHideFlags: 0
@@ -5687,7 +5735,7 @@ Canvas:
   m_GameObject: {fileID: 6139199920957319418}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -5695,8 +5743,8 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_VertexColorAlwaysGammaSpace: 1
+  m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 1982893279
   m_SortingOrder: -10

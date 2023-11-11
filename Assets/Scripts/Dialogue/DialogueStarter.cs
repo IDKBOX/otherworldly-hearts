@@ -4,8 +4,9 @@ using UnityEngine.Events;
 public class DialogueStarter : MonoBehaviour
 {
     public ScriptableDialogue[] dialogueData;
+    public bool destroyOnComplete = true;
     public UnityEvent onDialogueTriggered, onDialogueComplete;
-    private bool hasBeenTriggered;
+    [HideInInspector] public bool hasBeenTriggered;
 
     public void StartDialogue()
     {

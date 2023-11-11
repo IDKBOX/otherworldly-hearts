@@ -11,9 +11,6 @@ public class MainMenuScript : MonoBehaviour
     public GameObject settingsScreen;
     public GameObject controlsScreen;
 
-    [Header("Transition")]
-    public Animator transition;
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -49,8 +46,11 @@ public class MainMenuScript : MonoBehaviour
 
     IEnumerator StartTransition(string levelSceneName)
     {
-        transition.SetTrigger("StartTransition");
+        TransitionManager.Instance.StartTransition();
+
         yield return new WaitForSeconds(1f);
+        
+        TransitionManager.Instance.EndTransition();
 
         if (levelSceneName != null && levelSceneName != "001_Intro")
         {

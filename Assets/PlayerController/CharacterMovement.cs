@@ -242,7 +242,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) 
         {
-            if (currentOneWayPlatform = null) 
+            if (currentOneWayPlatform != null) 
             {
                 StartCoroutine(DisableCollision());
             }

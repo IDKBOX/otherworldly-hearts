@@ -197,9 +197,9 @@ public class CharacterMovement : MonoBehaviour
         // check dead
         if(collision.gameObject.name == "Dead")
         {
-            // Get Checkpoint script
-            CheckPoint checkPointScript = FindObjectOfType<CheckPoint>();
-            checkPointScript.spawnPlayer();
+            // Get PlayerPos
+            PlayerPos playerPosScript = FindObjectOfType<PlayerPos>();
+            playerPosScript.respawnPlayer();
         }
     }
 

@@ -57,7 +57,7 @@ public class StoryItem : MonoBehaviour
 
     private void IDChecker()
     {
-        FindAnyObjectByType<ItemDisplay>().itemsToShow = ItemID;
+        ItemDisplay.itemsToShow = ItemID;
 
         switch (ItemID)
         {

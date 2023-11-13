@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ItemDisplay : MonoBehaviour
 {
-    public int itemsToShow;
+    public static int itemsToShow;
 
     [Header("Prerequisites")]
     public GameObject item1;

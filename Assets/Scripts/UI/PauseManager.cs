@@ -9,7 +9,6 @@ public class PauseManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject mainMenuConfirmOverlay;
     [HideInInspector] public static bool isPaused;
-    public Animator transition;
     public GameObject settingsScreen;
     public GameObject controlsScreen;
 
@@ -95,13 +94,14 @@ public class PauseManager : MonoBehaviour
     }
 
     IEnumerator StartTransition()
-    { 
-        transition.SetTrigger("StartTransition");
+    {
+        TransitionManager.Instance.StartTransition();
         yield return new WaitForSecondsRealtime(1f);
 
         Time.timeScale = 1f;
         isPaused = false;
         SceneManager.LoadScene(0);
+        TransitionManager.Instance.EndTransition();
     }
 
     //settings screen

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -40,13 +41,17 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
-    private TrailRenderer trailRenderer;
+    [SerializeField] private TrailRenderer trailRenderer;
 
     public ParticleSystem moveDustParticle;
     bool moveDustPlaying;
     public ParticleSystem starParticle;
+    public ParticleSystem wallDustParticle;
+    bool wallDustPlaying;
 
-    public GameObject glowingBoots;
+    public GameObject bootsLight;
+    public GameObject ghostCompanion;
+    public GhostFollow ghostFollow;
 
     private GameObject currentOneWayPlatform;
 
@@ -54,8 +59,9 @@ public class CharacterMovement : MonoBehaviour
 
     //Unlock Player Abilities
     [Header("Unlock Player Abilities")]
-    [SerializeField] public bool doubleJumpUnlocked = false;
-    [SerializeField] public bool dashUnlocked = false;
+    public bool ghostCompanionUnlocked = false;
+    public bool doubleJumpUnlocked = false;
+    public bool dashUnlocked = false;
 
     //Player check point
     [HideInInspector] public Transform SpawnPoint;
@@ -63,13 +69,13 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isDashing)
-        {
-            return;
-        }
-
         if (!isDisabled)
         {
+            if (isDashing)
+            {
+                return;
+            }
+
             horizontal = Input.GetAxisRaw("Horizontal");
 
             if (IsGrounded())
@@ -79,11 +85,11 @@ public class CharacterMovement : MonoBehaviour
 
                 if (doubleJumpUnlocked)
                 {
-                    glowingBoots.SetActive(true);
+                    bootsLight.SetActive(true);
                 }
                 else
                 {
-                    glowingBoots.SetActive(false);
+                    bootsLight.SetActive(false);
                 }
 
                 if (horizontal != 0 && !moveDustPlaying)
@@ -127,7 +133,7 @@ public class CharacterMovement : MonoBehaviour
                 jumpBufferCounter = 0f;
 
                 doubleJump = true;
-                glowingBoots.SetActive(false);
+                bootsLight.SetActive(false);
                 CinemachineShake.Instance.ShakeCamera(5, 0.1f);
                 starParticle.Play();
             }
@@ -145,7 +151,7 @@ public class CharacterMovement : MonoBehaviour
 
             WallJump();
 
-            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && dashUnlocked)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && dashUnlocked && ghostCompanionUnlocked)
             {
                 StartCoroutine(Dash());
             }
@@ -153,6 +159,20 @@ public class CharacterMovement : MonoBehaviour
             if (!isWallJumping)
             {
                 Flip();
+            }
+
+            if (ghostCompanionUnlocked)
+            {
+                ghostCompanion.SetActive(true);
+
+                if (!dashUnlocked)
+                {
+                    ghostFollow.ghostLight.SetActive(false);
+                }
+            }
+            else
+            {
+                ghostCompanion.SetActive(false);
             }
         }
     }
@@ -213,7 +233,7 @@ public class CharacterMovement : MonoBehaviour
 
     private IEnumerator DisableCollision()
     {
-        BoxCollider2D platformCollider = currentOneWayPlatform.GetComponent<BoxCollider2D>();
+        TilemapCollider2D platformCollider = currentOneWayPlatform.GetComponent<TilemapCollider2D>();
 
         Physics2D.IgnoreCollision(playerCollider, platformCollider);
         yield return new WaitForSeconds(0.25f);
@@ -244,10 +264,23 @@ public class CharacterMovement : MonoBehaviour
         {
             isWallSliding = true;
             rb.velocity = new Vector2 (rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
+
+            if (!wallDustPlaying)
+            {
+                wallDustPlaying = true;
+                wallDustParticle.Play();
+            }
+            
         }
         else
         {
             isWallSliding = false;
+
+            if (wallDustPlaying)
+            {
+                wallDustPlaying = false;
+                wallDustParticle.Stop();
+            }
         }
     }
 
@@ -298,15 +331,31 @@ public class CharacterMovement : MonoBehaviour
         rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
         CinemachineShake.Instance.ShakeCamera(8, 0.1f);
         starParticle.Play();
-        /*trailRenderer.emitting = true;*/
+        trailRenderer.emitting = true;
+        ghostFollow.DashUsedIndicator();
 
         yield return new WaitForSeconds(dashingTime);
 
-        /*trailRenderer.emitting = false;*/
+        trailRenderer.emitting = false;
         rb.gravityScale = originalGravity;
         isDashing = false;
 
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
+        ghostFollow.DashRefreshIndicator();
+    }
+
+
+    //unlock abilities
+    public void UnlockDoubleJump()
+    {
+        ghostCompanionUnlocked = true;
+        doubleJumpUnlocked = true;
+    }
+
+    public void UnlockDash()
+    {
+        dashUnlocked = true;
+        ghostFollow.DashRefreshIndicator();
     }
 }

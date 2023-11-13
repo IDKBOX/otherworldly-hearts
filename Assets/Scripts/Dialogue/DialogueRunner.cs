@@ -83,17 +83,39 @@ public class DialogueRunner : MonoBehaviour
         DialogueUIPrefab.SetActive(false);
         FindObjectOfType<CharacterMovement>().isDisabled = false;
 
+        if (currentDialogueTrigger.GetComponent<CinemachineFocus>() != null)
+        {
+            currentDialogueTrigger.GetComponent<CinemachineFocus>().EndCinemachineFocus();
+        }
+
         if (currentDialogueTrigger != null)
         {
-            if (currentDialogueTrigger.GetComponent<CinemachineFocus>() != null)
+            if (currentDialogueTrigger.GetComponent<DialogueStarter>() != null)
             {
-                currentDialogueTrigger.GetComponent<CinemachineFocus>().EndCinemachineFocus();
-                Destroy(currentDialogueTrigger, 1f);
+                if (currentDialogueTrigger.GetComponent<DialogueStarter>().destroyOnComplete)
+                {
+                    DestroyCurrentDialogueTrigger();
+                }
             }
-            else
+            else if (currentDialogueTrigger.GetComponent<DialogueTrigger>() != null)
             {
-                Destroy(currentDialogueTrigger);
+                if (currentDialogueTrigger.GetComponent<DialogueTrigger>().destroyOnComplete)
+                {
+                    DestroyCurrentDialogueTrigger();
+                }
             }
+        }
+    }
+
+    private void DestroyCurrentDialogueTrigger()
+    {
+        if (currentDialogueTrigger.GetComponent<CinemachineFocus>() != null)
+        {
+            Destroy(currentDialogueTrigger, 1f);
+        }
+        else
+        {
+            Destroy(currentDialogueTrigger);
         }
     }
 

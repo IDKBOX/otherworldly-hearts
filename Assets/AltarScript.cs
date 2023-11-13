@@ -11,10 +11,15 @@ public class AltarScript : MonoBehaviour
     public DoorScript level2Door;
     public DoorScript level3Door;
     public GameObject interactPromptPrefab;
+    public Animator altarEffect;
 
     private bool inTrigger;
     private bool hasBeenTriggered;
-    private Animator animator;
+    
+    private void Awake()
+    {
+        altarEffect = GetComponentInChildren<Animator>();
+    }
 
     private void Update()
     {
@@ -22,6 +27,7 @@ public class AltarScript : MonoBehaviour
         {
             hasBeenTriggered = true;
             Destroy(interactPromptPrefab);
+            altarEffect.SetTrigger("Diminish");
             AltarInteract();
         }
     }

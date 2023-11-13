@@ -46,7 +46,8 @@ public class CharacterMovement : MonoBehaviour
     public ParticleSystem moveDustParticle;
     bool moveDustPlaying;
     public ParticleSystem starParticle;
-    public GameObject wallDustParticle;
+    public ParticleSystem wallDustParticle;
+    bool wallDustPlaying;
 
     public GameObject bootsLight;
     public GameObject ghostCompanion;
@@ -263,12 +264,23 @@ public class CharacterMovement : MonoBehaviour
         {
             isWallSliding = true;
             rb.velocity = new Vector2 (rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
-            wallDustParticle.SetActive(true);
+
+            if (!wallDustPlaying)
+            {
+                wallDustPlaying = true;
+                wallDustParticle.Play();
+            }
+            
         }
         else
         {
             isWallSliding = false;
-            wallDustParticle.SetActive(false);
+
+            if (wallDustPlaying)
+            {
+                wallDustPlaying = false;
+                wallDustParticle.Stop();
+            }
         }
     }
 

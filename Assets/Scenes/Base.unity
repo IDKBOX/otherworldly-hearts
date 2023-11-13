@@ -10038,6 +10038,7 @@ GameObject:
   - component: {fileID: 6402325663403910282}
   - component: {fileID: 7350594851653706832}
   - component: {fileID: 4517981967230286653}
+  - component: {fileID: 7350594851653706833}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -10206,8 +10207,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.004150003, y: 0.038300008, z: 0}
-    m_Extent: {x: 0.74345005, y: 0.5523, z: 0}
+    m_Center: {x: -0.005099982, y: 0.035999984, z: 0}
+    m_Extent: {x: 0.7484, y: 0.5547, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1
@@ -20070,6 +20071,18 @@ MonoBehaviour:
   doubleJumpUnlocked: 1
   dashUnlocked: 1
   SpawnPoint: {fileID: 0}
+--- !u!114 &7350594851653706833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062253792428588534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16510a6b2675a834a970d77335983b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &7449603583427943477
 ParticleSystem:
   m_ObjectHideFlags: 0

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerPos : MonoBehaviour
+public class RespawnPlayer : MonoBehaviour
 {
     private GameMaster gm;
-    // Start is called before the first frame update
+
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
@@ -15,10 +15,16 @@ public class PlayerPos : MonoBehaviour
 
     public void respawnPlayer()
     {
-        //scenemanager.loadscene(scenemanager.getactivescene().buildindex);
-        SceneManager.UnloadSceneAsync("Base");
-        SceneManager.LoadScene("Base", LoadSceneMode.Additive);
+        StartCoroutine(StartTransition());
+    }
 
+    IEnumerator StartTransition()
+    {
+        TransitionManager.Instance.StartTransition();
+        yield return new WaitForSeconds(1f);
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Additive);
+        TransitionManager.Instance.EndTransition();
     }
 
     //private void Update()

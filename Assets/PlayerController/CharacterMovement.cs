@@ -218,7 +218,7 @@ public class CharacterMovement : MonoBehaviour
         if(collision.gameObject.name == "Dead")
         {
             // Get PlayerPos
-            PlayerPos playerPosScript = FindObjectOfType<PlayerPos>();
+            RespawnPlayer playerPosScript = FindObjectOfType<RespawnPlayer>();
             playerPosScript.respawnPlayer();
         }
     }

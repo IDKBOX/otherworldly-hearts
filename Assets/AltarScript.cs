@@ -2,6 +2,15 @@ using UnityEngine;
 
 public class AltarScript : MonoBehaviour
 {
+/*    [Header("Altar Sprites")]
+    public Sprite altarNoItems;
+    public Sprite altarOneItem;
+    public Sprite altarTwoItems;*/
+
+    [Header("ItemSprites")]
+    public Sprite photoSprite;
+    public Sprite diarySprite;
+
     [Header("Dialogues")]
     public DialogueStarter NoItemsDialogue;
     public DialogueStarter OneItemDialogue;
@@ -12,6 +21,7 @@ public class AltarScript : MonoBehaviour
     public DoorScript level3Door;
     public GameObject interactPromptPrefab;
     public Animator altarEffect;
+    public SpriteRenderer altarAnimSprite;
 
     private bool inTrigger;
     private bool hasBeenTriggered;
@@ -43,9 +53,11 @@ public class AltarScript : MonoBehaviour
             case 1:
                 OneItemDialogue.StartDialogue();
                 level3Door.UnlockDoor();
+                altarAnimSprite.sprite = photoSprite;
                 break;
             case 2:
                 TwoItemsDialogue.StartDialogue();
+                altarAnimSprite.sprite = diarySprite;
                 break;
             default:
                 Debug.Log("Altar Error");

@@ -172,7 +172,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.875
   m_Color: {r: 0.6313726, g: 1, b: 0.88235295, a: 1}
-  m_Intensity: 6.96
+  m_Intensity: 7
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 69f2f17dd188dbc66fb8153cdf8c3076
@@ -985,6 +985,7 @@ MonoBehaviour:
   level2Door: {fileID: 1244762829}
   level3Door: {fileID: 41140611}
   interactPromptPrefab: {fileID: 1220296158}
+  altarEffect: {fileID: 1429267471}
 --- !u!1 &492176780
 GameObject:
   m_ObjectHideFlags: 0
@@ -16638,6 +16639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1429267470}
+  - component: {fileID: 1429267471}
   m_Layer: 0
   m_Name: AltarEffects
   m_TagString: Untagged
@@ -16662,6 +16664,27 @@ Transform:
   - {fileID: 27445774}
   m_Father: {fileID: 471016894}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1429267471
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429267469}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b96763d72f4ca0845b9eba2c3657f828, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1558909298
 GameObject:
   m_ObjectHideFlags: 0

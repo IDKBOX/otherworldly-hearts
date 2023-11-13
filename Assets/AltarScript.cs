@@ -1,10 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AltarScript : MonoBehaviour
 {
+    [Header("Dialogues")]
+    public DialogueStarter NoItemsDialogue;
+    public DialogueStarter OneItemDialogue;
+    public DialogueStarter TwoItemsDialogue;
+
     [Header("Prerequisites")]
     public DoorScript level2Door;
     public DoorScript level3Door;
@@ -13,20 +15,13 @@ public class AltarScript : MonoBehaviour
     private bool inTrigger;
     private bool hasBeenTriggered;
     private Animator animator;
-    /*private DialogueStarter dialogueStarter;*/
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        /*dialogueStarter = GetComponent<DialogueStarter>();*/
-    }
 
     private void Update()
     {
         if (inTrigger && !hasBeenTriggered && Input.GetKeyDown(KeyCode.E))
         {
             hasBeenTriggered = true;
-            interactPromptPrefab.SetActive(false);
+            Destroy(interactPromptPrefab);
             AltarInteract();
         }
     }
@@ -36,13 +31,15 @@ public class AltarScript : MonoBehaviour
         switch (ItemDisplay.itemsToShow)
         {
             case 0:
+                NoItemsDialogue.StartDialogue();
                 level2Door.UnlockDoor();
                 break;
             case 1:
+                OneItemDialogue.StartDialogue();
                 level3Door.UnlockDoor();
                 break;
             case 2:
-                Debug.Log("Window Opens");
+                TwoItemsDialogue.StartDialogue();
                 break;
             default:
                 Debug.Log("Altar Error");
@@ -55,7 +52,11 @@ public class AltarScript : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             inTrigger = true;
-            interactPromptPrefab.SetActive(true);
+
+            if (interactPromptPrefab != null)
+            {
+                interactPromptPrefab.SetActive(true);
+            }
         }
     }
 
@@ -64,9 +65,12 @@ public class AltarScript : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             inTrigger = false;
-            interactPromptPrefab.SetActive(false);
             hasBeenTriggered = false;
-            /*dialogueStarter.hasBeenTriggered = false;*/
+
+            if (interactPromptPrefab != null)
+            {
+                interactPromptPrefab.SetActive(false);
+            }
         }
     }
 

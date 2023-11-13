@@ -14222,6 +14222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 7161277954322006353, guid: 858fbd954dc1f2140892b7be913dcb9f, type: 3}
+      propertyPath: nextSceneName
+      value: LevelHub
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

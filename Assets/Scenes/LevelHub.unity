@@ -1982,6 +1982,18 @@ Tilemap:
     m_Data: {fileID: -43303089, guid: ca977bac9b715ec4c9ffbe1fd3c492fe, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 1914641708, guid: ca977bac9b715ec4c9ffbe1fd3c492fe, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 146
     m_Data:

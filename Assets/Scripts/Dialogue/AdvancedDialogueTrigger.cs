@@ -59,13 +59,21 @@ public class AdvancedDialogueTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             inTrigger = false;
-            onDialogueComplete?.Invoke();
-            hasBeenTriggered = false;
+            
+            if (interactionNeeded)
+            {
+                hasBeenTriggered = false;
+            }
 
             if (interactPromptPrefab != null)
             {
                 interactPromptPrefab.SetActive(false);
             }
         }
+    }
+
+    public void OnComplete()
+    {
+        onDialogueComplete?.Invoke();
     }
 }

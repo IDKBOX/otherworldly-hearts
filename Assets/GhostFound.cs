@@ -10,6 +10,7 @@ public class GhostFound : MonoBehaviour
     [Header("Prerequisites")]
     public Animator UIAnimator;
     public GameObject ItemFoundUI;
+    public Animator melatiAnimator;
 
     public void CollectItem()
     {
@@ -18,10 +19,11 @@ public class GhostFound : MonoBehaviour
 
     public IEnumerator ItemCollected()
     {
-        Destroy(GetComponentInChildren<SpriteRenderer>().gameObject, 0.5f);
-        Destroy(GetComponent<CircleCollider2D>());
         ItemFoundUI.SetActive(true);
+        melatiAnimator.SetTrigger("Out");
         yield return new WaitForSecondsRealtime(0.15f);
+        FindAnyObjectByType<CharacterMovement>().ghostCompanionUnlocked = true;
+        FindAnyObjectByType<CharacterMovement>().doubleJumpUnlocked = true;
         Time.timeScale = 0.25f;
         yield return new WaitForSecondsRealtime(4f);
         UIAnimator.SetTrigger("End");

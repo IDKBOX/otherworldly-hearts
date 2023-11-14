@@ -599,10 +599,19 @@ MonoBehaviour:
   destroyOnComplete: 1
   onDialogueTriggered:
     m_PersistentCalls:
-      m_Calls: []
-  onDialogueComplete:
-    m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 219137191}
+        m_TargetAssemblyTypeName: CinemachineFocus, Assembly-CSharp
+        m_MethodName: StartCinemachineFocus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   interactPromptPrefab: {fileID: 0}
 --- !u!61 &219137189
 BoxCollider2D:
@@ -9773,6 +9782,7 @@ MonoBehaviour:
       m_Calls: []
   UIAnimator: {fileID: 2006897780}
   ItemFoundUI: {fileID: 127755473}
+  melatiAnimator: {fileID: 1856776481}
 --- !u!1 &1524903410
 GameObject:
   m_ObjectHideFlags: 0
@@ -9783,7 +9793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1524903411}
   m_Layer: 0
-  m_Name: Melati_Spooky System
+  m_Name: StoryItem_Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15090,6 +15100,7 @@ GameObject:
   - component: {fileID: 1856776479}
   - component: {fileID: 1856776478}
   - component: {fileID: 1856776480}
+  - component: {fileID: 1856776481}
   m_Layer: 0
   m_Name: Melati_Spooky
   m_TagString: Untagged
@@ -15160,7 +15171,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1524903411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15214,6 +15225,27 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!95 &1856776481
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856776477}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b316b0df9cd0134a9f34b7057c81e5d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1894241495
 GameObject:
   m_ObjectHideFlags: 0
@@ -15378,7 +15410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a7fe58e0f0f6847bba99f798ef40e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previousCamera: {fileID: 1798305557}
+  previousCamera: {fileID: 301704293}
   focusCamera: {fileID: 1894241495}
   onFocusStarted:
     m_PersistentCalls:
@@ -15405,7 +15437,19 @@ MonoBehaviour:
   destroyOnComplete: 1
   onDialogueTriggered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1963025382}
+        m_TargetAssemblyTypeName: CinemachineFocus, Assembly-CSharp
+        m_MethodName: StartCinemachineFocus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDialogueComplete:
     m_PersistentCalls:
       m_Calls:

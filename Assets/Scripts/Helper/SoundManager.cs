@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -6,7 +5,7 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
 
-    [SerializeField] private AudioSource _musicSource, _effectSource, _overlapEffectSource, _ambientSource;
+    public AudioSource _musicSource, _effectSource, _overlapEffectSource, _ambientSource;
 
     //audio fade snapshots
     public AudioMixerSnapshot normalAudioSnapshot;

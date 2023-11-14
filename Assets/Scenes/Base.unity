@@ -1341,7 +1341,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1366,7 +1366,7 @@ Transform:
   m_GameObject: {fileID: 528385658}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 301.9, y: 44.8, z: -10}
+  m_LocalPosition: {x: 288.03, y: 48.440002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3587,7 +3587,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3aa75d862ceeaf409b6736948685c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsToShow: 0
   item1: {fileID: 148209454}
   item2: {fileID: 468922969}
   item3: {fileID: 107049723}
@@ -10206,8 +10205,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0063000023, y: 0.041500002, z: 0}
-    m_Extent: {x: 0.74979997, y: 0.54999995, z: 0}
+    m_Center: {x: -0.006549984, y: 0.044, z: 0}
+    m_Extent: {x: 0.75025, y: 0.55139995, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1
@@ -20061,6 +20060,7 @@ MonoBehaviour:
   trailRenderer: {fileID: 9122128949113836551}
   moveDustParticle: {fileID: 4245672791363952157}
   starParticle: {fileID: 3904067656777216014}
+  wallDustParticle: {fileID: 0}
   bootsLight: {fileID: 4017350966554763865}
   ghostCompanion: {fileID: 61142672}
   ghostFollow: {fileID: 61142675}

@@ -92,6 +92,8 @@ public class DialogueRunner : MonoBehaviour
         {
             if (currentDialogueTrigger.GetComponent<DialogueStarter>() != null)
             {
+                currentDialogueTrigger.GetComponent<DialogueStarter>().OnComplete();
+
                 if (currentDialogueTrigger.GetComponent<DialogueStarter>().destroyOnComplete)
                 {
                     DestroyCurrentDialogueTrigger();

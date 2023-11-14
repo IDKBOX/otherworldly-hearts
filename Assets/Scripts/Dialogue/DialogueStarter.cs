@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -17,12 +18,18 @@ public class DialogueStarter : MonoBehaviour
             FindAnyObjectByType<CharacterMovement>().isDisabled = true;
             FindAnyObjectByType<CharacterMovement>().rb.velocity = Vector3.zero;
             DialogueRunner.Instance.TriggerDialogue(dialogueData);
-            DialogueRunner.Instance.currentDialogueTrigger = gameObject;
+            StartCoroutine(setCurrentDialogueTrigger());
         }
     }
 
-    private void OnDestroy()
+    public void OnComplete()
     {
         onDialogueComplete?.Invoke();
+    }
+
+    IEnumerator setCurrentDialogueTrigger()
+    {
+        yield return new WaitForSeconds(0.2f);
+        DialogueRunner.Instance.currentDialogueTrigger = gameObject;
     }
 }

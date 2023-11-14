@@ -36,7 +36,7 @@ public class StoryItem : MonoBehaviour
         }
     }
 
-    private IEnumerator ItemCollected()
+    public IEnumerator ItemCollected()
     {
         collectEffect.Play();
         itemAnimator.SetTrigger("Collected");

@@ -1,29 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckPoint : MonoBehaviour
+public class Checkpoint : MonoBehaviour
 {
-    public GameObject player;
-    CharacterMovement playerScript;
+    private CheckpointManager gm;
 
     private void Start()
     {
-        player = GameObject.Find("Character");
-        playerScript = FindAnyObjectByType<CharacterMovement>();
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<CheckpointManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            playerScript.SpawnPoint = gameObject.transform;
+            gm.lastCheckPointPos = transform.position;
         }
-    }
-
-    public void spawnPlayer()
-    {
-        player.transform.position = playerScript.SpawnPoint.position;
     }
 }
 

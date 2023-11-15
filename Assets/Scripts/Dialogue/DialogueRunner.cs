@@ -106,6 +106,15 @@ public class DialogueRunner : MonoBehaviour
                     DestroyCurrentDialogueTrigger();
                 }
             }
+            else if (currentDialogueTrigger.GetComponent<AdvancedDialogueTrigger>() != null)
+            {
+                currentDialogueTrigger.GetComponent<AdvancedDialogueTrigger>().OnComplete();
+
+                if (currentDialogueTrigger.GetComponent<AdvancedDialogueTrigger>().destroyOnComplete)
+                {
+                    DestroyCurrentDialogueTrigger();
+                }
+            }
         }
     }
 

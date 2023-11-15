@@ -36,7 +36,7 @@ public class StoryItem : MonoBehaviour
         }
     }
 
-    private IEnumerator ItemCollected()
+    public IEnumerator ItemCollected()
     {
         collectEffect.Play();
         itemAnimator.SetTrigger("Collected");
@@ -72,7 +72,7 @@ public class StoryItem : MonoBehaviour
                 itemFoundText.text = "Old Photo Found";
                 descriptionText.text = "Dash Unlocked";
                 itemImage.sprite = item1Sprite;
-                FindAnyObjectByType<CharacterMovement>().dashUnlocked = true;
+                FindAnyObjectByType<CharacterMovement>().UnlockDash();
                 break;
             case 2:
                 itemFoundText.text = "Old Diary Found";

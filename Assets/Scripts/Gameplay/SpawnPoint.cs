@@ -13,11 +13,16 @@ public class SpawnPoint : MonoBehaviour
 
     private void Start()
     {
-        spawnPlayer();
+        if (!CheckpointManager.Instance.checkpointActive)
+        {
+            spawnPlayer();
+        }
     }
 
     public void spawnPlayer()
     {
+        CheckpointManager.Instance.lastCheckPointPos = transform.position;
+        CheckpointManager.Instance.checkpointActive = true;
         player.transform.position = transform.position;
 
         if (ghost != null)

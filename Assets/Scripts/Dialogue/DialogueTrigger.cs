@@ -7,7 +7,7 @@ public class DialogueTrigger : MonoBehaviour
     public bool interactionNeeded;
     public bool destroyOnComplete = true;
     [Space]
-    [HideInInspector] public UnityEvent onDialogueTriggered, onDialogueComplete;
+    public UnityEvent onDialogueTriggered;
     private bool hasBeenTriggered;
     private bool inTrigger;
 
@@ -59,8 +59,11 @@ public class DialogueTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             inTrigger = false;
-            onDialogueComplete?.Invoke();
-            hasBeenTriggered = false;
+
+            if (interactionNeeded)
+            {
+                hasBeenTriggered = false;
+            }
 
             if (interactPromptPrefab != null)
             {

@@ -6,7 +6,9 @@ TagManager:
   tags:
   - OneWayPlatform
   - Wall
+  - GM
   - Hazard
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

@@ -1,20 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class GameMaster : MonoBehaviour
+public class CheckpointManager : MonoBehaviour
 {
-    private static GameMaster instance;
+    private static CheckpointManager instance;
     public Vector2 lastCheckPointPos;
     public string sceneActive;
 
-
-
     private void Awake()
     {
-        GameObject startPosition = GameObject.Find("start");
-        lastCheckPointPos = startPosition.transform.position;
         if(instance == null)
         {
             instance = this;
@@ -25,6 +18,4 @@ public class GameMaster : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
 }

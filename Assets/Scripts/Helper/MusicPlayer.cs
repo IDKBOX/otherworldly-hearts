@@ -7,14 +7,17 @@ public class MusicPlayer : MonoBehaviour
 
     void Start()
     {
-        if (SoundManager.Instance != null && playMusic)
+        if (!CheckpointManager.Instance.checkpointActive)
         {
-            SoundManager.Instance.PlayMusic(musicToPlay);
-        }
-        else
-        {
-            SoundManager.Instance.FadeOut();
-            SoundManager.Instance._musicSource.Stop();
+            if (SoundManager.Instance != null && playMusic)
+            {
+                SoundManager.Instance.PlayMusic(musicToPlay);
+            }
+            else
+            {
+                SoundManager.Instance.FadeOut();
+                SoundManager.Instance._musicSource.Stop();
+            }
         }
     }
 }

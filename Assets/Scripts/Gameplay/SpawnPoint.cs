@@ -22,6 +22,7 @@ public class SpawnPoint : MonoBehaviour
     public void spawnPlayer()
     {
         CheckpointManager.Instance.lastCheckPointPos = transform.position;
+        CheckpointManager.Instance.checkpointActive = true;
         player.transform.position = transform.position;
 
         if (ghost != null)

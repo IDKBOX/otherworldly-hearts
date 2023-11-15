@@ -15,11 +15,13 @@ public class DoorScript : MonoBehaviour
     [Header("Prerequisites")]
     public GameObject interactPromptPrefab;
     private DialogueStarter dialogueStarter;
+    private CheckpointManager checkpointManager;
 
     private void Awake()
     {
         dialogueStarter = GetComponent<DialogueStarter>();
         animator = GetComponent<Animator>();
+        checkpointManager = FindAnyObjectByType<CheckpointManager>();
     }
 
     private void Start()
@@ -42,6 +44,7 @@ public class DoorScript : MonoBehaviour
         yield return new WaitForSeconds(1f);
         SceneManager.UnloadSceneAsync(currentSceneName);
         SceneManager.LoadScene(nextSceneName, LoadSceneMode.Additive);
+        checkpointManager.resetCheckpoint();
         TransitionManager.Instance.EndTransition();
     }
 

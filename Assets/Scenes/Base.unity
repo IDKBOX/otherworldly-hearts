@@ -1315,8 +1315,8 @@ Camera:
   m_GameObject: {fileID: 528385658}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1450,52 +1450,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &543327393
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 543327395}
-  - component: {fileID: 543327396}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: GM
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &543327395
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 543327393}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9300951, y: -0.63875186, z: 0.055458695}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &543327396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 543327393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 863bbe52d7ad05540863006c5b5083ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lastCheckPointPos: {x: 0, y: 0}
-  sceneActive: 
 --- !u!1 &552341633
 GameObject:
   m_ObjectHideFlags: 0
@@ -3633,7 +3587,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3aa75d862ceeaf409b6736948685c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsToShow: 0
   item1: {fileID: 148209454}
   item2: {fileID: 468922969}
   item3: {fileID: 107049723}
@@ -10253,8 +10206,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.003850013, y: 0.043550014, z: 0}
-    m_Extent: {x: 0.74665, y: 0.54965, z: 0}
+    m_Center: {x: -0.0050500035, y: 0.041049987, z: 0}
+    m_Extent: {x: 0.73785, y: 0.55055, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1
@@ -20113,9 +20066,9 @@ MonoBehaviour:
   ghostCompanion: {fileID: 61142672}
   ghostFollow: {fileID: 61142675}
   playerCollider: {fileID: 6402325663403910282}
-  ghostCompanionUnlocked: 1
-  doubleJumpUnlocked: 1
-  dashUnlocked: 1
+  ghostCompanionUnlocked: 0
+  doubleJumpUnlocked: 0
+  dashUnlocked: 0
   SpawnPoint: {fileID: 0}
 --- !u!114 &7350594851653706833
 MonoBehaviour:
@@ -25184,7 +25137,6 @@ SceneRoots:
   - {fileID: 651301978}
   - {fileID: 2110568282}
   - {fileID: 236044795}
-  - {fileID: 543327395}
   - {fileID: 63574390}
   - {fileID: 1321393292}
   - {fileID: 859007917}

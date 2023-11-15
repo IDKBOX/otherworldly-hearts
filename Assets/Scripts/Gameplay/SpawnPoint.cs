@@ -4,22 +4,24 @@ public class SpawnPoint : MonoBehaviour
 {
     private GameObject player;
     private GameObject ghost;
-    private CheckpointManager gm;
 
     private void Awake()
     {
         player = GameObject.Find("Character");
         ghost = GameObject.Find("FloatingGhost");
-        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<CheckpointManager>();
     }
 
     private void Start()
     {
-        spawnPlayer();
+        if (!CheckpointManager.Instance.checkpointActive)
+        {
+            spawnPlayer();
+        }
     }
 
     public void spawnPlayer()
     {
+        CheckpointManager.Instance.lastCheckPointPos = transform.position;
         player.transform.position = transform.position;
 
         if (ghost != null)

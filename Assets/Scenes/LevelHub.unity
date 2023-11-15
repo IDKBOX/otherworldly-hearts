@@ -568,6 +568,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7161277954322006353, guid: 858fbd954dc1f2140892b7be913dcb9f, type: 3}
+      propertyPath: nextSceneName
+      value: Level1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7161277954322006353, guid: 858fbd954dc1f2140892b7be913dcb9f, type: 3}
       propertyPath: currentSceneName
       value: LevelHub
       objectReference: {fileID: 0}
@@ -23307,8 +23311,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.2348001, y: -5.8859997, z: 0}
-    m_Extent: {x: 8.1579, y: 11.5646, z: 0}
+    m_Center: {x: 1.2431002, y: -5.8763003, z: 0}
+    m_Extent: {x: 8.161, y: 11.5581, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

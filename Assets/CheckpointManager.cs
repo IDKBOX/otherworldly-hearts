@@ -5,12 +5,10 @@ public class CheckpointManager : MonoBehaviour
     public static CheckpointManager Instance;
     public Vector2 lastCheckPointPos;
     public string sceneActive;
+    [HideInInspector] public bool checkpointActive;
 
     private void Awake()
     {
-        GameObject startPosition = GameObject.FindGameObjectWithTag("SpawnPoint");
-        lastCheckPointPos = startPosition.transform.position;
-
         if (Instance == null)
         {
             Instance = this;
@@ -24,8 +22,7 @@ public class CheckpointManager : MonoBehaviour
 
     public void resetCheckpoint()
     {
-        GameObject startPosition = GameObject.FindGameObjectWithTag("SpawnPoint");
-        lastCheckPointPos = startPosition.transform.position;
-        FindAnyObjectByType<RespawnPlayer>().gameObject.transform.position = lastCheckPointPos;
+        Debug.Log("checkpointReset");
+        checkpointActive = false;
     }
 }

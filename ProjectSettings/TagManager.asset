@@ -8,7 +8,7 @@ TagManager:
   - Wall
   - GM
   - Hazard
-  - SpawnPoint
+  - HazardCollider
   layers:
   - Default
   - TransparentFX

@@ -802,7 +802,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
+      scalar: 0.5
       minScalar: 0.2
       maxCurve:
         serializedVersion: 2
@@ -1503,7 +1503,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 75
+      scalar: 50
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -23307,8 +23307,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.2356002, y: -5.8755, z: 0}
-    m_Extent: {x: 8.1572, y: 11.562901, z: 0}
+    m_Center: {x: 1.2443001, y: -5.88135, z: 0}
+    m_Extent: {x: 8.154901, y: 11.56385, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

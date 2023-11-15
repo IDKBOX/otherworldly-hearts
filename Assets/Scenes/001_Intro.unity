@@ -992,7 +992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: b863bb5186721274eb2b3cbade46370b, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1067,7 +1067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: b863bb5186721274eb2b3cbade46370b, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1153,14 +1153,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText:
-  - A long time ago... lived a shaman and a ghost...
-  - She was summoned to protect him and carry out his commands
-  - One day, the Shaman passed away...
-  - However... she wasn't sent back to the spirit realm...
+  - A long time ago... deep inside an Indonesian forest, lived a shaman and a ghost.
+  - 'They lived together happily & harmoniously. '
+  - 'However... that happiness didn''t last long... '
+  - One day, the Shaman passed away... but she wasn't sent back to the spirit realm...
   - As time moved on...
-  - Many decades had passed...
-  - Corruption slowly takes hold of her soul...
-  - And her own identity began to fade into the recesses of oblivion...
+  - 'Many decades had passed... '
+  - 'The corruption is slowly taking hold of her soul... '
+  - 'And her own identity began to fade into the recesses of oblivion... '
   dialogueImages:
   - {fileID: 21300000, guid: d5fb71dfacf77f440b40e5edebf8bd5e, type: 3}
   - {fileID: 21300000, guid: d5fb71dfacf77f440b40e5edebf8bd5e, type: 3}

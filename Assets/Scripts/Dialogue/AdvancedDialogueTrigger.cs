@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class DialogueTrigger : MonoBehaviour
+public class AdvancedDialogueTrigger : MonoBehaviour
 {
     public ScriptableDialogue[] dialogueData;
     public bool interactionNeeded;
     public bool destroyOnComplete = true;
     [Space]
-    public UnityEvent onDialogueTriggered;
+    public UnityEvent onDialogueTriggered, onDialogueComplete;
     private bool hasBeenTriggered;
     private bool inTrigger;
 
@@ -59,7 +59,7 @@ public class DialogueTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             inTrigger = false;
-
+            
             if (interactionNeeded)
             {
                 hasBeenTriggered = false;
@@ -70,5 +70,10 @@ public class DialogueTrigger : MonoBehaviour
                 interactPromptPrefab.SetActive(false);
             }
         }
+    }
+
+    public void OnComplete()
+    {
+        onDialogueComplete?.Invoke();
     }
 }

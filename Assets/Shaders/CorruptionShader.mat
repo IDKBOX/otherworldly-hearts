@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SpiritOrb
+  m_Name: CorruptionShader
   m_Shader: {fileID: -6465566751694194690, guid: f9e8cdb40176f2d459c3ff179c2da805, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -68,11 +68,11 @@ Material:
     m_Floats:
     - _BlendValue: 0.3
     - _CellDensity: 1
-    - _Complexity: 1
+    - _Complexity: 50
     - _EnableExternalAlpha: 0
-    - _PixelateAmount: 45
-    - _Speed: 4
-    - _Strength: 0.4
+    - _PixelateAmount: 150
+    - _Speed: 2
+    - _Strength: 0.01
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}

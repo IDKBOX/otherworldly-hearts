@@ -992,7 +992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: b863bb5186721274eb2b3cbade46370b, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1067,7 +1067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: b863bb5186721274eb2b3cbade46370b, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1133,12 +1133,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697944589}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d6ae035e5c9b73409672c2758d687e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   musicToPlay: {fileID: 8300000, guid: a133467114272f142ba43e1c7b7c60da, type: 3}
+  playMusic: 0
 --- !u!114 &1697944593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1152,18 +1153,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText:
-  - A long time ago... lived a shaman and a ghost...
-  - She was summoned to protect him and carry out his commands
+  - A long time ago... deep inside an Indonesian forest, lived a shaman and a ghost.
+  - 'They lived together happily & harmoniously. '
+  - However... that happiness was short lived...
   - One day, the Shaman passed away...
-  - However... she wasn't sent back to the spirit realm...
+  - But she wasn't sent back to the spirit realm...
   - As time moved on...
-  - Many decades had passed...
-  - Corruption slowly takes hold of her soul...
-  - And her own identity began to fade into the recesses of oblivion...
+  - 'Several decades had passed... '
+  - 'The corruption is slowly taking hold of her soul... '
+  - 'And her own identity began to fade away into the recesses of oblivion... '
   dialogueImages:
   - {fileID: 21300000, guid: d5fb71dfacf77f440b40e5edebf8bd5e, type: 3}
   - {fileID: 21300000, guid: d5fb71dfacf77f440b40e5edebf8bd5e, type: 3}
   - {fileID: 21300000, guid: ac8feff6e06c0464c9654c534dabd1fe, type: 3}
+  - {fileID: 21300000, guid: 66c03d1ddf80b7b4b81d8d624f890946, type: 3}
   - {fileID: 21300000, guid: 66c03d1ddf80b7b4b81d8d624f890946, type: 3}
   - {fileID: 21300000, guid: 906153bdebea6644aaa358a86cfde500, type: 3}
   - {fileID: 21300000, guid: 906153bdebea6644aaa358a86cfde500, type: 3}

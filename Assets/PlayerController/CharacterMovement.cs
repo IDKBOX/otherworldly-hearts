@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 public class CharacterMovement : MonoBehaviour
@@ -66,9 +67,11 @@ public class CharacterMovement : MonoBehaviour
     //Player check point
     [HideInInspector] public Transform SpawnPoint;
 
+
     // Update is called once per frame
     void Update()
     {
+
         if (!isDisabled)
         {
             if (isDashing)
@@ -214,13 +217,7 @@ public class CharacterMovement : MonoBehaviour
             currentOneWayPlatform = collision.gameObject;
         }
 
-        // check dead
-        if(collision.gameObject.name == "Dead")
-        {
-            // Get PlayerPos
-            RespawnPlayer playerPosScript = FindObjectOfType<RespawnPlayer>();
-            playerPosScript.respawnPlayer();
-        }
+        
     }
 
     private void OnCollisionExit2D(Collision2D collision)

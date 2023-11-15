@@ -10205,8 +10205,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.006549984, y: 0.044, z: 0}
-    m_Extent: {x: 0.75025, y: 0.55139995, z: 0}
+    m_Center: {x: -0.006399989, y: 0.030600011, z: 0}
+    m_Extent: {x: 0.7457, y: 0.5493, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1
@@ -20060,7 +20060,7 @@ MonoBehaviour:
   trailRenderer: {fileID: 9122128949113836551}
   moveDustParticle: {fileID: 4245672791363952157}
   starParticle: {fileID: 3904067656777216014}
-  wallDustParticle: {fileID: 0}
+  wallDustParticle: {fileID: 7449603583427943477}
   bootsLight: {fileID: 4017350966554763865}
   ghostCompanion: {fileID: 61142672}
   ghostFollow: {fileID: 61142675}

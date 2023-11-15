@@ -127,7 +127,7 @@ public class IntroRunner : MonoBehaviour
     private void ChangeDialogueTween()
     {
         //0 opacity instantly then slowly fades back up
-        if (index != 1 && index != 3 && index != 5 && index != 7)
+        if (index != 1 && index != 3 && index != 4 && index != 6 && index != 8)
         {
             Sequence imageFade = DOTween.Sequence();
 
@@ -155,7 +155,7 @@ public class IntroRunner : MonoBehaviour
             .Join(dialogueImageObjectBG.DOColor(new Color32(255, 255, 255, 0), 1.5f));
         }
 
-        if (index == 7)
+        if (index == 8)
         {
             dialogueImageObject.DOColor(new Color32(255, 255, 255, 125), 1.5f);
         }

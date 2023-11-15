@@ -1155,16 +1155,18 @@ MonoBehaviour:
   dialogueText:
   - A long time ago... deep inside an Indonesian forest, lived a shaman and a ghost.
   - 'They lived together happily & harmoniously. '
-  - 'However... that happiness didn''t last long... '
-  - One day, the Shaman passed away... but she wasn't sent back to the spirit realm...
+  - However... that happiness was short lived...
+  - One day, the Shaman passed away...
+  - But she wasn't sent back to the spirit realm...
   - As time moved on...
-  - 'Many decades had passed... '
+  - 'Several decades had passed... '
   - 'The corruption is slowly taking hold of her soul... '
-  - 'And her own identity began to fade into the recesses of oblivion... '
+  - 'And her own identity began to fade away into the recesses of oblivion... '
   dialogueImages:
   - {fileID: 21300000, guid: d5fb71dfacf77f440b40e5edebf8bd5e, type: 3}
   - {fileID: 21300000, guid: d5fb71dfacf77f440b40e5edebf8bd5e, type: 3}
   - {fileID: 21300000, guid: ac8feff6e06c0464c9654c534dabd1fe, type: 3}
+  - {fileID: 21300000, guid: 66c03d1ddf80b7b4b81d8d624f890946, type: 3}
   - {fileID: 21300000, guid: 66c03d1ddf80b7b4b81d8d624f890946, type: 3}
   - {fileID: 21300000, guid: 906153bdebea6644aaa358a86cfde500, type: 3}
   - {fileID: 21300000, guid: 906153bdebea6644aaa358a86cfde500, type: 3}

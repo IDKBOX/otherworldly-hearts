@@ -34695,6 +34695,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1743305212}
     m_Modifications:
     - target: {fileID: 508797659588946768, guid: fc3809317c5bf8c45a3633b48a0ce141, type: 3}
+      propertyPath: gateMoveRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 508797659588946768, guid: fc3809317c5bf8c45a3633b48a0ce141, type: 3}
       propertyPath: spiritOrbsRequired
       value: 1
       objectReference: {fileID: 0}

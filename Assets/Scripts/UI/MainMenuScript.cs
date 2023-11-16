@@ -56,7 +56,6 @@ public class MainMenuScript : MonoBehaviour
     {
         CheckpointManager.Instance.deleteCheckpointData();
         CheckpointManager.Instance.loadCheckpointData();
-        Debug.Log("StoryItemDataDeleted");
         PlayerPrefs.DeleteKey("StoryItemData");
         StartCoroutine(StartTransition(levelSceneName));
         SoundManager.Instance.FadeOut();

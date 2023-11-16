@@ -73,12 +73,15 @@ public class CharacterMovement : MonoBehaviour
         {
             case 0:
                 UnlockDoubleJump();
+                yield return new WaitForSeconds(0.05f);
+                ghostCompanion.transform.position = transform.position;
                 break;
             case 1:
             case 2:
             case 3:
                 UnlockDoubleJump();
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.05f);
+                ghostCompanion.transform.position = transform.position;
                 UnlockDash();
                 break;
         }
@@ -363,7 +366,6 @@ public class CharacterMovement : MonoBehaviour
     {
         ghostCompanionUnlocked = true;
         doubleJumpUnlocked = true;
-        ghostCompanion.transform.position = transform.position;
     }
 
     public void UnlockDash()

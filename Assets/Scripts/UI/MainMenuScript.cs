@@ -10,6 +10,20 @@ public class MainMenuScript : MonoBehaviour
     public GameObject creditsScreen;
     public GameObject settingsScreen;
     public GameObject controlsScreen;
+    public GameObject continueButton;
+
+    private void Start()
+    {
+        //disable continue button if no save is available
+        if (PlayerPrefs.GetInt("canLoadGame", 0) == 1)
+        {
+            continueButton.SetActive(true);
+        }
+        else
+        {
+            continueButton.SetActive(false);
+        }
+    }
 
     private void Update()
     {

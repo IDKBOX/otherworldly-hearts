@@ -44,6 +44,7 @@ public class CheckpointManager : MonoBehaviour
         PlayerPrefs.SetInt("checkpointActive", 0);
         PlayerPrefs.SetFloat("checkpointX", lastCheckPointPos.x);
         PlayerPrefs.SetFloat("checkpointY", lastCheckPointPos.y);
+        PlayerPrefs.SetInt("canLoadGame", 1);
     }
 
     public void saveCheckpoint()
@@ -52,6 +53,7 @@ public class CheckpointManager : MonoBehaviour
         PlayerPrefs.SetInt("checkpointActive", 1);
         PlayerPrefs.SetFloat("checkpointX", lastCheckPointPos.x);
         PlayerPrefs.SetFloat("checkpointY", lastCheckPointPos.y);
+        PlayerPrefs.SetInt("canLoadGame", 1);
     }
 
     public void loadCheckpointData()
@@ -75,5 +77,6 @@ public class CheckpointManager : MonoBehaviour
         PlayerPrefs.DeleteKey("checkpointActive");
         PlayerPrefs.DeleteKey("checkpointX");
         PlayerPrefs.DeleteKey("checkpointY");
+        PlayerPrefs.DeleteKey("canLoadGame");
     }
 }

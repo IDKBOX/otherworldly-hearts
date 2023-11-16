@@ -13,7 +13,7 @@ public class CheckpointManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            loadCheckpoint();
+            loadCheckpointData();
         }
         else
         {
@@ -23,7 +23,13 @@ public class CheckpointManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(PlayerPrefs.GetString("levelData"));
+        //for testing, remove on release!
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            Debug.Log("CheckpointData Deleted");
+            deleteCheckpointData();
+            loadCheckpointData();
+        }
     }
 
     public void resetCheckpoint()
@@ -48,7 +54,7 @@ public class CheckpointManager : MonoBehaviour
         PlayerPrefs.SetFloat("checkpointY", lastCheckPointPos.y);
     }
 
-    public void loadCheckpoint()
+    public void loadCheckpointData()
     {
         if (PlayerPrefs.GetInt("checkpointActive", 0) == 0)
         {
@@ -61,5 +67,13 @@ public class CheckpointManager : MonoBehaviour
 
         lastCheckPointPos.x = PlayerPrefs.GetFloat("checkpointX", 0);
         lastCheckPointPos.y = PlayerPrefs.GetFloat("checkpointY", 0);
+    }
+
+    public void deleteCheckpointData()
+    {
+        PlayerPrefs.DeleteKey("levelData");
+        PlayerPrefs.DeleteKey("checkpointActive");
+        PlayerPrefs.DeleteKey("checkpointX");
+        PlayerPrefs.DeleteKey("checkpointY");
     }
 }

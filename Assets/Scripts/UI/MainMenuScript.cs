@@ -38,8 +38,10 @@ public class MainMenuScript : MonoBehaviour
         }
     }
 
-    public void LoadScene(string levelSceneName)
+    public void NewGame(string levelSceneName)
     {
+        CheckpointManager.Instance.deleteCheckpointData();
+        CheckpointManager.Instance.loadCheckpointData();
         StartCoroutine(StartTransition(levelSceneName));
         SoundManager.Instance.FadeOut();
     }

@@ -13,10 +13,9 @@ public class Hazard : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("HazardCollider") && !hasBeenTriggered)
+        if (collision.gameObject.CompareTag("HazardCollider") && !hasBeenTriggered && !collision.gameObject.GetComponentInParent<CharacterMovement>().isDashing)
         {
             hasBeenTriggered = true;
-            // Get PlayerPos
             RespawnPlayer respawnPlayerScript = FindObjectOfType<RespawnPlayer>();
             respawnPlayerScript.respawnPlayer();
         }

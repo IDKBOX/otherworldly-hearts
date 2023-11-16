@@ -29,7 +29,7 @@ public class CharacterMovement : MonoBehaviour
     private Vector2 wallJumpingPower = new Vector2(8f, 16f);
 
     private bool canDash = true;
-    private bool isDashing;
+    [HideInInspector] public bool isDashing;
     [SerializeField] private float dashingPower = 24f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;

@@ -13,7 +13,7 @@ public class SpiritGate : MonoBehaviour
             if (!tweenPlayed)
             {
                 tweenPlayed = true;
-                transform.DOMoveY(4, 0.5f);
+                transform.DOMoveY(transform.position.y + 4, 0.5f);
             }
         }
     }

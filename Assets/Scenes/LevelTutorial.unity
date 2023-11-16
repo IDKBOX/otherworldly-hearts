@@ -10191,8 +10191,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 14.077201, y: -6.7379, z: 0}
-    m_Extent: {x: 30.7776, y: 25.3554, z: 0}
+    m_Center: {x: 14.085851, y: -6.74035, z: 0}
+    m_Extent: {x: 30.78675, y: 25.36285, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -15308,6 +15308,10 @@ PrefabInstance:
     - target: {fileID: 7161277954322006353, guid: 858fbd954dc1f2140892b7be913dcb9f, type: 3}
       propertyPath: currentSceneName
       value: LevelTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 7161277954322006353, guid: 858fbd954dc1f2140892b7be913dcb9f, type: 3}
+      propertyPath: disableFadeOutMusic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

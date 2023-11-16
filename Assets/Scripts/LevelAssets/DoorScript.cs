@@ -7,6 +7,7 @@ public class DoorScript : MonoBehaviour
     public string currentSceneName;
     public string nextSceneName;
     public bool isLocked;
+    public bool disableFadeOutMusic;
 
     private bool inTrigger;
     private bool hasBeenTriggered;
@@ -33,7 +34,11 @@ public class DoorScript : MonoBehaviour
     public void LoadScene()
     {
         StartCoroutine(StartTransition());
-        SoundManager.Instance.FadeOut();
+
+        if (!disableFadeOutMusic)
+        {
+            SoundManager.Instance.FadeOut();
+        }
     }
 
     IEnumerator StartTransition()

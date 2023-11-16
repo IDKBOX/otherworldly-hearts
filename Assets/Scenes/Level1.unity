@@ -819,6 +819,7 @@ GameObject:
   - component: {fileID: 196659343}
   - component: {fileID: 196659342}
   - component: {fileID: 196659341}
+  - component: {fileID: 196659344}
   m_Layer: 2
   m_Name: RoomEight
   m_TagString: Untagged
@@ -904,6 +905,19 @@ Transform:
   - {fileID: 1481472366}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &196659344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196659340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef082580c9e3c3248b3b1d25cd7c9686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicToPlay: {fileID: 0}
 --- !u!1 &233553018
 GameObject:
   m_ObjectHideFlags: 0
@@ -72447,6 +72461,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7086862577403460592, guid: 783321e10e3154b4cba3680e2c4e6414, type: 3}
   m_PrefabInstance: {fileID: 1389315393}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &597053577
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 161782390920292506, guid: 9219859a5d39fba4bb76bdfd444b4cb0, type: 3}
+      propertyPath: m_Name
+      value: MusicPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 616727690170711066, guid: 9219859a5d39fba4bb76bdfd444b4cb0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.0330825
+      objectReference: {fileID: 0}
+    - target: {fileID: 616727690170711066, guid: 9219859a5d39fba4bb76bdfd444b4cb0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6678053
+      objectReference: {fileID: 0}
+    - target: {fileID: 616727690170711066, guid: 9219859a5d39fba4bb76bdfd444b4cb0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1102.8087
+      objectReference: {fileID: 0}
+    - target: {fileID: 616727690170711066, guid: 9219859a5d39fba4bb76bdfd444b4cb0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 616727690170711066, guid: 9219859a5d39fba4bb76bdfd444b4cb0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 616727690170711066, guid: 9219859a5d39fba4bb76bdfd444b4cb0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 616727690170711066, guid: 9219859a5d39fba4bb76bdfd444b4cb0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 616727690170711066, guid: 9219859a5d39fba4bb76bdfd444b4cb0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 616727690170711066, guid: 9219859a5d39fba4bb76bdfd444b4cb0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 616727690170711066, guid: 9219859a5d39fba4bb76bdfd444b4cb0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9219859a5d39fba4bb76bdfd444b4cb0, type: 3}
 --- !u!1 &627599134
 GameObject:
   m_ObjectHideFlags: 0
@@ -73764,8 +73835,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 14.080251, y: -6.7433004, z: 0}
-    m_Extent: {x: 30.783852, y: 25.3625, z: 0}
+    m_Center: {x: 14.08635, y: -6.7363005, z: 0}
+    m_Extent: {x: 30.77975, y: 25.3521, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -132300,6 +132371,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4765698447009388092, guid: fc3809317c5bf8c45a3633b48a0ce141, type: 3}
   m_PrefabInstance: {fileID: 1425126150}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1459826169 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2570807828489416331, guid: 7a50b69ef8c70a54faf6c6d911431201, type: 3}
+  m_PrefabInstance: {fileID: 9052412241683162265}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2915c137d2ded34bbb17166a038ebee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1481472362
 GameObject:
   m_ObjectHideFlags: 0
@@ -138867,6 +138949,34 @@ PrefabInstance:
       propertyPath: linkedSpiritGate
       value: 
       objectReference: {fileID: 972277847}
+    - target: {fileID: 2570807828489416331, guid: 7a50b69ef8c70a54faf6c6d911431201, type: 3}
+      propertyPath: onComplete.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570807828489416331, guid: 7a50b69ef8c70a54faf6c6d911431201, type: 3}
+      propertyPath: onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570807828489416331, guid: 7a50b69ef8c70a54faf6c6d911431201, type: 3}
+      propertyPath: onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1459826169}
+    - target: {fileID: 2570807828489416331, guid: 7a50b69ef8c70a54faf6c6d911431201, type: 3}
+      propertyPath: onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570807828489416331, guid: 7a50b69ef8c70a54faf6c6d911431201, type: 3}
+      propertyPath: onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenSpiritGate
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570807828489416331, guid: 7a50b69ef8c70a54faf6c6d911431201, type: 3}
+      propertyPath: onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GhostFound, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570807828489416331, guid: 7a50b69ef8c70a54faf6c6d911431201, type: 3}
+      propertyPath: onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3314497189435820730, guid: 7a50b69ef8c70a54faf6c6d911431201, type: 3}
       propertyPath: previousCamera
       value: 
@@ -138929,6 +139039,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 597053577}
   - {fileID: 1746396734}
   - {fileID: 1104122087}
   - {fileID: 1619845127}

@@ -3,6 +3,7 @@ using UnityEngine;
 public class MusicTrigger : MonoBehaviour
 {
     public AudioClip musicToPlay;
+    public bool destroyOnTriggered;
 
     private bool hasBeenTriggered;
 
@@ -15,12 +16,20 @@ public class MusicTrigger : MonoBehaviour
             if (musicToPlay != null)
             {
                 SoundManager.Instance.PlayMusic(musicToPlay);
-                Destroy(gameObject);
+                if (destroyOnTriggered)
+                {
+                    Destroy(gameObject);
+                }
             }
             else
             {
                 SoundManager.Instance.FadeOut();
-                Destroy(gameObject);
+                SoundManager.Instance._musicSource.Stop();
+                SoundManager.Instance.isLevelMusicPlaying = false;
+                if (destroyOnTriggered)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }

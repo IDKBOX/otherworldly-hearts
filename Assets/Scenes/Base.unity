@@ -3318,6 +3318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1405916770}
   - component: {fileID: 1405916771}
+  - component: {fileID: 1405916772}
   m_Layer: 0
   m_Name: CharacterSprite
   m_TagString: Untagged
@@ -3336,7 +3337,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1539247124344136738}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3392,6 +3393,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1405916772
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405916769}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 169a7af12b7609a46a0f554ddad7b49a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1419689564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10428,8 +10450,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00084999204, y: 0.03400001, z: 0}
-    m_Extent: {x: 0.74345005, y: 0.5566, z: 0}
+    m_Center: {x: -0.010349989, y: 0.03220001, z: 0}
+    m_Extent: {x: 0.74635, y: 0.5537, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1
@@ -20252,6 +20274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16510a6b2675a834a970d77335983b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floatingGhost: {fileID: 61142672}
+  vortexEffect: {fileID: 6495639331950475266, guid: cb6d38eaa36079349b154a1c7f53f766, type: 3}
 --- !u!198 &7449603583427943477
 ParticleSystem:
   m_ObjectHideFlags: 0

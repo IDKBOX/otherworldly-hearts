@@ -1,9 +1,11 @@
 using DG.Tweening;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class SpiritGate : MonoBehaviour
 {
     public int spiritOrbsRequired;
+    public float gateMoveRange = 4f;
     bool tweenPlayed = false;
 
     void Update()
@@ -13,7 +15,7 @@ public class SpiritGate : MonoBehaviour
             if (!tweenPlayed)
             {
                 tweenPlayed = true;
-                transform.DOMoveY(transform.position.y + 4, 0.5f);
+                transform.DOMoveY(transform.position.y + gateMoveRange, 0.5f);
             }
         }
     }

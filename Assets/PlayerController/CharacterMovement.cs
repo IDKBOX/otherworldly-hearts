@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 public class CharacterMovement : MonoBehaviour
@@ -28,7 +29,7 @@ public class CharacterMovement : MonoBehaviour
     private Vector2 wallJumpingPower = new Vector2(8f, 16f);
 
     private bool canDash = true;
-    private bool isDashing;
+    [HideInInspector] public bool isDashing;
     [SerializeField] private float dashingPower = 24f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
@@ -65,6 +66,26 @@ public class CharacterMovement : MonoBehaviour
 
     //Player check point
     [HideInInspector] public Transform SpawnPoint;
+
+    private IEnumerator Start()
+    {
+        switch(PlayerPrefs.GetInt("StoryItemData", -1))
+        {
+            case 0:
+                UnlockDoubleJump();
+                yield return new WaitForSeconds(0.05f);
+                ghostCompanion.transform.position = transform.position;
+                break;
+            case 1:
+            case 2:
+            case 3:
+                UnlockDoubleJump();
+                yield return new WaitForSeconds(0.05f);
+                ghostCompanion.transform.position = transform.position;
+                UnlockDash();
+                break;
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -214,13 +235,7 @@ public class CharacterMovement : MonoBehaviour
             currentOneWayPlatform = collision.gameObject;
         }
 
-        // check dead
-        if(collision.gameObject.name == "Dead")
-        {
-            // Get Checkpoint script
-            CheckPoint checkPointScript = FindObjectOfType<CheckPoint>();
-            checkPointScript.spawnPlayer();
-        }
+        
     }
 
     private void OnCollisionExit2D(Collision2D collision)

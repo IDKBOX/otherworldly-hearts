@@ -9,6 +9,11 @@ public class ItemDisplay : MonoBehaviour
     public GameObject item2;
     public GameObject item3;
 
+    private void Start()
+    {
+        itemsToShow = PlayerPrefs.GetInt("StoryItemData", -1);
+    }
+
     void Update()
     {
         switch (itemsToShow)
@@ -33,6 +38,13 @@ public class ItemDisplay : MonoBehaviour
                 item2.SetActive(true);
                 item3.SetActive(true);
                 break;
+        }
+
+        //debug, remove on release
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            Debug.Log("StoryItemDataDeleted");
+            PlayerPrefs.DeleteKey("StoryItemData");
         }
     }
 }

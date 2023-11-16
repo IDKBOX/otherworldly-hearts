@@ -6,7 +6,9 @@ TagManager:
   tags:
   - OneWayPlatform
   - Wall
+  - GM
   - Hazard
+  - HazardCollider
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,20 @@ public class MainMenuScript : MonoBehaviour
     public GameObject creditsScreen;
     public GameObject settingsScreen;
     public GameObject controlsScreen;
+    public GameObject continueButton;
+
+    private void Start()
+    {
+        //disable continue button if no save is available
+        if (PlayerPrefs.GetInt("canLoadGame", 0) == 1)
+        {
+            continueButton.SetActive(true);
+        }
+        else
+        {
+            continueButton.SetActive(false);
+        }
+    }
 
     private void Update()
     {
@@ -38,8 +52,11 @@ public class MainMenuScript : MonoBehaviour
         }
     }
 
-    public void LoadScene(string levelSceneName)
+    public void NewGame(string levelSceneName)
     {
+        CheckpointManager.Instance.deleteCheckpointData();
+        CheckpointManager.Instance.loadCheckpointData();
+        PlayerPrefs.DeleteKey("StoryItemData");
         StartCoroutine(StartTransition(levelSceneName));
         SoundManager.Instance.FadeOut();
     }
@@ -63,6 +80,14 @@ public class MainMenuScript : MonoBehaviour
         }
     }
 
+    public void ContinueGame()
+    {
+        StartCoroutine(StartTransition(PlayerPrefs.GetString("levelData", "001_Intro")));
+        SoundManager.Instance.FadeOut();
+    }
+
+
+    //menu UIs
     //credits screen
     public void ShowCredits()
     {

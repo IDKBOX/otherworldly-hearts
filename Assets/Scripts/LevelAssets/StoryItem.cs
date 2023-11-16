@@ -33,6 +33,7 @@ public class StoryItem : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             StartCoroutine(ItemCollected());
+            PlayerPrefs.SetInt("StoryItemData", ItemID);
         }
     }
 

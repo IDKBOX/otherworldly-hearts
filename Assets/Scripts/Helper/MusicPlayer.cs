@@ -7,14 +7,17 @@ public class MusicPlayer : MonoBehaviour
 
     void Start()
     {
-        if (SoundManager.Instance != null && playMusic)
+        if (SoundManager.Instance.isLevelMusicPlaying == false && playMusic)
         {
+            SoundManager.Instance.isLevelMusicPlaying = true;
             SoundManager.Instance.PlayMusic(musicToPlay);
         }
-        else
+
+        if (!playMusic)
         {
             SoundManager.Instance.FadeOut();
             SoundManager.Instance._musicSource.Stop();
+            SoundManager.Instance.isLevelMusicPlaying = false;
         }
     }
 }

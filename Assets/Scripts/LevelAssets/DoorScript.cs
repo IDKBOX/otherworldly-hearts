@@ -42,6 +42,7 @@ public class DoorScript : MonoBehaviour
         yield return new WaitForSeconds(1f);
         SceneManager.UnloadSceneAsync(currentSceneName);
         SceneManager.LoadScene(nextSceneName, LoadSceneMode.Additive);
+        CheckpointManager.Instance.resetCheckpoint();
         TransitionManager.Instance.EndTransition();
     }
 

@@ -15,6 +15,7 @@ public class GhostFound : MonoBehaviour
     public void CollectItem()
     {
         StartCoroutine(ItemCollected());
+        PlayerPrefs.SetInt("StoryItemData", 0);
     }
 
     public IEnumerator ItemCollected()
@@ -25,6 +26,8 @@ public class GhostFound : MonoBehaviour
         FindAnyObjectByType<CharacterMovement>().ghostCompanionUnlocked = true;
         FindAnyObjectByType<CharacterMovement>().doubleJumpUnlocked = true;
         Time.timeScale = 0.25f;
+        yield return new WaitForSecondsRealtime(0.1f);
+        FindAnyObjectByType<GhostFollow>().gameObject.transform.position = transform.position;
         yield return new WaitForSecondsRealtime(4f);
         UIAnimator.SetTrigger("End");
         yield return new WaitForSecondsRealtime(1f);

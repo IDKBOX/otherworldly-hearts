@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class MusicPlayer : MonoBehaviour
 {
@@ -15,9 +16,15 @@ public class MusicPlayer : MonoBehaviour
 
         if (!playMusic)
         {
-            SoundManager.Instance.FadeOut();
-            SoundManager.Instance._musicSource.Stop();
-            SoundManager.Instance.isLevelMusicPlaying = false;
+            StartCoroutine(FadeOutMusic());
         }
+    }
+
+    private IEnumerator FadeOutMusic()
+    {
+        SoundManager.Instance.FadeOut();
+        yield return new WaitForSecondsRealtime(0.5f);
+        SoundManager.Instance._musicSource.Stop();
+        SoundManager.Instance.isLevelMusicPlaying = false;
     }
 }

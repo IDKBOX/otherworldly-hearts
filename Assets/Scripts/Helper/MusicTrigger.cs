@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class MusicTrigger : MonoBehaviour
@@ -17,21 +18,29 @@ public class MusicTrigger : MonoBehaviour
             if (playMusic)
             {
                 SoundManager.Instance.PlayMusic(musicToPlay);
-                if (destroyOnTriggered)
-                {
-                    Destroy(gameObject);
-                }
+                destroyTrigger();
             }
             else
             {
-                SoundManager.Instance.FadeOut();
-                SoundManager.Instance._musicSource.Stop();
-                SoundManager.Instance.isLevelMusicPlaying = false;
-                if (destroyOnTriggered)
-                {
-                    Destroy(gameObject);
-                }
+                StartCoroutine(FadeOutMusic());
+                destroyTrigger();
             }
         }
+    }
+
+    private void destroyTrigger()
+    {
+        if (destroyOnTriggered)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private IEnumerator FadeOutMusic()
+    {
+        SoundManager.Instance.FadeOut();
+        yield return new WaitForSecondsRealtime(0.5f);
+        SoundManager.Instance._musicSource.Stop();
+        SoundManager.Instance.isLevelMusicPlaying = false;
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
@@ -15,15 +16,15 @@ public class SpawnPoint : MonoBehaviour
     {
         if (!CheckpointManager.Instance.checkpointActive)
         {
-            spawnPlayer();
+            SpawnPlayer();
         }
     }
 
-    public void spawnPlayer()
+    public void SpawnPlayer()
     {
         CheckpointManager.Instance.lastCheckPointPos = transform.position;
-        CheckpointManager.Instance.checkpointActive = true;
         player.transform.position = transform.position;
+        CheckpointManager.Instance.checkpointActive = true;
 
         if (ghost != null)
         {

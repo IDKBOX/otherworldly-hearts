@@ -91,6 +91,7 @@ public class PauseManager : MonoBehaviour
     {
         StartCoroutine(StartTransition());
         SoundManager.Instance.FadeOut();
+        SoundManager.Instance.isLevelMusicPlaying = false;
     }
 
     IEnumerator StartTransition()

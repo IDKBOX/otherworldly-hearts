@@ -1057,7 +1057,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1841441232960842593, guid: 2583f8dab7507654da76e7c30274a9ea, type: 3}
       propertyPath: m_Name
-      value: CheckpointManager
+      value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 7843385652043655407, guid: 2583f8dab7507654da76e7c30274a9ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10450,8 +10450,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0065999925, y: 0.038700014, z: 0}
-    m_Extent: {x: 0.73969996, y: 0.5547, z: 0}
+    m_Center: {x: 0.0037499964, y: 0.038650006, z: 0}
+    m_Extent: {x: 0.74695003, y: 0.55165005, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1

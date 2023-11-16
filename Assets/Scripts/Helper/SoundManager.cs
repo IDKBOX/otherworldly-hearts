@@ -10,6 +10,7 @@ public class SoundManager : MonoBehaviour
     //audio fade snapshots
     public AudioMixerSnapshot normalAudioSnapshot;
     public AudioMixerSnapshot noMusicAudioSnapshot;
+    [HideInInspector] public bool isLevelMusicPlaying;
 
     private void Awake()
     {

@@ -16,6 +16,7 @@ public class Checkpoint : MonoBehaviour
             animator.SetTrigger("On");
             CheckpointManager.Instance.lastCheckPointPos = transform.position;
             CheckpointManager.Instance.checkpointActive = true;
+            CheckpointManager.Instance.saveCheckpoint();
         }
     }
 }

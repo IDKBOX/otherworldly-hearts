@@ -63,6 +63,14 @@ public class MainMenuScript : MonoBehaviour
         }
     }
 
+    public void ContinueGame()
+    {
+        StartCoroutine(StartTransition(PlayerPrefs.GetString("levelData", "001_Intro")));
+        SoundManager.Instance.FadeOut();
+    }
+
+
+    //menu UIs
     //credits screen
     public void ShowCredits()
     {

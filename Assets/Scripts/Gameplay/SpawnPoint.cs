@@ -17,6 +17,7 @@ public class SpawnPoint : MonoBehaviour
         if (!CheckpointManager.Instance.checkpointActive)
         {
             SpawnPlayer();
+            CheckpointManager.Instance.saveLevel();
         }
     }
 

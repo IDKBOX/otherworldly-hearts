@@ -44,7 +44,6 @@ public class DoorScript : MonoBehaviour
         SceneManager.LoadScene(nextSceneName, LoadSceneMode.Additive);
         CheckpointManager.Instance.resetCheckpoint();
         TransitionManager.Instance.EndTransition();
-        
     }
 
     private void Update()

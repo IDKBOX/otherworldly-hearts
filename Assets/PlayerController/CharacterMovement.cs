@@ -67,11 +67,26 @@ public class CharacterMovement : MonoBehaviour
     //Player check point
     [HideInInspector] public Transform SpawnPoint;
 
+    private IEnumerator Start()
+    {
+        switch(PlayerPrefs.GetInt("StoryItemData", -1))
+        {
+            case 0:
+                UnlockDoubleJump();
+                break;
+            case 1:
+            case 2:
+            case 3:
+                UnlockDoubleJump();
+                yield return new WaitForSeconds(0.1f);
+                UnlockDash();
+                break;
+        }
+    }
 
     // Update is called once per frame
     void Update()
     {
-
         if (!isDisabled)
         {
             if (isDashing)
@@ -348,6 +363,7 @@ public class CharacterMovement : MonoBehaviour
     {
         ghostCompanionUnlocked = true;
         doubleJumpUnlocked = true;
+        ghostCompanion.transform.position = transform.position;
     }
 
     public void UnlockDash()

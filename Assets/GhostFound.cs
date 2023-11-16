@@ -15,6 +15,7 @@ public class GhostFound : MonoBehaviour
     public void CollectItem()
     {
         StartCoroutine(ItemCollected());
+        PlayerPrefs.SetInt("StoryItemData", 0);
     }
 
     public IEnumerator ItemCollected()

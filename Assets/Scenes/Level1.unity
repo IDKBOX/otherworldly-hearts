@@ -918,6 +918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicToPlay: {fileID: 0}
+  destroyOnTriggered: 0
 --- !u!1 &233553018
 GameObject:
   m_ObjectHideFlags: 0
@@ -73835,8 +73836,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 14.08635, y: -6.7363005, z: 0}
-    m_Extent: {x: 30.77975, y: 25.3521, z: 0}
+    m_Center: {x: 14.086401, y: -6.7459507, z: 0}
+    m_Extent: {x: 30.7852, y: 25.35655, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -138945,6 +138946,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1034125282}
     m_Modifications:
+    - target: {fileID: 1375571795885917490, guid: 7a50b69ef8c70a54faf6c6d911431201, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2570807828489416331, guid: 7a50b69ef8c70a54faf6c6d911431201, type: 3}
       propertyPath: linkedSpiritGate
       value: 
@@ -138985,6 +138990,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoryItem_Ghost
       objectReference: {fileID: 0}
+    - target: {fileID: 6383773077408709023, guid: 7a50b69ef8c70a54faf6c6d911431201, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6668655433028649576, guid: 7a50b69ef8c70a54faf6c6d911431201, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.817001
@@ -139024,6 +139033,14 @@ PrefabInstance:
     - target: {fileID: 6668655433028649576, guid: 7a50b69ef8c70a54faf6c6d911431201, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574450038725719055, guid: 7a50b69ef8c70a54faf6c6d911431201, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574450038725719055, guid: 7a50b69ef8c70a54faf6c6d911431201, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.58
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

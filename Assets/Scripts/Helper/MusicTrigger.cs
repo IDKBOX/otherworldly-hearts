@@ -3,6 +3,7 @@ using UnityEngine;
 public class MusicTrigger : MonoBehaviour
 {
     public AudioClip musicToPlay;
+    public bool playMusic;
     public bool destroyOnTriggered;
 
     private bool hasBeenTriggered;
@@ -13,7 +14,7 @@ public class MusicTrigger : MonoBehaviour
         {
             hasBeenTriggered = true;
 
-            if (musicToPlay != null)
+            if (playMusic)
             {
                 SoundManager.Instance.PlayMusic(musicToPlay);
                 if (destroyOnTriggered)

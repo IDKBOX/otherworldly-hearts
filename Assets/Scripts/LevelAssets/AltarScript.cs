@@ -46,7 +46,7 @@ public class AltarScript : MonoBehaviour
     {
         switch (ItemDisplay.itemsToShow)
         {
-            case 0:
+            default:
                 NoItemsDialogue.StartDialogue();
                 level2Door.UnlockDoor();
                 break;
@@ -58,9 +58,6 @@ public class AltarScript : MonoBehaviour
             case 2:
                 TwoItemsDialogue.StartDialogue();
                 altarAnimSprite.sprite = diarySprite;
-                break;
-            default:
-                Debug.Log("Altar Error");
                 break;
         }
     }

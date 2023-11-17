@@ -29,6 +29,13 @@ public class GhostFollow : MonoBehaviour
         }
     }
 
+    public void ActivateDashRefreshIndicator()
+    {
+        ghostLight.SetActive(true);
+        starParticle.Play();
+        transform.DOPunchScale(new Vector3(1.5f * transform.localScale.x, 1.5f, 1.5f), 0.5f);
+    }
+
     public void DashRefreshIndicator()
     {
         ghostLight.SetActive(true);

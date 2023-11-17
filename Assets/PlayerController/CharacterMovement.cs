@@ -371,6 +371,6 @@ public class CharacterMovement : MonoBehaviour
     public void UnlockDash()
     {
         dashUnlocked = true;
-        ghostFollow.DashRefreshIndicator();
+        ghostFollow.ActivateDashRefreshIndicator();
     }
 }

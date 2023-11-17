@@ -1,8 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 public class MusicTrigger : MonoBehaviour
 {
     public AudioClip musicToPlay;
+    public bool playMusic;
+    public bool destroyOnTriggered;
 
     private bool hasBeenTriggered;
 
@@ -12,16 +15,32 @@ public class MusicTrigger : MonoBehaviour
         {
             hasBeenTriggered = true;
 
-            if (musicToPlay != null)
+            if (playMusic)
             {
                 SoundManager.Instance.PlayMusic(musicToPlay);
-                Destroy(gameObject);
+                destroyTrigger();
             }
             else
             {
-                SoundManager.Instance.FadeOut();
-                Destroy(gameObject);
+                StartCoroutine(FadeOutMusic());
+                destroyTrigger();
             }
         }
+    }
+
+    private void destroyTrigger()
+    {
+        if (destroyOnTriggered)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private IEnumerator FadeOutMusic()
+    {
+        SoundManager.Instance.FadeOut();
+        yield return new WaitForSecondsRealtime(0.5f);
+        SoundManager.Instance._musicSource.Stop();
+        SoundManager.Instance.isLevelMusicPlaying = false;
     }
 }

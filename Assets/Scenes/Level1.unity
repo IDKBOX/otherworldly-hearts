@@ -918,6 +918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicToPlay: {fileID: 0}
+  playMusic: 0
   destroyOnTriggered: 0
 --- !u!1 &233553018
 GameObject:
@@ -73836,8 +73837,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 14.086401, y: -6.7459507, z: 0}
-    m_Extent: {x: 30.7852, y: 25.35655, z: 0}
+    m_Center: {x: 14.086051, y: -6.7463493, z: 0}
+    m_Extent: {x: 30.77895, y: 25.35355, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -132650,7 +132651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7086862577403460592, guid: 783321e10e3154b4cba3680e2c4e6414, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.52
+      value: -10.64
       objectReference: {fileID: 0}
     - target: {fileID: 7086862577403460592, guid: 783321e10e3154b4cba3680e2c4e6414, type: 3}
       propertyPath: m_LocalPosition.z

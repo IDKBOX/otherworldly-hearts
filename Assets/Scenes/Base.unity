@@ -1398,7 +1398,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11
+  orthographic size: 10.81
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1423,7 +1423,7 @@ Transform:
   m_GameObject: {fileID: 528385658}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 261.15, y: 32.59, z: -10}
+  m_LocalPosition: {x: 116.590004, y: 31.81, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10450,8 +10450,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.003799975, y: 0.031649977, z: 0}
-    m_Extent: {x: 0.7543, y: 0.55695, z: 0}
+    m_Center: {x: -0.0036000013, y: 0.0352, z: 0}
+    m_Extent: {x: 0.7429, y: 0.5578, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1

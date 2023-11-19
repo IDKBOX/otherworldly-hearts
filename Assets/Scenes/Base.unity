@@ -10450,8 +10450,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0036000013, y: 0.0352, z: 0}
-    m_Extent: {x: 0.7429, y: 0.5578, z: 0}
+    m_Center: {x: -0.000100016594, y: 0.038300008, z: 0}
+    m_Extent: {x: 0.7478, y: 0.5569, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1
@@ -20259,9 +20259,9 @@ MonoBehaviour:
   ghostCompanion: {fileID: 61142672}
   ghostFollow: {fileID: 61142675}
   playerCollider: {fileID: 6402325663403910282}
-  ghostCompanionUnlocked: 0
-  doubleJumpUnlocked: 0
-  dashUnlocked: 0
+  ghostCompanionUnlocked: 1
+  doubleJumpUnlocked: 1
+  dashUnlocked: 1
   SpawnPoint: {fileID: 0}
 --- !u!114 &7350594851653706833
 MonoBehaviour:

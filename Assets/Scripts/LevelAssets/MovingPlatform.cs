@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovingPlatform : MonoBehaviour
 {
     [SerializeField] private Transform[] _waypoints;
     [SerializeField] private float _speed;
     [SerializeField] private float _checkDistance = 0.05f;
+    
 
     private Transform _targerWatpoint;
     private int _currentWaypointIndex = 0;
@@ -48,6 +50,7 @@ public class MovingPlatform : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         var CharacterMovementScript = collision.collider.GetComponent<CharacterMovement>();
+        Debug.Log(CharacterMovementScript.gameObject.name);
         if (CharacterMovementScript != null)
         {
             CharacterMovementScript.SetParent(transform);
@@ -62,6 +65,8 @@ public class MovingPlatform : MonoBehaviour
         if (CharacterMovementScript != null)
         {
             CharacterMovementScript.ResetParent();
+            SceneManager.MoveGameObjectToScene(CharacterMovementScript.gameObject, SceneManager.GetSceneByName("Base") );
+            
             //CharacterMovementScript.isWallSliding = true;
             //CharacterMovementScript.isOnMovingPlatform = false;
 

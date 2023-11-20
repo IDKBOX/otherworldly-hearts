@@ -385,7 +385,6 @@ public class CharacterMovement : MonoBehaviour
     {
         _originalParent = transform.parent;
         transform.parent = newParent;
-        Debug.Log(newParent);
     }
 
     public void ResetParent()

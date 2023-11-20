@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 802180887584923521}
   - component: {fileID: 8599054137294344038}
   m_Layer: 0
-  m_Name: PS_Orb
+  m_Name: PS_Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ ParticleSystem:
   m_GameObject: {fileID: 7450323798372507207}
   serializedVersion: 8
   lengthInSec: 1
-  simulationSpeed: 1
+  simulationSpeed: 0.7
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -180,7 +180,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
+      scalar: 2
       minScalar: 0.4
       maxCurve:
         serializedVersion: 2
@@ -233,8 +233,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 0.25
+      scalar: 5
+      minScalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -675,7 +675,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: -0.5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -736,7 +736,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 4.92, y: 1.36, z: 1}
+    m_Scale: {x: 6, y: 2, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -4888,7 +4888,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -10
+  m_SortingOrder: 25
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -5131,7 +5131,7 @@ MonoBehaviour:
   _waypoints:
   - {fileID: 5704098966262716036}
   - {fileID: 842292760073005516}
-  _interval: 2
+  _speed: 2
 --- !u!114 &2081323036067241738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5166,8 +5166,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0042000413, y: -0.005400002, z: 0}
-    m_Extent: {x: 1.121, y: 0.673, z: 0}
+    m_Center: {x: -0.002300024, y: 0.002550006, z: 0}
+    m_Extent: {x: 1.1187, y: 0.66625, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

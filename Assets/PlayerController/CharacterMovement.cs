@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 public class CharacterMovement : MonoBehaviour
@@ -67,9 +66,14 @@ public class CharacterMovement : MonoBehaviour
     //Player check point
     [HideInInspector] public Transform SpawnPoint;
 
+    // Player parent platform
+    private Transform _originalParent;
+
+
     private IEnumerator Start()
     {
-        switch(PlayerPrefs.GetInt("StoryItemData", -1))
+        _originalParent = transform.parent;
+        switch (PlayerPrefs.GetInt("StoryItemData", -1))
         {
             case 0:
                 UnlockDoubleJump();
@@ -372,5 +376,18 @@ public class CharacterMovement : MonoBehaviour
     {
         dashUnlocked = true;
         ghostFollow.ActivateDashRefreshIndicator();
+    }
+
+
+    //moving platform code
+    public void SetParent(Transform newParent)
+    {
+        _originalParent = transform.parent;
+        transform.parent = newParent;
+    }
+
+    public void ResetParent()
+    {
+        transform.parent = null;
     }
 }

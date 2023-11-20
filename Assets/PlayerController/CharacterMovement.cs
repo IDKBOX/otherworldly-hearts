@@ -1,7 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.TextCore.Text;
 using UnityEngine.Tilemaps;
 
 public class CharacterMovement : MonoBehaviour
@@ -74,7 +72,6 @@ public class CharacterMovement : MonoBehaviour
 
     private IEnumerator Start()
     {
-        Debug.Log(transform.parent);
         _originalParent = transform.parent;
         switch (PlayerPrefs.GetInt("StoryItemData", -1))
         {
@@ -381,6 +378,8 @@ public class CharacterMovement : MonoBehaviour
         ghostFollow.ActivateDashRefreshIndicator();
     }
 
+
+    //moving platform code
     public void SetParent(Transform newParent)
     {
         _originalParent = transform.parent;
@@ -390,6 +389,5 @@ public class CharacterMovement : MonoBehaviour
     public void ResetParent()
     {
         transform.parent = null;
-
     }
 }

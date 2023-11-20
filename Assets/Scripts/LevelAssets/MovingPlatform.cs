@@ -1,37 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MovingPlatform : MonoBehaviour
 {
     [SerializeField] private Transform[] _waypoints;
-    [SerializeField] private float _speed;
-    [SerializeField] private float _checkDistance = 0.05f;
+    [SerializeField] private float _speed = 2;
+    private float _checkDistance = 0.05f;
     
-
-    private Transform _targerWatpoint;
+    private Transform _targetWaypoint;
     private int _currentWaypointIndex = 0;
-    // Start is called before the first frame update
+
+
     void Start()
     {
-        _targerWatpoint = _waypoints[0];
-        
+        _targetWaypoint = _waypoints[0];
     }
 
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         transform.position = Vector2.MoveTowards(
             transform.position,
-            _targerWatpoint.position,
+            _targetWaypoint.position,
             _speed * Time.deltaTime
             );
 
-        if(Vector2.Distance(transform.position, _targerWatpoint.position) < _checkDistance)
+        if (Vector2.Distance(transform.position, _targetWaypoint.position) < _checkDistance)
         {
-            _targerWatpoint = GetNextWaypoint();
+            _targetWaypoint = GetNextWaypoint();
         }
     }
 
@@ -50,12 +46,9 @@ public class MovingPlatform : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         var CharacterMovementScript = collision.collider.GetComponent<CharacterMovement>();
-        Debug.Log(CharacterMovementScript.gameObject.name);
         if (CharacterMovementScript != null)
         {
             CharacterMovementScript.SetParent(transform);
-            //CharacterMovementScript.isWallSliding = false;
-            //CharacterMovementScript.isOnMovingPlatform = true;
         }
     }
 
@@ -65,10 +58,7 @@ public class MovingPlatform : MonoBehaviour
         if (CharacterMovementScript != null)
         {
             CharacterMovementScript.ResetParent();
-            SceneManager.MoveGameObjectToScene(CharacterMovementScript.gameObject, SceneManager.GetSceneByName("Base") );
-            
-            //CharacterMovementScript.isWallSliding = true;
-            //CharacterMovementScript.isOnMovingPlatform = false;
+            SceneManager.MoveGameObjectToScene(CharacterMovementScript.gameObject, SceneManager.GetSceneByName("Base"));
 
         }
     }

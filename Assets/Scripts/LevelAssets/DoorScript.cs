@@ -25,7 +25,7 @@ public class DoorScript : MonoBehaviour
 
     private void Start()
     {
-        if (!isLocked)
+        if (!isLocked && animator != null)
         {
             animator.SetTrigger("Unlock");
         }

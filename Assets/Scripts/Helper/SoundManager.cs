@@ -27,8 +27,8 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        ChangeMusicVolume(PlayerPrefs.GetFloat("MusicVolume", 1));
-        ChangeSFXVolume(PlayerPrefs.GetFloat("SFXVolume", 1));
+        ChangeMusicVolume(PlayerPrefs.GetFloat("MusicVolume", 0.5f));
+        ChangeSFXVolume(PlayerPrefs.GetFloat("SFXVolume", 0.5f));
     }
 
     public void PlaySound(AudioClip clip)

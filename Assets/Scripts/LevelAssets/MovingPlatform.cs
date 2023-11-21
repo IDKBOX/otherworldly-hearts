@@ -1,4 +1,3 @@
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -43,7 +42,7 @@ public class MovingPlatform : MonoBehaviour
     }
 
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         var CharacterMovementScript = collision.collider.GetComponent<CharacterMovement>();
         if (CharacterMovementScript != null)
@@ -59,7 +58,6 @@ public class MovingPlatform : MonoBehaviour
         {
             CharacterMovementScript.ResetParent();
             SceneManager.MoveGameObjectToScene(CharacterMovementScript.gameObject, SceneManager.GetSceneByName("Base"));
-
         }
     }
 }

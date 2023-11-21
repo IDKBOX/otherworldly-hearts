@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -200,6 +201,11 @@ public class CharacterMovement : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && dashUnlocked && ghostCompanionUnlocked)
             {
+                if (gameObject.scene.name != "Base")
+                {
+                    ResetParent();
+                    SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetSceneByName("Base"));
+                }
                 StartCoroutine(Dash());
             }
 

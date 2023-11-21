@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class MovingPlatform : MonoBehaviour
 {
     [SerializeField] private Transform[] _waypoints;
-    [SerializeField] private float _speed = 2;
+    [SerializeField] private float _speed = 6f;
     private float _checkDistance = 0.05f;
     
     private Transform _targetWaypoint;

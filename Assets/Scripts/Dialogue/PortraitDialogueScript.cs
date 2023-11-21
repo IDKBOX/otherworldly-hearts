@@ -73,19 +73,16 @@ public class PortraitDialogueScript : MonoBehaviour
         }
     }
 
-    void EmotionChecker(string emotionIndex)
+    void EmotionChecker(int emotionIndex)
     {
-        if (emotionIndex == "Smile")
+        if (emotionIndex > 0 && emotionIndex < dialogueData.characterData.portraitImages.Length)
         {
-            characterImage.sprite = dialogueData.characterData.smileSprite;
-        }
-        else if (emotionIndex == "Sad")
-        {
-            characterImage.sprite = dialogueData.characterData.sadSprite;
+            characterImage.sprite = dialogueData.characterData.portraitImages[emotionIndex];
         }
         else
         {
-            characterImage.sprite = dialogueData.characterData.defaultSprite;
+            characterImage.sprite = dialogueData.characterData.portraitImages[0];
         }
+       
     }
 }

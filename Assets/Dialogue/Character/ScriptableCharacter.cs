@@ -6,9 +6,7 @@ public class ScriptableCharacter : ScriptableObject
     public string characterName;
 
     [Header("Sprites")]
-    public Sprite defaultSprite;
-    public Sprite smileSprite;
-    public Sprite sadSprite;
+    public Sprite[] portraitImages;
 
     public AudioSource[] audioClips;
 }

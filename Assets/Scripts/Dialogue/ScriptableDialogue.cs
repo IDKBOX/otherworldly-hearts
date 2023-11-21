@@ -11,5 +11,5 @@ public class ScriptableDialogue : ScriptableObject
 
     [Header("Portrait Dialogue Options")]
     public ScriptableCharacter characterData;
-    public string[] emotion;
+    public int[] emotion;
 }

@@ -1139,7 +1139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicToPlay: {fileID: 8300000, guid: a133467114272f142ba43e1c7b7c60da, type: 3}
-  playMusic: 0
+  playMusic: 1
 --- !u!114 &1697944593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1161,7 +1161,7 @@ MonoBehaviour:
   - As time moved on...
   - 'Several decades had passed... '
   - 'The corruption is slowly taking hold of her soul... '
-  - 'And her own identity began to fade away into the recesses of oblivion... '
+  - 'And her own identity began to fade away... '
   dialogueImages:
   - {fileID: 21300000, guid: d5fb71dfacf77f440b40e5edebf8bd5e, type: 3}
   - {fileID: 21300000, guid: d5fb71dfacf77f440b40e5edebf8bd5e, type: 3}
@@ -1176,8 +1176,8 @@ MonoBehaviour:
   textComponent: {fileID: 104457698}
   dialogueImageObject: {fileID: 1488848140}
   dialogueImageObjectBG: {fileID: 1556699080}
-  textSpeed: 0.07
-  dialogueSound: {fileID: 8300000, guid: 84df00189eec4f24db596b024ea43ffc, type: 3}
+  textSpeed: 0.08
+  dialogueSound: {fileID: 8300000, guid: 4cfdc797ac0627d4d8d0c7e1db7b971b, type: 3}
   dialogueTriangle: {fileID: 3315157322653632648}
   isDialogueRunning: 0
 --- !u!1 &1746396731

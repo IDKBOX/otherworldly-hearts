@@ -10489,8 +10489,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.008650005, y: 0.03635001, z: 0}
-    m_Extent: {x: 0.74825, y: 0.55285, z: 0}
+    m_Center: {x: -0.012400001, y: 0.042650014, z: 0}
+    m_Extent: {x: 0.7478, y: 0.55614996, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1
@@ -20302,6 +20302,7 @@ MonoBehaviour:
   doubleJumpUnlocked: 1
   dashUnlocked: 1
   SpawnPoint: {fileID: 0}
+  SFXDash: {fileID: 8300000, guid: 9e9a6ec4f5b1b094db151c32b94e25ae, type: 3}
 --- !u!114 &7350594851653706833
 MonoBehaviour:
   m_ObjectHideFlags: 0

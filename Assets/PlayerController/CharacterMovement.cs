@@ -69,6 +69,9 @@ public class CharacterMovement : MonoBehaviour
     // Player parent platform
     private Transform _originalParent;
 
+    [Header("SFX")]
+    public AudioClip SFXDash;
+
 
     private IEnumerator Start()
     {
@@ -349,6 +352,7 @@ public class CharacterMovement : MonoBehaviour
         rb.gravityScale = 0f;
         rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
         CinemachineShake.Instance.ShakeCamera(8, 0.1f);
+        SoundManager.Instance.PlaySound(SFXDash);
         starParticle.Play();
         trailRenderer.emitting = true;
         ghostFollow.DashUsedIndicator();

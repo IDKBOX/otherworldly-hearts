@@ -1398,7 +1398,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1423,7 +1423,7 @@ Transform:
   m_GameObject: {fileID: 528385658}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 192.4, y: 32.55, z: -10}
+  m_LocalPosition: {x: -6.588108, y: 4.62, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3077,6 +3077,38 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.2
+--- !u!1 &1168453216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1168453217}
+  m_Layer: 0
+  m_Name: CharacterSprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1168453217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168453216}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1405916770}
+  m_Father: {fileID: 1539247124344136738}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1238236226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3418,7 +3450,7 @@ GameObject:
   - component: {fileID: 1405916771}
   - component: {fileID: 1405916772}
   m_Layer: 0
-  m_Name: CharacterSprite
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3432,12 +3464,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405916769}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1539247124344136738}
+  m_Father: {fileID: 1168453217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1405916771
 SpriteRenderer:
@@ -10339,7 +10371,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1405916770}
+  - {fileID: 1168453217}
   - {fileID: 8655956393968457172}
   - {fileID: 6776233413756943222}
   - {fileID: 3607583716905639146}
@@ -10489,8 +10521,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0065000057, y: 0.036599994, z: 0}
-    m_Extent: {x: 0.7514, y: 0.5557, z: 0}
+    m_Center: {x: -0.0012499988, y: 0.0343, z: 0}
+    m_Extent: {x: 0.73934996, y: 0.54929996, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1
@@ -20281,6 +20313,7 @@ MonoBehaviour:
   isDashing: 0
   dashingPower: 24
   isDisabled: 0
+  characterSprite: {fileID: 1168453217}
   rb: {fileID: 2378315341556567377}
   groundCheck: {fileID: 8655956393968457172}
   groundLayer:

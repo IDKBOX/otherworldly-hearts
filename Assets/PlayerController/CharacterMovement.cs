@@ -39,6 +39,7 @@ public class CharacterMovement : MonoBehaviour
 
     [Header("Prerequisites")]
     public Transform characterSprite;
+    public Animator animator;
     public Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -227,6 +228,16 @@ public class CharacterMovement : MonoBehaviour
             {
                 ghostCompanion.SetActive(false);
             }
+        }
+
+        //animator
+        if (rb.velocity.x != 0 && IsGrounded())
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else if (rb.velocity.x == 0 || !IsGrounded())
+        {
+            animator.SetBool("isRunning", false);
         }
     }
 

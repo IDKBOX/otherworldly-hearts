@@ -182,6 +182,7 @@ MonoBehaviour:
   _ambientSource: {fileID: 7019392219415267701}
   normalAudioSnapshot: {fileID: 24500006, guid: b6443362b99be184494a51b939200ca6, type: 2}
   noMusicAudioSnapshot: {fileID: -7470050790072641369, guid: b6443362b99be184494a51b939200ca6, type: 2}
+  isLevelMusicPlaying: 0
 --- !u!1 &2725890469747081080
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,7 +353,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3072186414377902635, guid: b6443362b99be184494a51b939200ca6, type: 2}
-  m_audioClip: {fileID: 8300000, guid: ef1424a0617fa1944b63b06f6e68a86b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7f33d1399c663474492bc88699a3a3a7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

@@ -1,7 +1,8 @@
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -37,12 +38,14 @@ public class CharacterMovement : MonoBehaviour
     [HideInInspector] public bool isDisabled;
 
     [Header("Prerequisites")]
+    public Transform characterSprite;
     public Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
     [SerializeField] private TrailRenderer trailRenderer;
+    private bool hasLanded;
 
     public ParticleSystem moveDustParticle;
     bool moveDustPlaying;
@@ -67,9 +70,16 @@ public class CharacterMovement : MonoBehaviour
     //Player check point
     [HideInInspector] public Transform SpawnPoint;
 
+    // Player parent platform
+    private Transform _originalParent;
+
+    [Header("SFX")]
+    public AudioClip SFXDash;
+
     private IEnumerator Start()
     {
-        switch(PlayerPrefs.GetInt("StoryItemData", -1))
+        _originalParent = transform.parent;
+        switch (PlayerPrefs.GetInt("StoryItemData", -1))
         {
             case 0:
                 UnlockDoubleJump();
@@ -123,11 +133,22 @@ public class CharacterMovement : MonoBehaviour
                     moveDustPlaying = false;
                     moveDustParticle.Stop();
                 }
+
+                if (!hasLanded)
+                {
+                    hasLanded = true;
+
+                    Sequence landSquash = DOTween.Sequence();
+
+                    landSquash.Append(characterSprite.DOPunchScale(new Vector3(0.2f, -0.2f, 0), 0.05f, 10, 0))
+                        .Append(characterSprite.DOScale(Vector3.one, 0.01f));
+                }
             }
             else
             {
                 coyoteTimeCounter -= Time.deltaTime;
                 moveDustPlaying = false;
+                hasLanded = false;
                 moveDustParticle.Stop();
             }
 
@@ -146,16 +167,22 @@ public class CharacterMovement : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
+                Sequence jumpSquash = DOTween.Sequence();
+
+                jumpSquash.Append(characterSprite.DOScale(Vector3.one, 0.01f))
+                    .Append(characterSprite.DOPunchScale(new Vector3(-0.3f, 0.3f, 0), 0.3f, 10, 0));
+
                 jumpBufferCounter = 0f;
             }
             else if (!doubleJump && Input.GetButtonDown("Jump") && !IsWalled() && doubleJumpUnlocked)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                characterSprite.DOPunchScale(new Vector3(-0.3f, 0.3f, 0), 0.3f, 10, 0);
                 jumpBufferCounter = 0f;
 
                 doubleJump = true;
                 bootsLight.SetActive(false);
-                CinemachineShake.Instance.ShakeCamera(5, 0.1f);
+                CinemachineShake.Instance.ShakeCamera(3, 0.1f);
                 starParticle.Play();
             }
 
@@ -174,6 +201,11 @@ public class CharacterMovement : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && dashUnlocked && ghostCompanionUnlocked)
             {
+                if (gameObject.scene.name != "Base")
+                {
+                    ResetParent();
+                    SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetSceneByName("Base"));
+                }
                 StartCoroutine(Dash());
             }
 
@@ -318,6 +350,7 @@ public class CharacterMovement : MonoBehaviour
         {
             isWallJumping = true;
             rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
+            characterSprite.DOPunchScale(new Vector3(-0.4f, 0.4f, 0), 0.3f, 10, 0);
             wallJumpingCounter = 0f;
 
             if (transform.localScale.x != wallJumpingDirection)
@@ -345,9 +378,11 @@ public class CharacterMovement : MonoBehaviour
         rb.gravityScale = 0f;
         rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
         CinemachineShake.Instance.ShakeCamera(8, 0.1f);
+        SoundManager.Instance.PlaySound(SFXDash);
         starParticle.Play();
         trailRenderer.emitting = true;
         ghostFollow.DashUsedIndicator();
+        characterSprite.DOPunchScale(new Vector3(1f, -1f, 0), 0.3f, 10, 0);
 
         yield return new WaitForSeconds(dashingTime);
 
@@ -372,5 +407,18 @@ public class CharacterMovement : MonoBehaviour
     {
         dashUnlocked = true;
         ghostFollow.ActivateDashRefreshIndicator();
+    }
+
+
+    //moving platform code
+    public void SetParent(Transform newParent)
+    {
+        _originalParent = transform.parent;
+        transform.parent = newParent;
+    }
+
+    public void ResetParent()
+    {
+        transform.parent = null;
     }
 }

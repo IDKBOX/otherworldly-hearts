@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Melati
   m_EditorClassIdentifier: 
   characterName: Melati
-  defaultSprite: {fileID: 21300000, guid: 0127db418381f974c806bf8a6008f2e0, type: 3}
-  smileSprite: {fileID: 21300000, guid: 24fba2388a2b74b4e9feed5a14ac287d, type: 3}
-  sadSprite: {fileID: 21300000, guid: 2beb388e1edbfe64aa96f94a2e47a385, type: 3}
+  portraitImages:
+  - {fileID: 21300000, guid: 0127db418381f974c806bf8a6008f2e0, type: 3}
+  - {fileID: 21300000, guid: 24fba2388a2b74b4e9feed5a14ac287d, type: 3}
+  - {fileID: 21300000, guid: 2beb388e1edbfe64aa96f94a2e47a385, type: 3}
+  - {fileID: 21300000, guid: c282ce1b933fa7c4ea1ed8f96077b98f, type: 3}
   audioClips: []

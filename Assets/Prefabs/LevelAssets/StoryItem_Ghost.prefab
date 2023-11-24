@@ -558,7 +558,19 @@ MonoBehaviour:
   linkedSpiritGate: {fileID: 0}
   onComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2570807828489416331}
+        m_TargetAssemblyTypeName: GhostFound, Assembly-CSharp
+        m_MethodName: OpenSpiritGate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   UIAnimator: {fileID: 6155213852018203286}
   ItemFoundUI: {fileID: 422566196660663071}
   melatiAnimator: {fileID: 3517933061490461958}
@@ -756,7 +768,7 @@ Transform:
   m_GameObject: {fileID: 6383773077408709023}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.04, y: -0.1, z: -10}
+  m_LocalPosition: {x: 0.74, y: -0.79, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -785,7 +797,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 2.5
+    OrthographicSize: 4.5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -1091,7 +1103,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.78990173, y: 0.5440409}
+  m_Offset: {x: -0.4249115, y: 0.5440409}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1102,7 +1114,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.9809265, y: 3.144363}
+  m_Size: {x: 1.5513, y: 3.144363}
   m_EdgeRadius: 0
 --- !u!114 &3307963334203653539
 MonoBehaviour:

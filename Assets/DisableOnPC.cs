@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DisableOnPC : MonoBehaviour
 {
-#if UNITY_STANDALONE_WIN || UNITY_EDITOR
+#if UNITY_STANDALONE || UNITY_EDITOR
     void Start()
     {
         gameObject.SetActive(false);

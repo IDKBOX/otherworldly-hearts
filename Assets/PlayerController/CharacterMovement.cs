@@ -231,7 +231,7 @@ public class CharacterMovement : MonoBehaviour
         }
 
         //animator
-        if (rb.velocity.x != 0 && IsGrounded())
+        if (rb.velocity.x != 0 && IsGrounded() && horizontal != 0)
         {
             animator.SetBool("isRunning", true);
         }

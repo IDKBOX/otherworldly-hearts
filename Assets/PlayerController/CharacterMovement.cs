@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -77,6 +78,38 @@ public class CharacterMovement : MonoBehaviour
     [Header("SFX")]
     public AudioClip SFXDash;
 
+    //new input system
+    private PlayerControls playerControls;
+    private InputAction move;
+    private InputAction jump;
+    private InputAction dash;
+    private InputAction drop;
+
+    private void Awake()
+    {
+        playerControls = new PlayerControls();
+    }
+
+    private void OnEnable()
+    {
+        move = playerControls.Player.Move;
+        move.Enable();
+
+        dash = playerControls.Player.Dash;
+        dash.Enable();
+        dash.performed += Dash;
+
+        jump = playerControls.Player.Jump;
+        jump.Enable();
+    }
+
+    private void OnDisable()
+    {
+        move.Disable();
+        dash.Disable();
+        jump.Disable();
+    }
+
     private IEnumerator Start()
     {
         _originalParent = transform.parent;
@@ -108,7 +141,7 @@ public class CharacterMovement : MonoBehaviour
                 return;
             }
 
-            horizontal = Input.GetAxisRaw("Horizontal");
+            horizontal = move.ReadValue<Vector2>().x;
 
             if (IsGrounded())
             {
@@ -153,7 +186,7 @@ public class CharacterMovement : MonoBehaviour
                 moveDustParticle.Stop();
             }
 
-            if (Input.GetButtonDown("Jump"))
+            if (jump.triggered)
             {
                 jumpBufferCounter = jumpBufferTime;
             }
@@ -175,7 +208,7 @@ public class CharacterMovement : MonoBehaviour
 
                 jumpBufferCounter = 0f;
             }
-            else if (!doubleJump && Input.GetButtonDown("Jump") && !IsWalled() && doubleJumpUnlocked)
+            else if (!doubleJump && jump.triggered && !IsWalled() && doubleJumpUnlocked)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 characterSprite.DOPunchScale(new Vector3(-0.3f, 0.3f, 0), 0.3f, 10, 0);
@@ -187,7 +220,7 @@ public class CharacterMovement : MonoBehaviour
                 starParticle.Play();
             }
 
-            if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
+            if (jump.WasReleasedThisFrame() && rb.velocity.y > 0)
             {
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
 
@@ -199,16 +232,6 @@ public class CharacterMovement : MonoBehaviour
             WallSlide();
 
             WallJump();
-
-            if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && dashUnlocked && ghostCompanionUnlocked)
-            {
-                if (gameObject.scene.name != "Base")
-                {
-                    ResetParent();
-                    SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetSceneByName("Base"));
-                }
-                StartCoroutine(Dash());
-            }
 
             if (!isWallJumping)
             {
@@ -238,6 +261,19 @@ public class CharacterMovement : MonoBehaviour
         else if (rb.velocity.x == 0 || !IsGrounded())
         {
             animator.SetBool("isRunning", false);
+        }
+    }
+
+    private void Dash(InputAction.CallbackContext context)
+    {
+        if (canDash && dashUnlocked && ghostCompanionUnlocked)
+        {
+            if (gameObject.scene.name != "Base")
+            {
+                ResetParent();
+                SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetSceneByName("Base"));
+            }
+            StartCoroutine(DashCoroutine());
         }
     }
 
@@ -381,7 +417,7 @@ public class CharacterMovement : MonoBehaviour
         isWallJumping = false;
     }
 
-    private IEnumerator Dash()
+    private IEnumerator DashCoroutine()
     {
         canDash = false;
         isDashing = true;

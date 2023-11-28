@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 438f31e55d066974aa7ad6e03ef03b6f, type: 3}
-  m_Name: 002
+  m_Name: 002_after_level1
   m_EditorClassIdentifier: 
   isDescriptionDialogue: 0
   lines:
-  - Look over there!
-  - That door is glowing after you interacted with the altar
-  - "Let\u2019s check out that room. Maybe we can find something there"
+  - Hey look!
+  - "There\u2019s an altar up there"
+  - Maybe it can help you figure out about the ritual
+  - "Let\u2019s check it out"
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
-  emotion: 000000000000000000000000
+  emotion: 00000000000000000000000000000000

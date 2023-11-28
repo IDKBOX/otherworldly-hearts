@@ -35,6 +35,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float dashingPower = 24f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
+    [HideInInspector] public bool isInvincible;
 
     [HideInInspector] public bool isDisabled;
 
@@ -421,6 +422,7 @@ public class CharacterMovement : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
+        isInvincible = true;
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
@@ -437,7 +439,10 @@ public class CharacterMovement : MonoBehaviour
         rb.gravityScale = originalGravity;
         isDashing = false;
 
-        yield return new WaitForSeconds(dashingCooldown);
+        yield return new WaitForSeconds(0.5f);
+        isInvincible = false;
+
+        yield return new WaitForSeconds(dashingCooldown - 0.5f);
         canDash = true;
         ghostFollow.DashRefreshIndicator();
     }

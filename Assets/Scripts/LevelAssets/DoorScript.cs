@@ -74,6 +74,7 @@ public class DoorScript : MonoBehaviour
         {
             hasBeenTriggered = true;
             interactPromptPrefab.SetActive(false);
+            ShowInteractButton.Instance.DisableInteractButton();
 
             if (isLocked)
             {
@@ -92,6 +93,7 @@ public class DoorScript : MonoBehaviour
         {
             inTrigger = true;
             interactPromptPrefab.SetActive(true);
+            ShowInteractButton.Instance.EnableInteractButton();
         }
     }
 
@@ -103,6 +105,7 @@ public class DoorScript : MonoBehaviour
             interactPromptPrefab.SetActive(false);
             hasBeenTriggered = false;
             dialogueStarter.hasBeenTriggered = false;
+            ShowInteractButton.Instance.DisableInteractButton();
         }
     }
 

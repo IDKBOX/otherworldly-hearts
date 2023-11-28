@@ -757,7 +757,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &147745637
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1360,6 +1360,7 @@ GameObject:
   - component: {fileID: 184608043}
   - component: {fileID: 184608042}
   - component: {fileID: 184608046}
+  - component: {fileID: 184608047}
   m_Layer: 5
   m_Name: MobileCanvas
   m_TagString: Untagged
@@ -1462,6 +1463,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9171f0fc20634746ba97d55d7af58c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &184608047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184608041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2b1d0f06456d654e944f36137640382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactButton: {fileID: 147745636}
 --- !u!1 &236044793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,6 +1509,7 @@ MonoBehaviour:
   mainMenuConfirmOverlay: {fileID: 1827561688}
   settingsScreen: {fileID: 2051469849}
   controlsScreen: {fileID: 1323775443}
+  dialogueCanvas: {fileID: 63574385}
   normalAudioSnapshot: {fileID: 24500006, guid: b6443362b99be184494a51b939200ca6, type: 2}
   lowpassAudioSnapshot: {fileID: 7644709922124287134, guid: b6443362b99be184494a51b939200ca6, type: 2}
 --- !u!4 &236044795
@@ -1831,7 +1846,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1856,7 +1871,7 @@ Transform:
   m_GameObject: {fileID: 528385658}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05594015, y: -0.66883993, z: -10}
+  m_LocalPosition: {x: 24.62, y: -1.7799999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2518,7 +2533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10414,14 +10429,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.99135804, a: 0.09803922}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0fa56598779dd2844a326b59b1c6538d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3f39d5bf6a4b0414fa2234242f54ad75, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11746,8 +11761,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.026800036, y: 0.07275, z: 0}
-    m_Extent: {x: 1.1393, y: 0.56165004, z: 0}
+    m_Center: {x: 0.032700002, y: 0.077350006, z: 0}
+    m_Extent: {x: 1.1348, y: 0.56575, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1
@@ -21537,6 +21552,7 @@ MonoBehaviour:
   jumpForce: 16
   isDashing: 0
   dashingPower: 24
+  isInvincible: 0
   isDisabled: 0
   characterSprite: {fileID: 1168453217}
   animator: {fileID: 1405916772}

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438f31e55d066974aa7ad6e03ef03b6f, type: 3}
+  m_Name: 002
+  m_EditorClassIdentifier: 
+  isDescriptionDialogue: 1
+  lines:
+  - Yes you!
+  - "It\u2019s been a while since I\u2019ve seen one of you"
+  - "You shouldn\u2019t be here"
+  - This place is dangerous for humans, so..
+  - "I\u2019ll be your guide!"
+  - For starters, you can move around with [A] and [D]. You can also press [Space]
+    if you want to jump
+  - "Pretty simple right? Alright I\u2019ll see you in the next room!"
+  characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
+  emotion: 

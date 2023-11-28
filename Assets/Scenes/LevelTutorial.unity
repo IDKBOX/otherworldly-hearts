@@ -150,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 131351723}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.67, y: -0.27, z: -9.194454}
+  m_LocalPosition: {x: 0.33, y: 0.23, z: -9.194454}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 2.07
+    OrthographicSize: 3
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -16526,7 +16526,7 @@ Transform:
   m_GameObject: {fileID: 1259651877}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.25, y: -0.27, z: -9.194454}
+  m_LocalPosition: {x: 0.06, y: -0.05, z: -9.194454}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16612,7 +16612,7 @@ Transform:
   m_GameObject: {fileID: 1292297642}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.09, y: -4.49, z: 0}
+  m_LocalPosition: {x: -3.31, y: -4.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17406,8 +17406,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 14.076149, y: -6.741699, z: 0}
-    m_Extent: {x: 30.77755, y: 25.362, z: 0}
+    m_Center: {x: 14.0858, y: -6.73145, z: 0}
+    m_Extent: {x: 30.7765, y: 25.357151, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

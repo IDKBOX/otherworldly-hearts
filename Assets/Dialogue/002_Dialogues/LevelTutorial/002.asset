@@ -20,7 +20,7 @@ MonoBehaviour:
   - This place is dangerous for humans, so..
   - "I\u2019ll be your guide!"
   - For starters, you can move around with [A] and [D]. You can also press [Space]
-    if you want to jump
+    to jump
   - "Pretty simple right? Alright I\u2019ll see you in the next room!"
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
   emotion: 

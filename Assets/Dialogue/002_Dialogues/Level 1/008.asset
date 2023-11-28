@@ -16,25 +16,29 @@ MonoBehaviour:
   lines:
   - "I\u2019ve been expecting you."
   - "What\u2019s a human like you doing in this cursed place?"
-  - Investigate paranormal activities? HAH
+  - You're investigating paranormal activities?
   - "Well as you can see I\u2019m the ghost of this house."
   - Usually when you humans enter this house, they want something from me.
-  - What is it that you want this time? Supernatural strength? Unmatched wealth?
+  - What is it that you want this time?
+  - Supernatural strength?
+  - Unmatched wealth?
   - Huh?
   - What?!
-  - ....?
-  - You.. want to help me?
-  - Let me get this straight... you want to help me get free from this house?
+  - ........?
+  - You.. want to help me..?
+  - Let me get this straight...
+  - You want to help me get free from this house?
   - .....
   - "You\u2019re not joking are you?"
-  - "Alright alright, I\u2019ll trust you."
-  - "I\u2019ll help you navigate through this house."
-  - "I can\u2019t remember anything about myself or why I\u2019m stuck here."
-  - "There\u2019s a curse that\u2019s binding me here, and I need to know who cursed
-    me."
-  - I need your help human, I need to learn about myself if I want to escape from
-    this place.
-  - "Traversing forward might be difficult, I\u2019ll lend you some of my powers\u201D"
-  - "Now, what are we waiting for? Let\u2019s go human!\u201D"
+  - "Alright alright, I\u2019ll trust you..."
+  - "Human, I\u2019ll help you navigate through this house"
+  - "I can\u2019t remember anything about myself or why I\u2019m stuck here..."
+  - "There seem to be a curse that\u2019s binding me here..."
+  - And I need to know who cursed me
+  - I need your help human...
+  - I need to learn about myself if I want to escape from this place...
+  - "Traversing forward might be difficult, so I\u2019ll lend you some of my powers."
+  - Now, what are we waiting for?
+  - "Let\u2019s go human!"
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
-  emotion: 0300000003000000030000000300000003000000030000000000000000000000000000000000000000000000020000000200000002000000000000000000000000000000000000000000000001000000
+  emotion: 0300000003000000030000000300000003000000030000000300000003000000000000000000000000000000000000000000000002000000020000000200000000000000000000000000000000000000000000000100000001000000010000000100000001000000

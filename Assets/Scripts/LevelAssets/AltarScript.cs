@@ -64,6 +64,7 @@ public class AltarScript : MonoBehaviour
         {
             hasBeenTriggered = true;
             Destroy(interactPromptPrefab);
+            ShowInteractButton.Instance.DisableInteractButton();
             altarEffect.SetTrigger("Diminish");
             AltarInteract();
         }
@@ -115,6 +116,7 @@ public class AltarScript : MonoBehaviour
             {
                 interactPromptPrefab.SetActive(true);
             }
+            ShowInteractButton.Instance.EnableInteractButton();
         }
     }
 
@@ -129,6 +131,7 @@ public class AltarScript : MonoBehaviour
             {
                 interactPromptPrefab.SetActive(false);
             }
+            ShowInteractButton.Instance.DisableInteractButton();
         }
     }
 

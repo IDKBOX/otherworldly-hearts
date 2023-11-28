@@ -10415,7 +10415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.99135804, a: 0.09803922}
+  m_Color: {r: 0, g: 1, b: 0.99135804, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11747,8 +11747,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.023800015, y: 0.072349995, z: 0}
-    m_Extent: {x: 1.1424, y: 0.56295, z: 0}
+    m_Center: {x: 0.029000044, y: 0.06364998, z: 0}
+    m_Extent: {x: 1.1494, y: 0.56845, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1

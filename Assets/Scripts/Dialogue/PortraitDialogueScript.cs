@@ -22,7 +22,15 @@ public class PortraitDialogueScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !dialogueData.isDescriptionDialogue && Time.timeScale != 0)
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ContinueDialogue();
+        }
+    }
+
+    public void ContinueDialogue()
+    {
+        if (!dialogueData.isDescriptionDialogue && Time.timeScale != 0)
         {
             if (textComponent.text == dialogueData.lines[index])
             {

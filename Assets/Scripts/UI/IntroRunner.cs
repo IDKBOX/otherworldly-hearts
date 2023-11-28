@@ -27,18 +27,23 @@ public class IntroRunner : MonoBehaviour
     //dialogue code
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && allowSkipDialogue)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (textComponent.text == dialogueText[index])
-            {
-                NextLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                textComponent.text = dialogueText[index];
-                dialogueTriangle.SetActive(true);
-            }
+            ContinueDialogue();
+        }
+    }
+
+    public void ContinueDialogue()
+    {
+        if (textComponent.text == dialogueText[index] && allowSkipDialogue)
+        {
+            NextLine();
+        }
+        else
+        {
+            StopAllCoroutines();
+            textComponent.text = dialogueText[index];
+            dialogueTriangle.SetActive(true);
         }
     }
 

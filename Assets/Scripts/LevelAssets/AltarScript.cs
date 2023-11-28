@@ -23,6 +23,11 @@ public class AltarScript : MonoBehaviour
     public Animator altarEffect;
     public SpriteRenderer altarAnimSprite;
 
+    [Header("Dialog Triger")]
+    public GameObject afterLevel1;
+    public GameObject afterLevel2;
+    public GameObject afterLevel3;
+
     private bool inTrigger;
     private bool hasBeenTriggered;
     
@@ -31,6 +36,10 @@ public class AltarScript : MonoBehaviour
         altarEffect = GetComponentInChildren<Animator>();
     }
 
+    private void Start()
+    {
+        AltarFirstDialog();
+    }
     private void Update()
     {
         if (inTrigger && !hasBeenTriggered && Input.GetKeyDown(KeyCode.E))
@@ -58,6 +67,22 @@ public class AltarScript : MonoBehaviour
             case 2:
                 TwoItemsDialogue.StartDialogue();
                 altarAnimSprite.sprite = diarySprite;
+                break;
+        }
+    }
+
+    private void AltarFirstDialog()
+    {
+        switch (ItemDisplay.itemsToShow)
+        {
+            default:
+                afterLevel1.SetActive(true);
+                break;
+            case 1:
+                afterLevel2.SetActive(true);
+                break;
+            case 2:
+                afterLevel3.SetActive(true);
                 break;
         }
     }

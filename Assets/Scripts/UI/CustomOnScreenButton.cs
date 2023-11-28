@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.OnScreen;
 using UnityEngine.InputSystem.Layouts;
+using DG.Tweening;
 
 public class CustomOnScreenButton : OnScreenControl, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -12,13 +13,11 @@ public class CustomOnScreenButton : OnScreenControl, IPointerDownHandler, IPoint
     public void OnPointerUp(PointerEventData eventData)
     {
         SendValueToControl(0.0f);
-        isDown = false;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         SendValueToControl(1.0f);
-        isDown = true;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -27,6 +26,12 @@ public class CustomOnScreenButton : OnScreenControl, IPointerDownHandler, IPoint
         {
             SendValueToControl(1.0f);
         }
+
+        if (!isDown)
+        {
+            isDown = true;
+            transform.DOScale(new Vector3(1.1f, 1.1f, 1.1f), 0.1f);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -34,6 +39,12 @@ public class CustomOnScreenButton : OnScreenControl, IPointerDownHandler, IPoint
         if (!holdOnExit)
         {
             SendValueToControl(0.0f);
+        }
+
+        if (isDown)
+        {
+            isDown = false;
+            transform.DOScale(Vector3.one, 0.1f);
         }
     }
 

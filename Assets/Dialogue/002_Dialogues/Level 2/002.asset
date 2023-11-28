@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 438f31e55d066974aa7ad6e03ef03b6f, type: 3}
-  m_Name: 001_after_level2
+  m_Name: 002
   m_EditorClassIdentifier: 
   isDescriptionDialogue: 0
   lines:
-  - Hey, we found the first item
-  - Lets put it on the altar and see what happens
+  - Look over there!
+  - That must be the first item
+  - I feel a strong energy coming from it
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
-  emotion: 0100000001000000
+  emotion: 000000000000000000000000

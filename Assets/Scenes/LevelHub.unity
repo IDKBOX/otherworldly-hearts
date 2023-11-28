@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 128357083}
   - component: {fileID: 128357082}
   m_Layer: 0
-  m_Name: 002_DotDotDot
+  m_Name: 002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData:
-  - {fileID: 11400000, guid: 38b2566e794ab1f48a7232ae42f8d44f, type: 2}
+  - {fileID: 11400000, guid: 5665bee42acaff3438c16c1f9ea946d8, type: 2}
   destroyOnComplete: 1
   onDialogueTriggered:
     m_PersistentCalls:
@@ -545,7 +545,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 501237879}
+      - m_Target: {fileID: 1100192932}
         m_TargetAssemblyTypeName: DialogueStarter, Assembly-CSharp
         m_MethodName: StartDialogue
         m_Mode: 1
@@ -6466,8 +6466,8 @@ MonoBehaviour:
   photoSprite: {fileID: 21300000, guid: fc838ff5d1048db4db534a8bf965362f, type: 3}
   diarySprite: {fileID: 21300000, guid: 9fc6fc910ae7fb04cacaf422eab1a961, type: 3}
   NoItemsDialogue: {fileID: 1293197309}
-  OneItemDialogue: {fileID: 1209170095}
-  TwoItemsDialogue: {fileID: 492176783}
+  OneItemDialogue: {fileID: 818920545}
+  TwoItemsDialogue: {fileID: 149488377}
   level2Door: {fileID: 1244762829}
   level3Door: {fileID: 41140611}
   interactPromptPrefab: {fileID: 1220296158}
@@ -6507,6 +6507,7 @@ Transform:
   m_Children:
   - {fileID: 818920543}
   - {fileID: 128357081}
+  - {fileID: 1100192929}
   - {fileID: 501237877}
   m_Father: {fileID: 50075456}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6688,8 +6689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData:
-  - {fileID: 11400000, guid: 99271baddf16e734f8b8ca972401fffb, type: 2}
-  - {fileID: 11400000, guid: 5dbccf46b4afb9349bc20dcbfb90ede6, type: 2}
+  - {fileID: 11400000, guid: fc6de5d0929149a498cab3f56fde7b03, type: 2}
   destroyOnComplete: 1
   onDialogueTriggered:
     m_PersistentCalls:
@@ -14224,7 +14224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData:
-  - {fileID: 11400000, guid: b633285dbb2d5144fb724ff37dd4dbf7, type: 2}
+  - {fileID: 11400000, guid: 8d42c0346de1139499858186a0103365, type: 2}
   destroyOnComplete: 1
   onDialogueTriggered:
     m_PersistentCalls:
@@ -24378,8 +24378,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.2445502, y: -5.8786, z: 0}
-    m_Extent: {x: 8.153851, y: 11.5533, z: 0}
+    m_Center: {x: 1.24565, y: -5.88125, z: 0}
+    m_Extent: {x: 8.16515, y: 11.556049, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -24466,6 +24466,106 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bedf3f1656c71944e9e9f1878151f838, type: 3}
+--- !u!1 &1100192928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1100192929}
+  - component: {fileID: 1100192932}
+  - component: {fileID: 1100192931}
+  - component: {fileID: 1100192930}
+  m_Layer: 0
+  m_Name: 003
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1100192929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100192928}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 490757900}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1100192930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100192928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca7f4ac672043c4b891e352d60eba78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1100192931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100192928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a7fe58e0f0f6847bba99f798ef40e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previousCamera: {fileID: 301704293}
+  focusCamera: {fileID: 878919652}
+  onFocusStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onFocusEnded:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1100192932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100192928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc854cb3f14856947bf680935acedaa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - {fileID: 11400000, guid: a284ca977e9b7f84ba6a93e5b0082e8d, type: 2}
+  destroyOnComplete: 1
+  onDialogueTriggered:
+    m_PersistentCalls:
+      m_Calls: []
+  onDialogueComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 501237879}
+        m_TargetAssemblyTypeName: DialogueStarter, Assembly-CSharp
+        m_MethodName: StartDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  hasBeenTriggered: 0
 --- !u!1001 &1100755569
 PrefabInstance:
   m_ObjectHideFlags: 0

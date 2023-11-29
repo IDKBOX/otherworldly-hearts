@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438f31e55d066974aa7ad6e03ef03b6f, type: 3}
+  m_Name: 006
+  m_EditorClassIdentifier: 
+  isDescriptionDialogue: 1
+  lines:
+  - 21/12/2004
+  - "My dear child, I\u2019m afraid i don\u2019t have much time left..."
+  - "I\u2019ve been searching for your favorite flower for so long..."
+  - "But now that I've found it it\u2019s out of my reach..."
+  - "My child... if you\u2019re reading this... i\u2019m sorry..."
+  - "I\u2019m such a selfish father... I can\u2019t s-ve y[]u w=-n y=@\u2019[]e a...ive...
+    -[]_ I c[]n\u2019t s-...d _...- b@...- =-...n _o-\u2019...@ ...- ...-=s st...[]te......"
+  - (The remaining part of the diary is unintelligible)
+  characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
+  emotion: 

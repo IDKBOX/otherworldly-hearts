@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class DoorScript : MonoBehaviour
 {
@@ -17,10 +18,26 @@ public class DoorScript : MonoBehaviour
     public GameObject interactPromptPrefab;
     private DialogueStarter dialogueStarter;
 
+    //new input system
+    private PlayerControls playerControls;
+    private InputAction interact;
+
     private void Awake()
     {
         dialogueStarter = GetComponent<DialogueStarter>();
         animator = GetComponent<Animator>();
+        playerControls = new PlayerControls();
+    }
+
+    private void OnEnable()
+    {
+        interact = playerControls.Player.Interact;
+        interact.Enable();
+    }
+
+    private void OnDisable()
+    {
+        interact.Disable();
     }
 
     private void Start()
@@ -53,10 +70,11 @@ public class DoorScript : MonoBehaviour
 
     private void Update()
     {
-        if (inTrigger && !hasBeenTriggered && Input.GetKeyDown(KeyCode.E))
+        if (inTrigger && !hasBeenTriggered && interact.triggered)
         {
             hasBeenTriggered = true;
             interactPromptPrefab.SetActive(false);
+            ShowInteractButton.Instance.DisableInteractButton();
 
             if (isLocked)
             {
@@ -75,6 +93,7 @@ public class DoorScript : MonoBehaviour
         {
             inTrigger = true;
             interactPromptPrefab.SetActive(true);
+            ShowInteractButton.Instance.EnableInteractButton();
         }
     }
 
@@ -86,6 +105,7 @@ public class DoorScript : MonoBehaviour
             interactPromptPrefab.SetActive(false);
             hasBeenTriggered = false;
             dialogueStarter.hasBeenTriggered = false;
+            ShowInteractButton.Instance.DisableInteractButton();
         }
     }
 

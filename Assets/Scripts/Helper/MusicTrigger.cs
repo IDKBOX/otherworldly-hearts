@@ -38,8 +38,8 @@ public class MusicTrigger : MonoBehaviour
 
     private IEnumerator FadeOutMusic()
     {
-        SoundManager.Instance.FadeOut();
-        yield return new WaitForSecondsRealtime(0.5f);
+        SoundManager.Instance.FadeOutLong();
+        yield return new WaitForSecondsRealtime(2f);
         SoundManager.Instance._musicSource.Stop();
         SoundManager.Instance.isLevelMusicPlaying = false;
     }

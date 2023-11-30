@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -13,6 +14,26 @@ public class DialogueTrigger : MonoBehaviour
 
     [Header("Interaction Prerequisite (Optional)")]
     public GameObject interactPromptPrefab;
+
+    //new input system
+    private PlayerControls playerControls;
+    private InputAction interact;
+
+    private void Awake()
+    {
+        playerControls = new PlayerControls();
+    }
+
+    private void OnEnable()
+    {
+        interact = playerControls.Player.Interact;
+        interact.Enable();
+    }
+
+    private void OnDisable()
+    {
+        interact.Disable();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -38,7 +59,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (inTrigger && interactionNeeded && !hasBeenTriggered && Input.GetKeyDown(KeyCode.E))
+        if (inTrigger && interactionNeeded && !hasBeenTriggered && interact.triggered)
         {
             if (interactPromptPrefab != null)
             {

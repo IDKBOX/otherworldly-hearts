@@ -11,6 +11,7 @@ public class PauseManager : MonoBehaviour
     [HideInInspector] public static bool isPaused;
     public GameObject settingsScreen;
     public GameObject controlsScreen;
+    public GameObject dialogueCanvas;
 
     //audio lowpass filter
     public AudioMixerSnapshot normalAudioSnapshot;
@@ -92,6 +93,7 @@ public class PauseManager : MonoBehaviour
         StartCoroutine(StartTransition());
         SoundManager.Instance.FadeOut();
         SoundManager.Instance.isLevelMusicPlaying = false;
+        Destroy(dialogueCanvas);
     }
 
     IEnumerator StartTransition()

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AltarScript : MonoBehaviour
 {
@@ -23,20 +24,47 @@ public class AltarScript : MonoBehaviour
     public Animator altarEffect;
     public SpriteRenderer altarAnimSprite;
 
+    [Header("Dialog Triger")]
+    public GameObject afterLevel1;
+    public GameObject afterLevel2;
+    public GameObject afterLevel3;
+
     private bool inTrigger;
     private bool hasBeenTriggered;
-    
+
+    //new input system
+    private PlayerControls playerControls;
+    private InputAction interact;
+
+
     private void Awake()
     {
         altarEffect = GetComponentInChildren<Animator>();
+        playerControls = new PlayerControls();
     }
 
+    private void OnEnable()
+    {
+        interact = playerControls.Player.Interact;
+        interact.Enable();
+    }
+
+    private void OnDisable()
+    {
+        interact.Disable();
+    }
+
+    private void Start()
+    {
+        AltarFirstDialog();
+    }
     private void Update()
     {
-        if (inTrigger && !hasBeenTriggered && Input.GetKeyDown(KeyCode.E))
+        if (inTrigger && !hasBeenTriggered && interact.triggered)
         {
             hasBeenTriggered = true;
             Destroy(interactPromptPrefab);
+            ShowInteractButton.Instance.DisableInteractButton();
             altarEffect.SetTrigger("Diminish");
             AltarInteract();
         }
@@ -62,6 +90,22 @@ public class AltarScript : MonoBehaviour
         }
     }
 
+    private void AltarFirstDialog()
+    {
+        switch (ItemDisplay.itemsToShow)
+        {
+            default:
+                afterLevel1.SetActive(true);
+                break;
+            case 1:
+                afterLevel2.SetActive(true);
+                break;
+            case 2:
+                afterLevel3.SetActive(true);
+                break;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -72,6 +116,7 @@ public class AltarScript : MonoBehaviour
             {
                 interactPromptPrefab.SetActive(true);
             }
+            ShowInteractButton.Instance.EnableInteractButton();
         }
     }
 
@@ -86,6 +131,7 @@ public class AltarScript : MonoBehaviour
             {
                 interactPromptPrefab.SetActive(false);
             }
+            ShowInteractButton.Instance.DisableInteractButton();
         }
     }
 

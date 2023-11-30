@@ -1,12 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 
 public class PortraitDialogueScript : MonoBehaviour
 {
     private TextMeshProUGUI textComponent;
-    public Image characterImage;
+    public Animator characterAnimator;
     [HideInInspector] public ScriptableDialogue dialogueData;
 
     public float textSpeed = 0.05f;
@@ -22,7 +21,15 @@ public class PortraitDialogueScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !dialogueData.isDescriptionDialogue && Time.timeScale != 0)
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ContinueDialogue();
+        }
+    }
+
+    public void ContinueDialogue()
+    {
+        if (!dialogueData.isDescriptionDialogue && Time.timeScale != 0)
         {
             if (textComponent.text == dialogueData.lines[index])
             {
@@ -75,13 +82,13 @@ public class PortraitDialogueScript : MonoBehaviour
 
     void EmotionChecker(int emotionIndex)
     {
-        if (emotionIndex > 0 && emotionIndex < dialogueData.characterData.portraitImages.Length)
+        if (emotionIndex > 0 && emotionIndex < dialogueData.characterData.animations.Length)
         {
-            characterImage.sprite = dialogueData.characterData.portraitImages[emotionIndex];
+            characterAnimator.Play(dialogueData.characterData.animations[emotionIndex].name);
         }
         else
         {
-            characterImage.sprite = dialogueData.characterData.portraitImages[0];
+            characterAnimator.Play(dialogueData.characterData.animations[0].name);
         }
        
     }

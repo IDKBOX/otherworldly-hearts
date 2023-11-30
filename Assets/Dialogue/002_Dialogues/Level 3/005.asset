@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438f31e55d066974aa7ad6e03ef03b6f, type: 3}
+  m_Name: 005
+  m_EditorClassIdentifier: 
+  isDescriptionDialogue: 1
+  lines:
+  - 18/11/2004
+  - "My dear child, It seems like I\u2019ve gotten very ill"
+  - "I\u2019m sorry for being such a horrible father..."
+  - I thought by bringing you back, it will finally give me another chance to redeem
+    myself...
+  - "But alas... i\u2019m succumbing to the same disease that you had..."
+  - "My dear child... \LI\u2019m sorry... I couldn\u2019t always be there for you"
+  - "I couldn\u2019t be a proper father. I couldn\u2019t stand seeing you dying...\LI
+    have to send you back to the spirit realm now... Otherwise you\u2019ll be stuck
+    here forever..."
+  characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
+  emotion: 

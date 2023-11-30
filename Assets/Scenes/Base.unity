@@ -2507,7 +2507,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703019336}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2c732d36bd84c5548be6e77a05f2f223, type: 2}
   m_CullingMode: 0
@@ -2533,7 +2533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
+  m_Color: {r: 0.79607844, g: 0.79607844, b: 0.79607844, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3566,7 +3566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1088367962
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10549,7 +10549,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1869310686
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10623,7 +10623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d9465c847d44849b373c4510d2cf8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterImage: {fileID: 703019339}
+  characterAnimator: {fileID: 703019338}
   dialogueData: {fileID: 0}
   textSpeed: 0.05
   dialogueSound: {fileID: 8300000, guid: 84df00189eec4f24db596b024ea43ffc, type: 3}
@@ -11761,8 +11761,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.032700002, y: 0.077350006, z: 0}
-    m_Extent: {x: 1.1348, y: 0.56575, z: 0}
+    m_Center: {x: 0.039350033, y: 0.06219998, z: 0}
+    m_Extent: {x: 1.14195, y: 0.5674, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1

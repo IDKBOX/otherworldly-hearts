@@ -13,9 +13,19 @@ MonoBehaviour:
   m_Name: Melati
   m_EditorClassIdentifier: 
   characterName: Melati
-  portraitImages:
-  - {fileID: 21300000, guid: 0127db418381f974c806bf8a6008f2e0, type: 3}
-  - {fileID: 21300000, guid: 24fba2388a2b74b4e9feed5a14ac287d, type: 3}
-  - {fileID: 21300000, guid: 2beb388e1edbfe64aa96f94a2e47a385, type: 3}
-  - {fileID: 21300000, guid: c282ce1b933fa7c4ea1ed8f96077b98f, type: 3}
+  animations:
+  - {fileID: 7400000, guid: 307fd638468b4fb4db3dbea4c2deb01c, type: 2}
+  - {fileID: 7400000, guid: cc1ca1c9ca646864e80256e0505d7d0f, type: 2}
+  - {fileID: 7400000, guid: 3de40feaa18f32e4eabfc0b31ab19457, type: 2}
+  - {fileID: 7400000, guid: 42e62637db21b47439d66a7da765b6a1, type: 2}
+  - {fileID: 7400000, guid: 4506072d89174c24ca7a828aae292889, type: 2}
+  - {fileID: 7400000, guid: a25b5cb06ae05074bab316ae9b29abd3, type: 2}
+  - {fileID: 7400000, guid: e065f4ebf9e93d6468f71267a811089c, type: 2}
+  - {fileID: 7400000, guid: 755db56e90dba704c9d608b31997a8b9, type: 2}
+  - {fileID: 7400000, guid: 3e0afc395c4f79f4f95bb9e0db9b1733, type: 2}
+  - {fileID: 7400000, guid: 7a30439057949dd4f8da80d9fba915b8, type: 2}
+  - {fileID: 7400000, guid: f602d4b8b42bcef4d8b152dcb58ed733, type: 2}
+  - {fileID: 7400000, guid: f29f054bdbb96e449a95693bca3c9261, type: 2}
+  - {fileID: 7400000, guid: fc6f64c4ec054d94b854ce84adf55ca9, type: 2}
+  - {fileID: 7400000, guid: fcfeff933f0a40b4eae691d9704a5c8b, type: 2}
   audioClips: []

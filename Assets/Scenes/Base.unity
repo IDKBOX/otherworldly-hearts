@@ -11552,9 +11552,9 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 236044794}
-    - target: {fileID: 8115419236927760464, guid: 97ab6efddb57d4a4fa264501d254eb18, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 631.2782
+    - target: {fileID: 4222316643869437541, guid: 97ab6efddb57d4a4fa264501d254eb18, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HideControls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11761,8 +11761,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.03065002, y: 0.06725001, z: 0}
-    m_Extent: {x: 1.13615, y: 0.56995, z: 0}
+    m_Center: {x: 0.035699964, y: 0.068299994, z: 0}
+    m_Extent: {x: 1.1395, y: 0.5663, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1

@@ -175,6 +175,7 @@ MonoBehaviour:
   player: {fileID: 1539247124344136738}
   moveSpeed: 7.5
   ghostLight: {fileID: 587561460}
+  ghostSprite: {fileID: 390262028}
 --- !u!114 &61142676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11761,8 +11762,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.025900006, y: 0.070500016, z: 0}
-    m_Extent: {x: 1.142, y: 0.5722, z: 0}
+    m_Center: {x: 0.025299966, y: 0.078300014, z: 0}
+    m_Extent: {x: 1.1413, y: 0.5651, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1
@@ -21577,7 +21578,14 @@ MonoBehaviour:
   doubleJumpUnlocked: 1
   dashUnlocked: 1
   SpawnPoint: {fileID: 0}
+  SFXRun: {fileID: 8300000, guid: 2f8023215b843ac4eadbe39b55a02d21, type: 3}
+  SFXLand: {fileID: 8300000, guid: 585831afc68c69d44898ee0ef2e5249b, type: 3}
+  SFXJump: {fileID: 8300000, guid: 07697469567e8ab4db8b372ee66751fb, type: 3}
+  SFXDoubleJump: {fileID: 8300000, guid: 61faac8f11e826f479a2735fbf42a973, type: 3}
+  SFXDoubleJumpRecharge: {fileID: 8300000, guid: 1614059b36ccec8459462a1446dda5ab, type: 3}
   SFXDash: {fileID: 8300000, guid: 9e9a6ec4f5b1b094db151c32b94e25ae, type: 3}
+  SFXDashRecharge: {fileID: 8300000, guid: 3392f4e7aad06284baaf2b7eac6fee79, type: 3}
+  SFXWallSlide: {fileID: 8300000, guid: 9040b8d52b929d84996992d5156307c1, type: 3}
 --- !u!114 &7350594851653706833
 MonoBehaviour:
   m_ObjectHideFlags: 0

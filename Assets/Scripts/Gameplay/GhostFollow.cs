@@ -7,6 +7,7 @@ public class GhostFollow : MonoBehaviour
     public Transform player;
     public float moveSpeed;
     public GameObject ghostLight;
+    public GameObject ghostSprite;
 
     private ParticleSystem starParticle;
 
@@ -33,7 +34,7 @@ public class GhostFollow : MonoBehaviour
     {
         ghostLight.SetActive(true);
         starParticle.Play();
-        transform.DOPunchScale(new Vector3(1.5f * transform.localScale.x, 1.5f, 1.5f), 0.5f);
+        ghostSprite.transform.DOPunchScale(new Vector3(1.5f * transform.localScale.x, 1.5f, 1.5f), 0.5f);
     }
 
     public void DashRefreshIndicator()
@@ -41,7 +42,7 @@ public class GhostFollow : MonoBehaviour
         ghostLight.SetActive(true);
         starParticle.Play();
         moveSpeed /= 1.5f;
-        transform.DOPunchScale(new Vector3(1.5f * transform.localScale.x, 1.5f, 1.5f), 0.5f);
+        ghostSprite.transform.DOPunchScale(new Vector3(1.5f * transform.localScale.x, 1.5f, 1.5f), 0.5f);
     }
 
     public void DashUsedIndicator()

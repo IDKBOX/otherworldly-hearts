@@ -5,7 +5,7 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
 
-    public AudioSource _musicSource, _effectSource, _overlapEffectSource, _ambientSource;
+    public AudioSource _musicSource, _effectSource, _overlapEffectSource, _overlapEffectSource2, _ambientSource, _ambientSource2;
 
     //audio fade snapshots
     public AudioMixerSnapshot normalAudioSnapshot;
@@ -55,6 +55,18 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public void PlayOverlappingSound2(AudioClip clip)
+    {
+        if (clip != null && !_overlapEffectSource2.isPlaying)
+        {
+            _overlapEffectSource2.PlayOneShot(clip);
+        }
+        else
+        {
+            Debug.LogWarning("No Audio Clip!");
+        }
+    }
+
     public void PlayMusic(AudioClip _clip)
     {
         if (_clip != null)
@@ -80,6 +92,8 @@ public class SoundManager : MonoBehaviour
         _effectSource.volume = value;
         _overlapEffectSource.volume = value;
         _ambientSource.volume = value;
+        _overlapEffectSource2.volume = value;
+        _ambientSource2.volume = value;
         PlayerPrefs.SetFloat("SFXVolume", value);
     }
 

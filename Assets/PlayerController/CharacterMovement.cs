@@ -77,7 +77,14 @@ public class CharacterMovement : MonoBehaviour
     private Transform _originalParent;
 
     [Header("SFX")]
+    public AudioClip SFXRun;
+    public AudioClip SFXLand;
+    public AudioClip SFXJump;
+    public AudioClip SFXDoubleJump;
+    public AudioClip SFXDoubleJumpRecharge;
     public AudioClip SFXDash;
+    public AudioClip SFXDashRecharge;
+    public AudioClip SFXWallSlide;
 
     //new input system
     private PlayerControls playerControls;
@@ -151,7 +158,11 @@ public class CharacterMovement : MonoBehaviour
 
                 if (doubleJumpUnlocked)
                 {
-                    bootsLight.SetActive(true);
+                    if (!bootsLight.activeSelf)
+                    {
+                        bootsLight.SetActive(true);
+                        SoundManager.Instance.PlaySound(SFXDoubleJumpRecharge);
+                    }
                 }
                 else
                 {
@@ -172,6 +183,7 @@ public class CharacterMovement : MonoBehaviour
                 if (!hasLanded)
                 {
                     hasLanded = true;
+                    SoundManager.Instance.PlaySound(SFXLand);
 
                     Sequence landSquash = DOTween.Sequence();
 
@@ -208,11 +220,13 @@ public class CharacterMovement : MonoBehaviour
                     .Append(characterSprite.DOPunchScale(new Vector3(-0.3f, 0.3f, 0), 0.3f, 10, 0));
 
                 jumpBufferCounter = 0f;
+                SoundManager.Instance.PlaySound(SFXJump);
             }
             else if (!doubleJump && jump.triggered && !IsWalled() && doubleJumpUnlocked)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 characterSprite.DOPunchScale(new Vector3(-0.3f, 0.3f, 0), 0.3f, 10, 0);
+                SoundManager.Instance.PlaySound(SFXDoubleJump);
                 jumpBufferCounter = 0f;
 
                 doubleJump = true;
@@ -255,9 +269,10 @@ public class CharacterMovement : MonoBehaviour
         }
 
         //animator
-        if (rb.velocity.x > 0.1 || rb.velocity.x < -0.1 && IsGrounded() && horizontal != 0)
+        if ((rb.velocity.x > 0.1 || rb.velocity.x < -0.1) && IsGrounded() && horizontal != 0)
         {
             animator.SetBool("isRunning", true);
+            SoundManager.Instance.PlayOverlappingSound(SFXRun);
         }
         else
         {
@@ -364,6 +379,7 @@ public class CharacterMovement : MonoBehaviour
             {
                 wallDustPlaying = true;
                 wallDustParticle.Play();
+                SoundManager.Instance.PlayOverlappingSound2(SFXWallSlide);
             }
             
         }
@@ -399,6 +415,7 @@ public class CharacterMovement : MonoBehaviour
             isWallJumping = true;
             rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
             characterSprite.DOPunchScale(new Vector3(-0.4f, 0.4f, 0), 0.3f, 10, 0);
+            SoundManager.Instance.PlaySound(SFXJump);
             wallJumpingCounter = 0f;
 
             if (transform.localScale.x != wallJumpingDirection)
@@ -445,6 +462,7 @@ public class CharacterMovement : MonoBehaviour
         yield return new WaitForSeconds(dashingCooldown - 0.5f);
         canDash = true;
         ghostFollow.DashRefreshIndicator();
+        SoundManager.Instance.PlaySound(SFXDashRecharge);
     }
 
 

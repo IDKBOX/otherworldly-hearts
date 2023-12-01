@@ -1794,7 +1794,6 @@ GameObject:
   m_Component:
   - component: {fileID: 528385661}
   - component: {fileID: 528385660}
-  - component: {fileID: 528385659}
   - component: {fileID: 528385662}
   - component: {fileID: 528385663}
   m_Layer: 0
@@ -1804,14 +1803,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &528385659
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 528385658}
-  m_Enabled: 1
 --- !u!20 &528385660
 Camera:
   m_ObjectHideFlags: 0
@@ -11592,6 +11583,7 @@ GameObject:
   - component: {fileID: 6402325663403910282}
   - component: {fileID: 7350594851653706832}
   - component: {fileID: 7350594851653706833}
+  - component: {fileID: 7350594851653706834}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -11762,8 +11754,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.025299966, y: 0.078300014, z: 0}
-    m_Extent: {x: 1.1413, y: 0.5651, z: 0}
+    m_Center: {x: 0.0255, y: 0.069600016, z: 0}
+    m_Extent: {x: 1.1452, y: 0.5703, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1
@@ -21600,6 +21592,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatingGhost: {fileID: 61142672}
   vortexEffect: {fileID: 6495639331950475266, guid: cb6d38eaa36079349b154a1c7f53f766, type: 3}
+--- !u!81 &7350594851653706834
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062253792428588534}
+  m_Enabled: 1
 --- !u!198 &7449603583427943477
 ParticleSystem:
   m_ObjectHideFlags: 0

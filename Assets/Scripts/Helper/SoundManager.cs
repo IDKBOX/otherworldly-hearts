@@ -37,10 +37,6 @@ public class SoundManager : MonoBehaviour
         {
             _effectSource.PlayOneShot(clip);
         }
-        else
-        {
-            Debug.LogWarning("No Audio Clip!");
-        }
     }
 
     public void PlayOverlappingSound(AudioClip clip)
@@ -49,10 +45,6 @@ public class SoundManager : MonoBehaviour
         {
             _overlapEffectSource.PlayOneShot(clip);
         }
-        else
-        {
-            Debug.LogWarning("No Audio Clip!");
-        }
     }
 
     public void PlayOverlappingSound2(AudioClip clip)
@@ -60,10 +52,6 @@ public class SoundManager : MonoBehaviour
         if (clip != null && !_overlapEffectSource2.isPlaying)
         {
             _overlapEffectSource2.PlayOneShot(clip);
-        }
-        else
-        {
-            Debug.LogWarning("No Audio Clip!");
         }
     }
 
@@ -77,7 +65,7 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No Audio Clip!");
+            Debug.LogWarning("No Music Clip!");
         }
     }
 

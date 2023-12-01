@@ -92,4 +92,9 @@ public class SoundManager : MonoBehaviour
     {
         noMusicAudioSnapshot.TransitionTo(0.5f);
     }
+
+    public void FadeOutLong()
+    {
+        noMusicAudioSnapshot.TransitionTo(2f);
+    }
 }

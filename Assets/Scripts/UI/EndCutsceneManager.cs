@@ -20,4 +20,11 @@ public class EndCutsceneManager : MonoBehaviour
             SceneManager.LoadScene(0);
         }
     }
+
+    public void Start()
+    {
+        CheckpointManager.Instance.deleteCheckpointData();
+        CheckpointManager.Instance.loadCheckpointData();
+        PlayerPrefs.DeleteKey("StoryItemData");
+    }
 }

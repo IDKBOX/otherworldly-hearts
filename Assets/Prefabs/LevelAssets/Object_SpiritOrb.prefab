@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linkedSpiritGate: {fileID: 0}
+  SFXOrbCollect: {fileID: 8300000, guid: bdc1163980636a942ad5aa5a9bfeab4c, type: 3}
 --- !u!1 &4136448714906468590
 GameObject:
   m_ObjectHideFlags: 0

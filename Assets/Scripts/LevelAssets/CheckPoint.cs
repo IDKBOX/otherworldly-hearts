@@ -3,6 +3,8 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     private Animator animator;
+    public AudioClip SFXCheckpointActive;
+    private bool activated;
 
     private void Awake()
     {
@@ -11,9 +13,11 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !activated)
         {
+            activated = true;
             animator.SetTrigger("On");
+            SoundManager.Instance.PlaySound(SFXCheckpointActive);
             CheckpointManager.Instance.lastCheckPointPos = transform.position;
             CheckpointManager.Instance.checkpointActive = true;
             CheckpointManager.Instance.saveCheckpoint();

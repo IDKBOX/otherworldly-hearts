@@ -3,6 +3,7 @@ using UnityEngine;
 public class SpiritOrb : MonoBehaviour
 {
     public SpiritGate linkedSpiritGate;
+    public AudioClip SFXOrbCollect;
     private ParticleSystem collectEffect;
     private Animator animator;
 
@@ -21,6 +22,7 @@ public class SpiritOrb : MonoBehaviour
 
             //destroy when touched
             animator.SetTrigger("Collected");
+            SoundManager.Instance.PlaySound(SFXOrbCollect);
             Destroy(GetComponentInChildren<SpriteRenderer>().gameObject, 0.5f);
             Destroy(GetComponent<CircleCollider2D>());
             Destroy(gameObject, 3f);

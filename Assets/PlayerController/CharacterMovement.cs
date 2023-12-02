@@ -222,7 +222,7 @@ public class CharacterMovement : MonoBehaviour
                 jumpBufferCounter = 0f;
                 SoundManager.Instance.PlayOverlappingSound2(SFXJump);
             }
-            else if (!doubleJump && jump.triggered && !IsWalled() && doubleJumpUnlocked)
+            else if (!doubleJump && jump.triggered && !isWallSliding && doubleJumpUnlocked)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 characterSprite.DOPunchScale(new Vector3(-0.3f, 0.3f, 0), 0.3f, 10, 0);

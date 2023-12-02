@@ -183,7 +183,7 @@ public class CharacterMovement : MonoBehaviour
                 if (!hasLanded)
                 {
                     hasLanded = true;
-                    SoundManager.Instance.PlaySound(SFXLand);
+                    SoundManager.Instance.PlayOverlappingSound2(SFXLand);
 
                     Sequence landSquash = DOTween.Sequence();
 
@@ -220,7 +220,7 @@ public class CharacterMovement : MonoBehaviour
                     .Append(characterSprite.DOPunchScale(new Vector3(-0.3f, 0.3f, 0), 0.3f, 10, 0));
 
                 jumpBufferCounter = 0f;
-                SoundManager.Instance.PlaySound(SFXJump);
+                SoundManager.Instance.PlayOverlappingSound2(SFXJump);
             }
             else if (!doubleJump && jump.triggered && !IsWalled() && doubleJumpUnlocked)
             {

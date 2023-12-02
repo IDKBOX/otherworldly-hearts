@@ -64,6 +64,7 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
         FindObjectOfType<CharacterMovement>().isDisabled = true;
+        MobileUIManager.Instance.hideMobileUI();
 
         //clear selected object
         EventSystem.current.SetSelectedGameObject(null);
@@ -75,6 +76,7 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         FindObjectOfType<CharacterMovement>().isDisabled = false;
+        MobileUIManager.Instance.showMobileUI();
         normalAudioSnapshot.TransitionTo(0f);
     }
 

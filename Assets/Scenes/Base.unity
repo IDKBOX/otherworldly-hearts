@@ -1360,8 +1360,8 @@ GameObject:
   - component: {fileID: 184608044}
   - component: {fileID: 184608043}
   - component: {fileID: 184608042}
-  - component: {fileID: 184608046}
   - component: {fileID: 184608047}
+  - component: {fileID: 184608048}
   m_Layer: 5
   m_Name: MobileCanvas
   m_TagString: Untagged
@@ -1418,8 +1418,8 @@ Canvas:
   m_GameObject: {fileID: 184608041}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
-  m_Camera: {fileID: 528385660}
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1452,18 +1452,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &184608046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184608041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9171f0fc20634746ba97d55d7af58c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &184608047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1477,6 +1465,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactButton: {fileID: 147745636}
+--- !u!114 &184608048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184608041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ca57b9732059147813764852c2643c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mobileUI: {fileID: 784642749}
+  debugOnPC: 1
 --- !u!1 &236044793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,6 +1798,7 @@ GameObject:
   - component: {fileID: 528385660}
   - component: {fileID: 528385662}
   - component: {fileID: 528385663}
+  - component: {fileID: 528385664}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1838,7 +1841,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 5.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1863,7 +1866,7 @@ Transform:
   m_GameObject: {fileID: 528385658}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.588108, y: 4.62, z: -10}
+  m_LocalPosition: {x: -0.0460248, y: -1.1577301, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1947,6 +1950,26 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &528385664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528385658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9420f5aea32df7646ab1a75a6346d5df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  matteColor: {r: 0, g: 0, b: 0, a: 1}
+  referenceMode: 0
+  x: 16
+  y: 9
+  width: 960
+  height: 540
+  onAwake: 1
+  onUpdate: 1
 --- !u!1 &552341633
 GameObject:
   m_ObjectHideFlags: 0
@@ -11541,6 +11564,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Controls
       objectReference: {fileID: 0}
+    - target: {fileID: 3032408414045957581, guid: 97ab6efddb57d4a4fa264501d254eb18, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -40.800003
+      objectReference: {fileID: 0}
     - target: {fileID: 4222316643869437541, guid: 97ab6efddb57d4a4fa264501d254eb18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -11755,8 +11782,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.028450012, y: 0.07419999, z: 0}
-    m_Extent: {x: 1.13515, y: 0.5668, z: 0}
+    m_Center: {x: 0.02790004, y: 0.07104999, z: 0}
+    m_Extent: {x: 1.1434, y: 0.55885, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1

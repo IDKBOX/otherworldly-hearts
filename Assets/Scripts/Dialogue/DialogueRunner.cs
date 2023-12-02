@@ -32,6 +32,7 @@ public class DialogueRunner : MonoBehaviour
         if (isDialogueRunnerRunning == false)
         {
             dialogueData = _dialogueData;
+            MobileUIManager.Instance.hideMobileUI();
 
             index = 0;
             isDialogueRunnerRunning = true;
@@ -82,6 +83,7 @@ public class DialogueRunner : MonoBehaviour
         isDialogueRunnerRunning = false;
         DialogueUIPrefab.SetActive(false);
         FindObjectOfType<CharacterMovement>().isDisabled = false;
+        MobileUIManager.Instance.showMobileUI();
 
         if (currentDialogueTrigger.GetComponent<CinemachineFocus>() != null)
         {

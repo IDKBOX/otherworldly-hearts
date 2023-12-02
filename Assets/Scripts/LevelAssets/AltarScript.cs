@@ -24,10 +24,10 @@ public class AltarScript : MonoBehaviour
     public Animator altarEffect;
     public SpriteRenderer altarAnimSprite;
 
-    [Header("Dialog Triger")]
-    public GameObject afterLevel1;
-    public GameObject afterLevel2;
-    public GameObject afterLevel3;
+    [Header("Dialog Trigger")]
+    public DialogueStarter afterLevel1;
+    public DialogueStarter afterLevel2;
+    public DialogueStarter afterLevel3;
 
     private bool inTrigger;
     private bool hasBeenTriggered;
@@ -96,13 +96,13 @@ public class AltarScript : MonoBehaviour
         switch (ItemDisplay.itemsToShow)
         {
             default:
-                afterLevel1.SetActive(true);
+                afterLevel1.StartDialogue();
                 break;
             case 1:
-                afterLevel2.SetActive(true);
+                afterLevel2.StartDialogue();
                 break;
             case 2:
-                afterLevel3.SetActive(true);
+                afterLevel3.StartDialogue();
                 break;
         }
     }

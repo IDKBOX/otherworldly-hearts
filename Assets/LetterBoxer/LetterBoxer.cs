@@ -16,26 +16,33 @@ public class LetterBoxer : MonoBehaviour
 
     private Camera cam;
     private Camera letterBoxerCamera;
+    private bool isEnabled;
 
     public void Awake()
     {
-        // store reference to the camera
-        cam = GetComponent<Camera>();
-
-        // add the letterboxing camera
-        AddLetterBoxingCamera();
-
-        // perform sizing if onAwake is set
-        if (onAwake)
+        if (DeviceTypeChecker.GetDeviceType() == ENUM_Device_Type.Tablet)
         {
-            PerformSizing();
+            // store reference to the camera
+            cam = GetComponent<Camera>();
+
+            // add the letterboxing camera
+            AddLetterBoxingCamera();
+
+            isEnabled = true;
+
+            // perform sizing if onAwake is set
+            if (onAwake)
+            {
+                PerformSizing();
+            }
         }
     }
 
     public void Update()
     {
+
         // perform sizing if onUpdate is set
-        if (onUpdate)
+        if (onUpdate && isEnabled)
         {
             PerformSizing();
         }

@@ -1969,7 +1969,7 @@ MonoBehaviour:
   width: 960
   height: 540
   onAwake: 1
-  onUpdate: 1
+  onUpdate: 0
 --- !u!1 &552341633
 GameObject:
   m_ObjectHideFlags: 0
@@ -11782,8 +11782,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.02790004, y: 0.07104999, z: 0}
-    m_Extent: {x: 1.1434, y: 0.55885, z: 0}
+    m_Center: {x: 0.029500008, y: 0.06775001, z: 0}
+    m_Extent: {x: 1.1362, y: 0.56624997, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1

@@ -11,6 +11,14 @@ public class FriendlyGhost : MonoBehaviour
         ps = GetComponentInChildren<ParticleSystem>();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Disappear();
+        }
+    }
+
     public void Disappear()
     {
         animator.SetTrigger("Disappear");

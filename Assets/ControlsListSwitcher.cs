@@ -9,10 +9,10 @@ public class ControlsListSwitcher : MonoBehaviour
 
     private void Start()
     {
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_IOS
         controlImage.sprite = mobileControls;
 
-#elif UNITY_STANDALONE             
+#elif UNITY_STANDALONE
         controlImage.sprite = PCControls;
 
 #endif

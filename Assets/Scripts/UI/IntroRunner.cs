@@ -39,6 +39,10 @@ public class IntroRunner : MonoBehaviour
         {
             NextLine();
         }
+        else if (!allowSkipDialogue)
+        {
+            //do nothing
+        }
         else
         {
             StopAllCoroutines();

@@ -58,6 +58,7 @@ public class AltarScript : MonoBehaviour
     {
         AltarFirstDialog();
     }
+
     private void Update()
     {
         if (inTrigger && !hasBeenTriggered && interact.triggered)
@@ -116,7 +117,11 @@ public class AltarScript : MonoBehaviour
             {
                 interactPromptPrefab.SetActive(true);
             }
-            ShowInteractButton.Instance.EnableInteractButton();
+
+            if (!hasBeenTriggered)
+            {
+                ShowInteractButton.Instance.EnableInteractButton();
+            }
         }
     }
 
@@ -125,7 +130,6 @@ public class AltarScript : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             inTrigger = false;
-            hasBeenTriggered = false;
 
             if (interactPromptPrefab != null)
             {

@@ -35177,8 +35177,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.2382002, y: -5.8821497, z: 0}
-    m_Extent: {x: 8.163, y: 11.55745, z: 0}
+    m_Center: {x: 1.2354, y: -5.8834496, z: 0}
+    m_Extent: {x: 8.1578, y: 11.55435, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -35564,6 +35564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windowClosed: {fileID: 144251316}
   windowOpened: {fileID: 1446404392}
+  SFXWhiteScreen: {fileID: 8300000, guid: 616ca6b3edf53ba46927da62f307f598, type: 3}
   onComplete:
     m_PersistentCalls:
       m_Calls:

@@ -6,10 +6,12 @@ public class OpenWindow : MonoBehaviour
 {
     public GameObject windowClosed;
     public GameObject windowOpened;
+    public AudioClip SFXWhiteScreen;
     public UnityEvent onComplete;
 
     IEnumerator Start()
     {
+        SoundManager.Instance.PlaySound(SFXWhiteScreen);
         yield return new WaitForSeconds(2);
         windowClosed.SetActive(false);
         windowOpened.SetActive(true);

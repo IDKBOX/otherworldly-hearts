@@ -273,5 +273,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35cd13f939bd8c448d5d69221ea33a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: EndCutscene
+  currentSceneName: Level4
+  nextSceneName: WhiteBackground
   loadSceneDelay: 2
+  useTransitionManager: 0
+  loadAdditive: 1

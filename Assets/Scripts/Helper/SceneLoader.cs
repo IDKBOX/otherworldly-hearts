@@ -4,11 +4,15 @@ using System.Collections;
 
 public class SceneLoader : MonoBehaviour
 {
-    public string sceneName;
+    public string currentSceneName;
+    public string nextSceneName;
     public float loadSceneDelay;
+    public bool useTransitionManager;
+    public bool loadAdditive;
 
     public void LoadScene()
     {
+
         StartCoroutine(StartTransition());
         SoundManager.Instance.FadeOut();
     }
@@ -16,9 +20,26 @@ public class SceneLoader : MonoBehaviour
     IEnumerator StartTransition()
     {
         yield return new WaitForSeconds(loadSceneDelay);
-        TransitionManager.Instance.StartTransition();
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(sceneName);
-        TransitionManager.Instance.EndTransition();
+        if (useTransitionManager)
+        {
+            TransitionManager.Instance.StartTransition();
+            yield return new WaitForSeconds(1f);
+        }
+
+        if (!loadAdditive)
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
+        else
+        {
+            SceneManager.UnloadSceneAsync(currentSceneName);
+            SceneManager.LoadScene(nextSceneName, LoadSceneMode.Additive);
+            CheckpointManager.Instance.resetCheckpoint();
+        }
+
+        if (useTransitionManager)
+        {
+            TransitionManager.Instance.EndTransition();
+        }
     }
 }

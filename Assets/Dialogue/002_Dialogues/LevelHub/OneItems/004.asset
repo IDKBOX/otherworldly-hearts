@@ -19,4 +19,4 @@ MonoBehaviour:
   - Maybe that room is now unlocked
   - "Let\u2019s check it out!"
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
-  emotion: 01000000010000000100000001000000
+  emotion: 02000000020000000000000002000000

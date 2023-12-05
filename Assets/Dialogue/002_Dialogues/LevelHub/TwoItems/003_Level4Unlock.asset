@@ -19,4 +19,4 @@ MonoBehaviour:
   - I feel a very strong energy coming from out there...
   - "Let\u2019s go human!"
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
-  emotion: 02000000000000000000000000000000
+  emotion: 00000000020000000000000002000000

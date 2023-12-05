@@ -6,6 +6,10 @@ public class ShakeCameraContinuously : MonoBehaviour
     public bool enableOnStart;
     private bool shakeStarted;
 
+    [Header("Optional")]
+    public AudioClip SFXShake;
+    
+
     private void Start()
     {
         if (enableOnStart)
@@ -21,11 +25,23 @@ public class ShakeCameraContinuously : MonoBehaviour
             StartCameraShake();
         }
     }
+
     public void StartCameraShake()
     {
         CinemachineShake.Instance.ShakeCamera(shakeValue, float.PositiveInfinity);
         shakeStarted = true;
     }
+
+    public void StartCameraShakeWithSFX()
+    {
+        CinemachineShake.Instance.ShakeCamera(shakeValue, float.PositiveInfinity);
+
+        if (SFXShake != null)
+        {
+            SoundManager.Instance.PlaySound(SFXShake);
+        }
+    }
+
 
     public void StopCameraShake()
     {

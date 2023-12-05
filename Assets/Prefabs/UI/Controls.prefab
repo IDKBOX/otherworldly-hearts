@@ -36,10 +36,10 @@ RectTransform:
   - {fileID: 3032408414045957581}
   m_Father: {fileID: 200447700962616976}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -337}
-  m_SizeDelta: {x: 341.487, y: 114.197}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 174}
+  m_SizeDelta: {x: 341.487, y: 114.19699}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3478716419866488532
 CanvasRenderer:
@@ -258,8 +258,9 @@ GameObject:
   - component: {fileID: 8115419236927760464}
   - component: {fileID: 6790635669894907916}
   - component: {fileID: 1090215688836622824}
+  - component: {fileID: 3289689575268220095}
   m_Layer: 5
-  m_Name: Credits
+  m_Name: ControlsList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,10 +280,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 200447700962616976}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 631.27826}
-  m_SizeDelta: {x: 773.2671, y: 566.9724}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 75}
+  m_SizeDelta: {x: -920, y: -513.0276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6790635669894907916
 CanvasRenderer:
@@ -322,6 +323,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3289689575268220095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4297452086786648646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62b92ad1ee5aae542b242c947907d0ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlImage: {fileID: 1090215688836622824}
+  PCControls: {fileID: 21300000, guid: 43fb2f8ab3e90b8478ababad9c114b22, type: 3}
+  mobileControls: {fileID: 21300000, guid: b37590689b528c040b0355d1ea1423b1, type: 3}
 --- !u!1 &4430715468941996195
 GameObject:
   m_ObjectHideFlags: 0

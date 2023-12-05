@@ -224,6 +224,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spiritOrbsRequired: 2
+  gateMoveRange: 4
+  horizontalGate: 0
+  SFXSpiritGateOpen: {fileID: 8300000, guid: 2c857b9d676c4fd48975d92a3c5aff14, type: 3}
 --- !u!1 &3105821794527532092
 GameObject:
   m_ObjectHideFlags: 0

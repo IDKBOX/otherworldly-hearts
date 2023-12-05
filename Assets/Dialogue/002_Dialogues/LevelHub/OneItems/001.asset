@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDescriptionDialogue: 1
   lines:
-  - You placed the Photo on the altar. The light from the moon shines onto it as
-    the photo starts to glow.
+  - You placed the Photo on the altar...
+  - The light from the moon shines onto it as the photo starts to glow.
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
   emotion: 00000000

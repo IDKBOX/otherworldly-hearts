@@ -15,7 +15,7 @@ MonoBehaviour:
   isDescriptionDialogue: 1
   lines:
   - It looks like an old diary
-  - The contents of it mostly have been torn and lost to time
-  - "But there\u2019s a single page that\u2019s still intact"
+  - The contents have been torn and lost to time...
+  - "But there\u2019s a single page that\u2019s still intact..."
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
-  emotion: 0000000000000000
+  emotion: 

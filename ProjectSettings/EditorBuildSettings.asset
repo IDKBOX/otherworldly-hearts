@@ -24,12 +24,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Level3.unity
     guid: f61d068cd25b3aa45b584236fe4444b6
   - enabled: 1
+    path: Assets/Scenes/Level4.unity
+    guid: cf1b60cc36ebb6c41b309d227d0e0902
+  - enabled: 1
     path: Assets/Scenes/LevelHub.unity
     guid: 8afef17ce689ce247a6b77652e87207b
   - enabled: 1
     path: Assets/Scenes/Base.unity
     guid: df53c73269aac1d409d0474a1f730ac1
   - enabled: 1
-    path: Assets/Scenes/End_Cutscene.unity
+    path: Assets/Scenes/WhiteBackground.unity
+    guid: 0d71588dbb330a649837cf77a0269ac9
+  - enabled: 1
+    path: Assets/Scenes/EndCutscene.unity
     guid: 0ccca3eab1043e74e8c243f180ccf64f
   m_configObjects: {}

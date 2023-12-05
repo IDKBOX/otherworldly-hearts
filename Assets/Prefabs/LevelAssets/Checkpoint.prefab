@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958306bd3b07ab740900b09f5296709d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SFXCheckpointActive: {fileID: 8300000, guid: 43d254bef6351be49b51343eae5ce470, type: 3}
 --- !u!61 &5564457430844022039
 BoxCollider2D:
   m_ObjectHideFlags: 0

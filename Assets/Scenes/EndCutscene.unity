@@ -1385,7 +1385,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1697944591}
-  - component: {fileID: 1697944594}
   - component: {fileID: 1697944593}
   m_Layer: 0
   m_Name: EndManager
@@ -1421,19 +1420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8801118d491f449a7a184c87242fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1697944594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1697944589}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e60ce985751874280cfaa1070f4530, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicToPlay: {fileID: 8300000, guid: 3975ca3475316ac4ca5c53681afc187c, type: 3}
 --- !u!1001 &1702622779
 PrefabInstance:
   m_ObjectHideFlags: 0

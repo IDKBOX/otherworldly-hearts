@@ -9,12 +9,17 @@ public class SceneLoader : MonoBehaviour
     public float loadSceneDelay;
     public bool useTransitionManager;
     public bool loadAdditive;
+    public bool fadeAudio;
 
     public void LoadScene()
     {
 
         StartCoroutine(StartTransition());
-        SoundManager.Instance.FadeOut();
+
+        if (fadeAudio)
+        {
+            SoundManager.Instance.FadeOut();
+        }
     }
 
     IEnumerator StartTransition()

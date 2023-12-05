@@ -26,4 +26,22 @@ public class SpiritGate : MonoBehaviour
             }
         }
     }
+
+    public void OpenGate()
+    {
+        if (!tweenPlayed)
+        {
+            tweenPlayed = true;
+            SoundManager.Instance.PlaySound(SFXSpiritGateOpen);
+
+            if (!horizontalGate)
+            {
+                transform.DOMoveY(transform.position.y + gateMoveRange, 0.5f);
+            }
+            else
+            {
+                transform.DOMoveX(transform.position.x + gateMoveRange, 0.5f);
+            }
+        }
+    }
 }

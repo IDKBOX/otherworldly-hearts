@@ -10,7 +10,7 @@ public class CharacterMovement : MonoBehaviour
     private float horizontal;
     [SerializeField] private float movementSpeed = 8f;
     [SerializeField] private float jumpForce = 16f;
-    private bool isFacingRight = true;
+    [HideInInspector] public bool isFacingRight = true;
 
     private float coyoteTime = 0.2f;
     private float coyoteTimeCounter;
@@ -310,7 +310,7 @@ public class CharacterMovement : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
     }
 
-    private void Flip()
+    public void Flip()
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {

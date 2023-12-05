@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1737409748141961016, guid: e0d6d1e854daf2640ac1b08650c1cf81, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.84
+      value: -14.26
       objectReference: {fileID: 0}
     - target: {fileID: 1737409748141961016, guid: e0d6d1e854daf2640ac1b08650c1cf81, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 163.22
+      value: 1.77
       objectReference: {fileID: 0}
     - target: {fileID: 1737409748141961016, guid: e0d6d1e854daf2640ac1b08650c1cf81, type: 3}
       propertyPath: m_LocalPosition.z
@@ -49,8 +49,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2110144617392535393, guid: e0d6d1e854daf2640ac1b08650c1cf81, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110144617392535393, guid: e0d6d1e854daf2640ac1b08650c1cf81, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110144617392535393, guid: e0d6d1e854daf2640ac1b08650c1cf81, type: 3}
       propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110144617392535393, guid: e0d6d1e854daf2640ac1b08650c1cf81, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110144617392535393, guid: e0d6d1e854daf2640ac1b08650c1cf81, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PlayerFaceRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110144617392535393, guid: e0d6d1e854daf2640ac1b08650c1cf81, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: PlayerFaceRightScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110144617392535393, guid: e0d6d1e854daf2640ac1b08650c1cf81, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110144617392535393, guid: e0d6d1e854daf2640ac1b08650c1cf81, type: 3}
+      propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2390127669778062904, guid: e0d6d1e854daf2640ac1b08650c1cf81, type: 3}
       propertyPath: m_Name

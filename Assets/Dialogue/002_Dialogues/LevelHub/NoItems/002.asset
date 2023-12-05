@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDescriptionDialogue: 0
   lines:
-  - Look over there!
-  - That door is glowing after you interacted with the altar
-  - "Let\u2019s check out that room. Maybe we can find something there"
+  - Seek for items that resembles connection?
+  - Maybe the ritual require items that have connections with me?
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
-  emotion: 000000000000000000000000
+  emotion: 0000000000000000

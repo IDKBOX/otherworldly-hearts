@@ -17,4 +17,4 @@ MonoBehaviour:
   - I remember this room
   - This room is connected to all the other rooms in the house
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
-  emotion: 0100000001000000
+  emotion: 0000000001000000

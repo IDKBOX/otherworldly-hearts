@@ -153,6 +153,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1293197311}
+  - {fileID: 1883531947}
   - {fileID: 1673048649}
   m_Father: {fileID: 50075456}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -383,6 +384,7 @@ Transform:
   m_Children:
   - {fileID: 545199242}
   - {fileID: 2135607492}
+  - {fileID: 1391563629}
   - {fileID: 1986141141}
   m_Father: {fileID: 471016894}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -35095,8 +35097,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.2463999, y: -5.88205, z: 0}
-    m_Extent: {x: 8.1622, y: 11.563351, z: 0}
+    m_Center: {x: 1.2421501, y: -5.8737497, z: 0}
+    m_Extent: {x: 8.16045, y: 11.56125, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -43325,7 +43327,7 @@ MonoBehaviour:
   onDialogueComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1673048651}
+      - m_Target: {fileID: 1883531949}
         m_TargetAssemblyTypeName: DialogueStarter, Assembly-CSharp
         m_MethodName: StartDialogue
         m_Mode: 1
@@ -43733,6 +43735,93 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1391563628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1391563629}
+  - component: {fileID: 1391563631}
+  - component: {fileID: 1391563630}
+  m_Layer: 0
+  m_Name: AfterLevel2Dialog_002
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1391563629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391563628}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 119042758}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1391563630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391563628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a7fe58e0f0f6847bba99f798ef40e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previousCamera: {fileID: 301704293}
+  focusCamera: {fileID: 878919652}
+  onFocusStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onFocusEnded:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1391563631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391563628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc854cb3f14856947bf680935acedaa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - {fileID: 11400000, guid: 39c76efb77d15bb4b83c46d8dda60267, type: 2}
+  destroyOnComplete: 1
+  onDialogueTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1391563630}
+        m_TargetAssemblyTypeName: CinemachineFocus, Assembly-CSharp
+        m_MethodName: StartCinemachineFocus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDialogueComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  hasBeenTriggered: 0
 --- !u!1 &1415998594
 GameObject:
   m_ObjectHideFlags: 0
@@ -49271,7 +49360,7 @@ GameObject:
   - component: {fileID: 1673048651}
   - component: {fileID: 1673048650}
   m_Layer: 0
-  m_Name: 002
+  m_Name: 003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49326,7 +49415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData:
-  - {fileID: 11400000, guid: 4239a3f28781613479401c2df01472ae, type: 2}
+  - {fileID: 11400000, guid: d411e115109d99e41aee7c3ee5566c06, type: 2}
   destroyOnComplete: 1
   onDialogueTriggered:
     m_PersistentCalls:
@@ -54407,6 +54496,105 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virtualCamera: {fileID: 301704293}
+--- !u!1 &1883531946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1883531947}
+  - component: {fileID: 1883531949}
+  - component: {fileID: 1883531948}
+  m_Layer: 0
+  m_Name: 002
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1883531947
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883531946}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 18810096}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1883531948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883531946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a7fe58e0f0f6847bba99f798ef40e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previousCamera: {fileID: 301704293}
+  focusCamera: {fileID: 878919652}
+  onFocusStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onFocusEnded:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1883531949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883531946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc854cb3f14856947bf680935acedaa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData:
+  - {fileID: 11400000, guid: 4239a3f28781613479401c2df01472ae, type: 2}
+  destroyOnComplete: 1
+  onDialogueTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1883531948}
+        m_TargetAssemblyTypeName: CinemachineFocus, Assembly-CSharp
+        m_MethodName: StartCinemachineFocus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDialogueComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1673048651}
+        m_TargetAssemblyTypeName: DialogueStarter, Assembly-CSharp
+        m_MethodName: StartDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  hasBeenTriggered: 0
 --- !u!1001 &1924659043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60114,7 +60302,19 @@ MonoBehaviour:
       m_Calls: []
   onDialogueComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1391563631}
+        m_TargetAssemblyTypeName: DialogueStarter, Assembly-CSharp
+        m_MethodName: StartDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   hasBeenTriggered: 0
 --- !u!1 &1008448791472528887
 GameObject:

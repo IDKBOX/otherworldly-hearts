@@ -18,4 +18,4 @@ MonoBehaviour:
     truth."
   - 'You decided to cheer her up. Saying that you will help her out of this. '
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
-  emotion: 02000000
+  emotion: 

@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDescriptionDialogue: 1
   lines:
-  - "She doesn\u2019t feel like talking. It seems like she felt very sad about the
-    truth."
-  - 'You decided to cheer her up. Saying that you will help her out of this. '
+  - "She still doesn\u2019t feel like talking..."
+  - You decided to cheer her up...
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
   emotion: 

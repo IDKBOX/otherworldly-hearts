@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDescriptionDialogue: 0
   lines:
-  - The corruption is blocking us off from entering this room
-  - "But worry not. I\u2019ve lend you some more of my power"
-  - I can give you the ability to dash through that corruption wall
-  - Just press [LeftShift] whenever I am glowing in order to perform a Spiritual
-    Dash
+  - Hmm....
+  - The corruption is blocking us from entering this room
+  - "But worry not human, I\u2019ve lend you some more of my powers..."
+  - I can give you the ability to dash through that corruption wall!
+  - Press [LeftShift] when I'm glowing blue to dash through corruptions
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
-  emotion: 04000000010000000100000003000000
+  emotion: 0400000004000000010000000100000003000000

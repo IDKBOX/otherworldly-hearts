@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDescriptionDialogue: 0
   lines:
-  - "You\u2019re right. You promised to free me and you\u2019re also helping seek
-    the truth"
+  - Haha...
+  - "First you promised to free me, and you\u2019re also helping seek the truth..."
+  - You're unlike the other humans i've met
   - "Thank you human, I\u2019m feeling a lot better now..."
   - Let us proceed!
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
-  emotion: 030000000100000003000000
+  emotion: 0800000009000000080000000900000008000000

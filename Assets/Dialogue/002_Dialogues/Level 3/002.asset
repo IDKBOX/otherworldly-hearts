@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDescriptionDialogue: 0
   lines:
-  - It worked!
-  - 'Okay, this is a far larger pit than before. Jumping over this might be tricky. '
-  - You can also use Spiritual Dash mid-air to get yourself further
+  - Okay, this is a far larger pit than before...
+  - Jumping over it might be tricky...
+  - Be careful human!
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
-  emotion: 010000000000000003000000
+  emotion: 000000000a0000000b000000

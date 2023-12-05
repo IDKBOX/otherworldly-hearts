@@ -17,7 +17,7 @@ MonoBehaviour:
   - Before you is an altar. It looks ancient and had gathered a lot of dust from
     being abandoned for a long time.
   - You dust it off, and reveals an ancient writing on the surface of the altar.
-  - "\u201DDisaster may befall from the spirit you call\u201D"
+  - "\u201DDisaster may befall from the spirit you summoned\""
   - "\u201DIn order to free them from corruption, seek for items that resembles a
     connection\u201D"
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}

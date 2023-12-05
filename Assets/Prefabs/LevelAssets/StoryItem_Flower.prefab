@@ -277,4 +277,4 @@ MonoBehaviour:
   nextSceneName: WhiteBackground
   loadSceneDelay: 2
   useTransitionManager: 0
-  loadAdditive: 1
+  loadAdditive: 0

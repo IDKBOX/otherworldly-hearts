@@ -19,6 +19,7 @@ public class IntroRunner : MonoBehaviour
     public AudioClip dialogueSound;
     public GameObject dialogueTriangle;
     [HideInInspector] public bool isDialogueRunning = false;
+    public GameObject cutsceneIntro;
 
     private int index;
     private bool sceneLoaded;
@@ -85,6 +86,8 @@ public class IntroRunner : MonoBehaviour
         }
         else
         {
+            cutsceneIntro.SetActive(true);
+
             if (!sceneLoaded)
             {
                 sceneLoaded = true;
@@ -120,11 +123,12 @@ public class IntroRunner : MonoBehaviour
     {
         DOTween.KillAll();
         StartCoroutine(StartTransition());
-        SoundManager.Instance.FadeOut();
+        SoundManager.Instance.FadeOutLong();
     }
 
     IEnumerator StartTransition()
     {
+        yield return new WaitForSeconds(5.5f);
         TransitionManager.Instance.StartTransition();
         yield return new WaitForSeconds(1f);
         TransitionManager.Instance.EndTransition();

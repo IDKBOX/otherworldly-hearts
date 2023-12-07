@@ -15,6 +15,6 @@ MonoBehaviour:
   isDescriptionDialogue: 1
   lines:
   - "As you go outside, you feel that something isn\u2019t right..."
-  - You felt a chill behind your spine...
+  - You felt a chill down your spine...
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
   emotion: 

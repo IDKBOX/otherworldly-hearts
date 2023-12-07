@@ -12,6 +12,10 @@ public class RisingCorruption : MonoBehaviour
         {
             transform.position = new Vector3(0, CheckpointManager.Instance.lastCheckPointPos.y, 0);
         }
+        else if (!CheckpointManager.Instance.checkpointActive && !Level4Manager.Instance.isDialogStarted)
+        {
+            transform.position = new Vector3(0, -10f, 0);
+        }
         else
         {
             transform.position = Vector3.zero;
@@ -30,7 +34,7 @@ public class RisingCorruption : MonoBehaviour
 
     public void startCorruptionSlowly()
     {
-        transform.DOMoveY(5, timeLimit);
+        transform.DOMoveY(1, timeLimit);
     }
     private void OnDestroy()
     {

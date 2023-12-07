@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Level4Manager : MonoBehaviour
@@ -21,12 +19,8 @@ public class Level4Manager : MonoBehaviour
 
     }
 
-
     public void DialogStarted()
     {
         isDialogStarted = true;
     }
-
-
-
 }

@@ -133,8 +133,7 @@ public class IntroRunner : MonoBehaviour
         yield return new WaitForSeconds(1f);
         TransitionManager.Instance.EndTransition();
         SceneManager.LoadScene("Base");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Additive);
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Additive); 
     }
 
     private void ChangeDialogueTween()

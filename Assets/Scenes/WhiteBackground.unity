@@ -264,7 +264,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1982893279
   m_SortingLayer: 3
-  m_SortingOrder: -999
+  m_SortingOrder: 100
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -466,7 +466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 255786280}
   m_Layer: 0
-  m_Name: Character
+  m_Name: CharacterSpriteParent
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -572,7 +572,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &538771447
+--- !u!1 &403978234
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -580,51 +580,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 538771450}
-  - component: {fileID: 538771449}
-  - component: {fileID: 538771448}
+  - component: {fileID: 403978236}
+  - component: {fileID: 403978235}
   m_Layer: 0
-  m_Name: WhiteBackgroundSceneManager
+  m_Name: CutsceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &538771448
+--- !u!114 &403978235
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 538771447}
+  m_GameObject: {fileID: 403978234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89a531baa18a6444dbbb1aed9254890a, type: 3}
+  m_Script: {fileID: 11500000, guid: f79fea61e4a850a45903ccf4c4c66787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &538771449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 538771447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e60ce985751874280cfaa1070f4530, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicToPlay: {fileID: 8300000, guid: 3975ca3475316ac4ca5c53681afc187c, type: 3}
---- !u!4 &538771450
+--- !u!4 &403978236
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 538771447}
+  m_GameObject: {fileID: 403978234}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.117704, y: 8.18482, z: 0.5997832}
+  m_LocalPosition: {x: -1.6947, y: -3.4589, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2119,7 +2105,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1982893279
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 400
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -22169,7 +22155,7 @@ BoxCollider2D:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 538771450}
+  - {fileID: 403978236}
   - {fileID: 1553862105}
   - {fileID: 816338160}
   - {fileID: 2144373499}

@@ -282,7 +282,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void Dash(InputAction.CallbackContext context)
     {
-        if (canDash && dashUnlocked && ghostCompanionUnlocked)
+        if (canDash && dashUnlocked && ghostCompanionUnlocked && !isDisabled)
         {
             if (gameObject.scene.name != "Base")
             {

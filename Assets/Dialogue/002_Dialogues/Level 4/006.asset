@@ -15,8 +15,9 @@ MonoBehaviour:
   isDescriptionDialogue: 0
   lines:
   - I guess its time for me to go huh...?
-  - "I\u2019ve had so much fun tonight... I wish I could stay longer here..."
+  - "I\u2019ve had so much fun tonight... I wish I could stay longer with you..."
   - Hey human, would it be alright if I stay with you instead?
+  - .............!
   - Dear human, from the bottom of my heart... thank you.
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
-  emotion: 07000000070000000800000009000000
+  emotion: 0800000009000000080000000500000008000000

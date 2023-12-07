@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDescriptionDialogue: 0
   lines:
+  - '!!!!!!!!!!!!!!'
   - HUMAN, LOOK!
   - The corruption is rising!
   - We must climb up this tree quickly!
   - RUN HUMAN!
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
-  emotion: 020000000c0000000200000007000000
+  emotion: 0c0000000c0000000c0000000c0000000c000000

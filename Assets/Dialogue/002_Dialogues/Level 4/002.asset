@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDescriptionDialogue: 0
   lines:
-  - "Oh no... what\u2019s happening now?!"
+  - ...............?!
+  - "What\u2019s happening now?!"
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
-  emotion: 0c000000
+  emotion: 0c0000000c000000

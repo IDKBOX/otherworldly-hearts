@@ -18,6 +18,7 @@ public class Checkpoint : MonoBehaviour
             activated = true;
             animator.SetTrigger("On");
             SoundManager.Instance.PlaySound(SFXCheckpointActive);
+            CinemachineShake.Instance.ShakeCamera(5f, 0.1f);
             CheckpointManager.Instance.lastCheckPointPos = transform.position;
             CheckpointManager.Instance.checkpointActive = true;
             CheckpointManager.Instance.saveCheckpoint();

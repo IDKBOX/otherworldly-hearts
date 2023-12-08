@@ -252,8 +252,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 14.079249, y: -6.7393007, z: 0}
-    m_Extent: {x: 30.77995, y: 25.356201, z: 0}
+    m_Center: {x: 14.078499, y: -6.743701, z: 0}
+    m_Extent: {x: 30.7832, y: 25.3606, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -18633,6 +18633,7 @@ GameObject:
   - component: {fileID: 1697944591}
   - component: {fileID: 1697944590}
   - component: {fileID: 1697944592}
+  - component: {fileID: 1697944593}
   m_Layer: 0
   m_Name: MainMenuManager
   m_TagString: Untagged
@@ -18687,6 +18688,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicToPlay: {fileID: 8300000, guid: a133467114272f142ba43e1c7b7c60da, type: 3}
+--- !u!114 &1697944593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697944589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e733799d3a84e274790a35665ef8ea62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: {fileID: 795818283}
 --- !u!1 &1746396731
 GameObject:
   m_ObjectHideFlags: 0
@@ -24638,6 +24652,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 721671503}
     m_Modifications:
+    - target: {fileID: 2689281317060699123, guid: d85a30e098dc5954c9770ab9c4a9aa55, type: 3}
+      propertyPath: volume
+      value: 
+      objectReference: {fileID: 795818283}
     - target: {fileID: 2973752619533266229, guid: d85a30e098dc5954c9770ab9c4a9aa55, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

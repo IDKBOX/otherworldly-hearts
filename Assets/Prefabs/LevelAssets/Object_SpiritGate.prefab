@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 430110468468049793}
   - component: {fileID: 8057365964921276796}
   - component: {fileID: 508797659588946768}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Object_SpiritGate
   m_TagString: Untagged
   m_Icon: {fileID: 0}

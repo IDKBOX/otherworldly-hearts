@@ -16,10 +16,9 @@ MonoBehaviour:
   lines:
   - It looks similar to me?
   - "I guess that\u2019s why it felt so familiar"
-  - But.. if that is me. Then.. those two figures behind me must be my parents
-  - "Their faces seem to be blurred out. I can\u2019t make up an image of them in
-    my head"
-  - "But that\u2019s okay. I\u2019m starting to remember about myself a little bit"
-  - We should look for more
+  - 'But... if that''s me... Then who''s that standing beside me...? '
+  - "The face seems to be torn out. I can\u2019t make up an image of them in my head "
+  - "But that\u2019s okay. I\u2019m starting to remember about myself a bit more..."
+  - Let's go human, we should look for more!
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
   emotion: 0000000003000000000000000a0000000100000003000000

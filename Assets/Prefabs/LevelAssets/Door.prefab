@@ -5180,7 +5180,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8125, y: 1.3125}
+    oldSize: {x: 1, y: 1.9375}
     newSize: {x: 0.8125, y: 1.3125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5204,6 +5204,7 @@ MonoBehaviour:
   currentSceneName: ExampleLevel
   nextSceneName: ExampleLevel
   isLocked: 0
+  disableFadeOutMusic: 0
   interactPromptPrefab: {fileID: 6379877271121936950}
 --- !u!114 &5349871410714226855
 MonoBehaviour:
@@ -5220,6 +5221,7 @@ MonoBehaviour:
   dialogueData:
   - {fileID: 11400000, guid: 17700da66795f044aade8afa225a2711, type: 2}
   destroyOnComplete: 0
+  beginOnStart: 0
   onDialogueTriggered:
     m_PersistentCalls:
       m_Calls: []
@@ -5258,6 +5260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1635683839851846546}
   - component: {fileID: 6823073878923504056}
+  - component: {fileID: 6481603094627425617}
   m_Layer: 0
   m_Name: UI_InteractPrompt
   m_TagString: Untagged
@@ -5302,3 +5305,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6481603094627425617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6379877271121936950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe45ae62e79f6144be243c2e7da9db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 4172109271414796070}
+  PCSprite: {fileID: 21300000, guid: e48416db04e916c458b755855615e3a4, type: 3}
+  mobileSprite: {fileID: 21300000, guid: 337c4fc2b1da05c4bb4a8cd9cd3d1f7f, type: 3}

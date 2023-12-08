@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDescriptionDialogue: 1
   lines:
-  - You obtained a picture frame, inside was a photo of a family.
-  - A mother, a father, and a daughter.
-  - "The parents\u2019 face were somehow stained and blurred out. Leaving just the
-    little girl."
+  - You obtained a picture frame, inside was a photo...
+  - The photo was torn and burnt...
+  - The only part of the photo that remained undamaged was the little girl
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
   emotion: 

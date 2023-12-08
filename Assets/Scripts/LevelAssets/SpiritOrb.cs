@@ -23,6 +23,7 @@ public class SpiritOrb : MonoBehaviour
             //destroy when touched
             animator.SetTrigger("Collected");
             SoundManager.Instance.PlaySound(SFXOrbCollect);
+            CinemachineShake.Instance.ShakeCamera(2f, 0.1f);
             Destroy(GetComponentInChildren<SpriteRenderer>().gameObject, 0.5f);
             Destroy(GetComponent<CircleCollider2D>());
             Destroy(gameObject, 3f);

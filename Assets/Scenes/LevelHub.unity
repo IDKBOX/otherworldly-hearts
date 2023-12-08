@@ -31271,8 +31271,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.24735, y: -5.8811502, z: 0}
-    m_Extent: {x: 8.15865, y: 11.56425, z: 0}
+    m_Center: {x: 1.2335, y: -5.8839498, z: 0}
+    m_Extent: {x: 8.160299, y: 11.56575, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -49561,8 +49561,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.2376502, y: -5.8814497, z: 0}
-    m_Extent: {x: 8.15515, y: 11.55425, z: 0}
+    m_Center: {x: 1.2419999, y: -5.87755, z: 0}
+    m_Extent: {x: 8.1553, y: 11.56415, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -54644,6 +54644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1736890600}
   - component: {fileID: 1736890601}
+  - component: {fileID: 1736890602}
   m_Layer: 0
   m_Name: UI_InteractPrompt
   m_TagString: Untagged
@@ -54688,6 +54689,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1736890602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736890599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe45ae62e79f6144be243c2e7da9db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 318908118}
+  PCSprite: {fileID: 21300000, guid: e48416db04e916c458b755855615e3a4, type: 3}
+  mobileSprite: {fileID: 21300000, guid: 337c4fc2b1da05c4bb4a8cd9cd3d1f7f, type: 3}
 --- !u!1 &1746396731
 GameObject:
   m_ObjectHideFlags: 0

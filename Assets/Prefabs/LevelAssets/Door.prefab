@@ -5206,6 +5206,7 @@ MonoBehaviour:
   isLocked: 0
   disableFadeOutMusic: 0
   interactPromptPrefab: {fileID: 6379877271121936950}
+  SFXOpenDoor: {fileID: 8300000, guid: 02742790471a6ac4bbddacd6a86b0750, type: 3}
 --- !u!114 &5349871410714226855
 MonoBehaviour:
   m_ObjectHideFlags: 0

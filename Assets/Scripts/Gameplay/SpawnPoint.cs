@@ -4,6 +4,8 @@ public class SpawnPoint : MonoBehaviour
 {
     private GameObject player;
     private GameObject ghost;
+    public AudioClip SFXSpawn;
+    public bool playAudio;
 
     private void Awake()
     {
@@ -25,6 +27,11 @@ public class SpawnPoint : MonoBehaviour
         CheckpointManager.Instance.lastCheckPointPos = transform.position;
         player.transform.position = transform.position;
         CheckpointManager.Instance.checkpointActive = true;
+
+        if (playAudio && SFXSpawn != null)
+        {
+            SoundManager.Instance.PlaySound(SFXSpawn);
+        }
 
         if (ghost != null)
         {

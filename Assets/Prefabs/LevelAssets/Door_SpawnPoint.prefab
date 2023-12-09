@@ -303,3 +303,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7f604baf84c444d8d0f460d2f2091d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SFXSpawn: {fileID: 8300000, guid: 2d664e512920af64f8e17f4c529b3004, type: 3}
+  playAudio: 1

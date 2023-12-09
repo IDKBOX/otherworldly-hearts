@@ -10,6 +10,7 @@ public class GhostFound : MonoBehaviour
     [Header("Prerequisites")]
     public Animator UIAnimator;
     public GameObject ItemFoundUI;
+    public AudioClip SFXItemFound;
     public Animator melatiAnimator;
 
     public void CollectItem()
@@ -21,6 +22,7 @@ public class GhostFound : MonoBehaviour
     public IEnumerator ItemCollected()
     {
         ItemFoundUI.SetActive(true);
+        SoundManager.Instance.PlaySound(SFXItemFound);
         melatiAnimator.SetTrigger("Out");
         yield return new WaitForSecondsRealtime(0.15f);
         FindAnyObjectByType<CharacterMovement>().ghostCompanionUnlocked = true;

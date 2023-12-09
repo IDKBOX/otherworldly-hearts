@@ -17,6 +17,7 @@ public class DoorScript : MonoBehaviour
     [Header("Prerequisites")]
     public GameObject interactPromptPrefab;
     private DialogueStarter dialogueStarter;
+    public AudioClip SFXOpenDoor;
 
     //new input system
     private PlayerControls playerControls;
@@ -82,6 +83,7 @@ public class DoorScript : MonoBehaviour
             }
             else
             {
+                SoundManager.Instance.PlaySound(SFXOpenDoor);
                 LoadScene();
             }
         }

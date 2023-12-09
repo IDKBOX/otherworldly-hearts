@@ -10,6 +10,7 @@ public class RespawnPlayer : MonoBehaviour
 
     public GameObject floatingGhost;
     public GameObject vortexEffect;
+    public AudioClip SFXDeath;
 
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class RespawnPlayer : MonoBehaviour
         characterMovement.isDisabled = true;
         animator.SetTrigger("Death");
         Instantiate(vortexEffect, transform.position, Quaternion.identity);
+        SoundManager.Instance.PlaySound(SFXDeath);
         characterMovement.rb.velocity = Vector2.zero;
         characterMovement.rb.simulated = false;
         TransitionManager.Instance.StartTransition();

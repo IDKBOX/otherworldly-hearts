@@ -573,6 +573,7 @@ MonoBehaviour:
         m_CallState: 2
   UIAnimator: {fileID: 6155213852018203286}
   ItemFoundUI: {fileID: 422566196660663071}
+  SFXItemFound: {fileID: 8300000, guid: c098c0ab41bad4947852b7024a380065, type: 3}
   melatiAnimator: {fileID: 3517933061490461958}
 --- !u!1 &4200608989016453551
 GameObject:
@@ -1129,8 +1130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData:
-  - {fileID: 11400000, guid: 44a472398eae995448b0a52ff3d9f5e9, type: 2}
-  - {fileID: 11400000, guid: d08ade9b7cd93aa40884f3b8a1c3ac65, type: 2}
+  - {fileID: 11400000, guid: e82383cb71b89c74689bdaeb38f29ba1, type: 2}
   interactionNeeded: 0
   destroyOnComplete: 1
   onDialogueTriggered:

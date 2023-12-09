@@ -8,5 +8,5 @@ public class ScriptableCharacter : ScriptableObject
     [Header("Sprites")]
     public AnimationClip[] animations;
 
-    public AudioSource[] audioClips;
+    public AudioClip[] audioClips;
 }

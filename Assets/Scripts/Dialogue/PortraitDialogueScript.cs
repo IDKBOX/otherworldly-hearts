@@ -9,7 +9,6 @@ public class PortraitDialogueScript : MonoBehaviour
     [HideInInspector] public ScriptableDialogue dialogueData;
 
     public float textSpeed = 0.05f;
-    public AudioClip dialogueSound;
     [HideInInspector] public bool isDialogueRunning = false;
 
     private int index;
@@ -59,7 +58,7 @@ public class PortraitDialogueScript : MonoBehaviour
         foreach (char c in dialogueData.lines[index].ToCharArray())
         {
             textComponent.text += c;
-            SoundManager.Instance.PlaySound(dialogueSound);
+            SoundManager.Instance.PlaySound(dialogueData.characterData.audioClips[Random.Range(0,3)]);
 
             yield return new WaitForSeconds(textSpeed);
         }

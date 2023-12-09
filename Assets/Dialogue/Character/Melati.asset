@@ -28,4 +28,7 @@ MonoBehaviour:
   - {fileID: 7400000, guid: f29f054bdbb96e449a95693bca3c9261, type: 2}
   - {fileID: 7400000, guid: fc6f64c4ec054d94b854ce84adf55ca9, type: 2}
   - {fileID: 7400000, guid: fcfeff933f0a40b4eae691d9704a5c8b, type: 2}
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: d8b3ff8ae93c98a4cac93f1ef07880fa, type: 3}
+  - {fileID: 8300000, guid: 705a2a53335cd7a41ba492d318d3c2d4, type: 3}
+  - {fileID: 8300000, guid: 8386c3d99b8270149a7fce25fa0077ef, type: 3}

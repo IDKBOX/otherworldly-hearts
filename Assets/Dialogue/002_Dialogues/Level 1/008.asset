@@ -22,25 +22,5 @@ MonoBehaviour:
   - What is it that you want this time?
   - Supernatural strength?
   - Unmatched wealth?
-  - Huh?
-  - What?!
-  - ........?
-  - You.. want to help me..?
-  - Let me get this straight...
-  - You want to help me get free from this house?
-  - "I... didn\u2019t expect that..."
-  - Usually people want my powers...
-  - "I didn\u2019t expect anyone to free me honestly"
-  - .....
-  - "You\u2019re not joking are you?"
-  - "Alright alright, I\u2019ll trust you..."
-  - "I\u2019ll help you navigate through this house."
-  - "I can\u2019t remember anything about myself or why I\u2019m stuck here."
-  - "There\u2019s a curse that\u2019s binding me here, and I need to know who cursed
-    me."
-  - I need your help human, I need to learn about myself if I want to escape from
-    this place.
-  - "Traversing forward might be difficult, I\u2019ll lend you some of my powers"
-  - "Now, what are we waiting for? Let\u2019s go human!"
-  characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
-  emotion: 0d0000000d0000000d0000000d0000000d0000000d0000000d0000000d0000000500000005000000050000000600000000000000060000000000000002000000000000000a0000000b0000000b000000000000000000000002000000000000000000000001000000
+  characterData: {fileID: 11400000, guid: 67e8637ea654abb408d9658fe806dac1, type: 2}
+  emotion: 0100000001000000010000000100000001000000010000000100000001000000

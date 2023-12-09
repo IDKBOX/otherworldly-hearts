@@ -44,8 +44,10 @@ public class RespawnPlayer : MonoBehaviour
         transform.position = gm.lastCheckPointPos;
         floatingGhost.transform.position = transform.position;
 
-        characterMovement.isDisabled = false;
         characterMovement.rb.simulated = true;
         TransitionManager.Instance.EndTransition();
+
+        yield return new WaitForSeconds(0.5f);
+        characterMovement.isDisabled = false;
     }
 }

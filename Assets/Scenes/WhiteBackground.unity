@@ -264,7 +264,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1982893279
   m_SortingLayer: 3
-  m_SortingOrder: 100
+  m_SortingOrder: -15
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -2173,6 +2173,18 @@ MonoBehaviour:
   onDialogueComplete:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 403978235}
+        m_TargetAssemblyTypeName: DisablePlayer, Assembly-CSharp
+        m_MethodName: Disable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 979942741}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LoadScene
@@ -22205,6 +22217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7f604baf84c444d8d0f460d2f2091d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SFXSpawn: {fileID: 0}
+  playAudio: 0
 --- !u!61 &8440116980107652018
 BoxCollider2D:
   m_ObjectHideFlags: 0

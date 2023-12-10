@@ -13,6 +13,7 @@ public class PauseManager : MonoBehaviour
     public GameObject controlsScreen;
     public GameObject dialogueCanvas;
     public GameObject dialogueUI;
+    [HideInInspector] public static bool canPause = true;
 
     //audio lowpass filter
     public AudioMixerSnapshot normalAudioSnapshot;
@@ -48,13 +49,16 @@ public class PauseManager : MonoBehaviour
 
     public void PausePressed()
     {
-        if (!isPaused)
+        if (canPause)
         {
-            PauseGame();
-        }
-        else if (isPaused)
-        {
-            ResumeGame();
+            if (!isPaused)
+            {
+                PauseGame();
+            }
+            else if (isPaused)
+            {
+                ResumeGame();
+            }
         }
     }
 

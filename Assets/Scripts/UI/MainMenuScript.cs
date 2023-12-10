@@ -49,6 +49,10 @@ public class MainMenuScript : MonoBehaviour
             {
                 NewGameConfirmCancel();
             }
+            else if (mainMenuScreen.activeSelf)
+            {
+                ExitConfirmOverlay.SetActive(true);
+            }
         }
     }
 

@@ -13,6 +13,7 @@ public class RespawnPlayer : MonoBehaviour
     public AudioClip SFXDeath;
 
     private bool sceneReloaded;
+    private bool isDead;
 
     private void Awake()
     {
@@ -29,7 +30,11 @@ public class RespawnPlayer : MonoBehaviour
     public void respawnPlayer()
     {
         CinemachineShake.Instance.ShakeCamera(15, 0.1f);
-        StartCoroutine(StartTransition());
+        if (!isDead)
+        {
+            isDead = true;
+            StartCoroutine(StartTransition());
+        }
     }
 
     IEnumerator StartTransition()
@@ -61,5 +66,6 @@ public class RespawnPlayer : MonoBehaviour
         characterMovement.rb.simulated = true;
         characterMovement.isDisabled = false;
         sceneReloaded = false;
+        isDead = false;
     }
 }

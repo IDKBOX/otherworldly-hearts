@@ -6,6 +6,7 @@ public class SpiritOrb : MonoBehaviour
     public AudioClip SFXOrbCollect;
     private ParticleSystem collectEffect;
     private Animator animator;
+    public GameObject audioSource;
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class SpiritOrb : MonoBehaviour
         {
             linkedSpiritGate.spiritOrbsRequired--;
             collectEffect.Play();
+            Destroy(audioSource);
 
             //destroy when touched
             animator.SetTrigger("Collected");

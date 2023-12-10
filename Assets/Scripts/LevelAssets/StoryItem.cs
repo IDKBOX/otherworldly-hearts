@@ -14,6 +14,7 @@ public class StoryItem : MonoBehaviour
     public GameObject ItemFoundUI;
     private ParticleSystem collectEffect;
     public AudioClip SFXItemFound;
+    public GameObject audioSource;
     public Animator itemAnimator;
     public Animator UIAnimator;
     public Image itemImage;
@@ -43,6 +44,7 @@ public class StoryItem : MonoBehaviour
         collectEffect.Play();
         itemAnimator.SetTrigger("Collected");
         SoundManager.Instance.PlaySound(SFXItemFound);
+        Destroy(audioSource);
         Destroy(GetComponentInChildren<SpriteRenderer>().gameObject, 0.5f);
         Destroy(GetComponent<CircleCollider2D>());
         IDChecker();

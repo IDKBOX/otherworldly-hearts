@@ -1478,7 +1478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mobileUI: {fileID: 784642749}
-  debugOnPC: 1
+  debugOnPC: 0
 --- !u!1 &236044793
 GameObject:
   m_ObjectHideFlags: 0
@@ -11808,8 +11808,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.03310001, y: 0.06895003, z: 0}
-    m_Extent: {x: 1.1442, y: 0.56915, z: 0}
+    m_Center: {x: 0.03544998, y: 0.07345, z: 0}
+    m_Extent: {x: 1.14415, y: 0.57344997, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1

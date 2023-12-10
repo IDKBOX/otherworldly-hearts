@@ -41,6 +41,7 @@ public class RespawnPlayer : MonoBehaviour
         characterMovement.rb.velocity = Vector2.zero;
         characterMovement.rb.simulated = false;
         TransitionManager.Instance.StartTransition();
+        PauseManager.canPause = false;
         yield return new WaitForSeconds(1f);
 
         if (!sceneReloaded)
@@ -53,8 +54,8 @@ public class RespawnPlayer : MonoBehaviour
         transform.position = gm.lastCheckPointPos;
         floatingGhost.transform.position = transform.position;
 
-        
         TransitionManager.Instance.EndTransition();
+        PauseManager.canPause = true;
 
         yield return new WaitForSeconds(0.5f);
         characterMovement.rb.simulated = true;

@@ -62,11 +62,13 @@ public class DoorScript : MonoBehaviour
     IEnumerator StartTransition()
     {
         TransitionManager.Instance.StartTransition();
+        PauseManager.canPause = false;
         yield return new WaitForSeconds(1f);
         SceneManager.UnloadSceneAsync(currentSceneName);
         SceneManager.LoadScene(nextSceneName, LoadSceneMode.Additive);
         CheckpointManager.Instance.resetCheckpoint();
         TransitionManager.Instance.EndTransition();
+        PauseManager.canPause = true;
     }
 
     private void Update()

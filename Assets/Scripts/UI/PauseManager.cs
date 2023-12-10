@@ -109,6 +109,8 @@ public class PauseManager : MonoBehaviour
     IEnumerator StartTransition()
     {
         TransitionManager.Instance.StartTransition();
+        canPause = false;
+
         yield return new WaitForSecondsRealtime(1f);
 
         Time.timeScale = 1f;

@@ -7,7 +7,6 @@ public class RisingCorruption : MonoBehaviour
 
     void Start()
     {
-
         if (CheckpointManager.Instance.checkpointActive)
         {
             transform.position = new Vector3(0, CheckpointManager.Instance.lastCheckPointPos.y, 0);

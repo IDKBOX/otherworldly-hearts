@@ -12,6 +12,7 @@ public class PauseManager : MonoBehaviour
     public GameObject settingsScreen;
     public GameObject controlsScreen;
     public GameObject dialogueCanvas;
+    public GameObject dialogueUI;
 
     //audio lowpass filter
     public AudioMixerSnapshot normalAudioSnapshot;
@@ -75,7 +76,10 @@ public class PauseManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
-        FindObjectOfType<CharacterMovement>().isDisabled = false;
+        if (dialogueUI.activeSelf != true)
+        {
+            FindObjectOfType<CharacterMovement>().isDisabled = false;
+        }
         MobileUIManager.Instance.showMobileUI();
         normalAudioSnapshot.TransitionTo(0f);
     }

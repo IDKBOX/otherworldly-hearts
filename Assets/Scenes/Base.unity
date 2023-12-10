@@ -1513,6 +1513,7 @@ MonoBehaviour:
   settingsScreen: {fileID: 2051469849}
   controlsScreen: {fileID: 1323775443}
   dialogueCanvas: {fileID: 63574385}
+  dialogueUI: {fileID: 1088367961}
   normalAudioSnapshot: {fileID: 24500006, guid: b6443362b99be184494a51b939200ca6, type: 2}
   lowpassAudioSnapshot: {fileID: 7644709922124287134, guid: b6443362b99be184494a51b939200ca6, type: 2}
 --- !u!4 &236044795
@@ -11807,8 +11808,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.030749977, y: 0.07080001, z: 0}
-    m_Extent: {x: 1.1343501, y: 0.5664, z: 0}
+    m_Center: {x: 0.03369999, y: 0.07609999, z: 0}
+    m_Extent: {x: 1.1407, y: 0.5682, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1

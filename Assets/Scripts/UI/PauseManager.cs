@@ -115,6 +115,7 @@ public class PauseManager : MonoBehaviour
 
         Time.timeScale = 1f;
         isPaused = false;
+        canPause = true;
         SceneManager.LoadScene(0);
         TransitionManager.Instance.EndTransition();
     }

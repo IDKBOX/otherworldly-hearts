@@ -1698,7 +1698,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: '0
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 95c3e120fe2173e46bcba5a2409abc74, type: 2}
   m_sharedMaterial: {fileID: 4976898685907292594, guid: 95c3e120fe2173e46bcba5a2409abc74, type: 2}
@@ -1725,14 +1727,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 27
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 30
+  m_fontSizeMax: 27
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1761,7 +1763,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -48.499977, y: 0, z: -17.907656, w: 0}
+  m_margin: {x: -26.075302, y: 0, z: 3.4060926, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4467,7 +4469,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -138.69, y: -188.70001}
+  m_AnchoredPosition: {x: -116, y: -188.70001}
   m_SizeDelta: {x: 154.74, y: 58.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1401474198
@@ -11192,8 +11194,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -132.8, y: -19.395}
-  m_SizeDelta: {x: 27.53, y: 38.79}
+  m_AnchoredPosition: {x: -126.810074, y: -21.8}
+  m_SizeDelta: {x: 54.81, y: 43.59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1934762666
 MonoBehaviour:
@@ -11215,9 +11217,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cb33f373d3c897642ad6b319fb0cea03, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3612aa2ced612c846bea4a21e05a4fcd, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -12115,8 +12117,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.030099988, y: 0.07035002, z: 0}
-    m_Extent: {x: 1.1493, y: 0.57525, z: 0}
+    m_Center: {x: 0.034749985, y: 0.077849984, z: 0}
+    m_Extent: {x: 1.14065, y: 0.56745, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1

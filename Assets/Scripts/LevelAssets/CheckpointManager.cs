@@ -28,7 +28,6 @@ public class CheckpointManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(PlayerPrefs.GetInt("DeathCount"));
         //for testing, remove on release!
         if (Input.GetKeyDown(KeyCode.O))
         {

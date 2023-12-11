@@ -60,6 +60,7 @@ public class MainMenuScript : MonoBehaviour
     {
         CheckpointManager.Instance.deleteCheckpointData();
         CheckpointManager.Instance.loadCheckpointData();
+        PlayerPrefs.DeleteKey("DeathCount");
         PlayerPrefs.DeleteKey("StoryItemData");
         StartCoroutine(StartTransition(levelSceneName));
         SoundManager.Instance.FadeOut();

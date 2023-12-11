@@ -4,10 +4,17 @@ using UnityEngine.SceneManagement;
 
 public class EndCutsceneManager : MonoBehaviour
 {
+    private GameObject dialogueCanvas;
+
     public void ReturnToMainMenu()
     {
         StartCoroutine(StartTransition());
         SoundManager.Instance.FadeOut();
+        
+        if (dialogueCanvas != null)
+        {
+            Destroy(dialogueCanvas);
+        }
     }
 
     IEnumerator StartTransition()
@@ -26,5 +33,6 @@ public class EndCutsceneManager : MonoBehaviour
         CheckpointManager.Instance.deleteCheckpointData();
         CheckpointManager.Instance.loadCheckpointData();
         PlayerPrefs.DeleteKey("StoryItemData");
+        dialogueCanvas = GameObject.FindGameObjectWithTag("DialogueCanvas");
     }
 }

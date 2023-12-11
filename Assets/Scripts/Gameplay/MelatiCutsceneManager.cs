@@ -20,6 +20,7 @@ public class MelatiCutsceneManager : MonoBehaviour
     public void deleteData()
     {
         CheckpointManager.Instance.deleteCheckpointData();
+        CheckpointManager.Instance.loadCheckpointData();
         PlayerPrefs.DeleteKey("StoryItemData");
     }
 }

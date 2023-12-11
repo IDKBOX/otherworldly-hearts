@@ -10,7 +10,11 @@ public class DisablePlayer : MonoBehaviour
     public void Disable()
     {
         GameObject.FindAnyObjectByType<CharacterMovement>().isDisabled = true;
-        GameObject.Find("MobileUI").SetActive(false);
+
+        if (GameObject.Find("MobileUI") != null)
+        {
+            GameObject.Find("MobileUI").SetActive(false);
+        }
 
         if (GameObject.Find("GameplayUI") != null)
         {

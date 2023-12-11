@@ -5020,6 +5020,7 @@ GameObject:
   - component: {fileID: 1538686483}
   - component: {fileID: 1538686485}
   - component: {fileID: 1538686484}
+  - component: {fileID: 1538686486}
   m_Layer: 5
   m_Name: GameplayUI
   m_TagString: Untagged
@@ -5088,6 +5089,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538686482}
   m_CullTransparentMesh: 1
+--- !u!225 &1538686486
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538686482}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1555176789
 GameObject:
   m_ObjectHideFlags: 0
@@ -12137,8 +12150,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.031149983, y: 0.07194999, z: 0}
-    m_Extent: {x: 1.14535, y: 0.57495, z: 0}
+    m_Center: {x: 0.032949984, y: 0.07065001, z: 0}
+    m_Extent: {x: 1.13955, y: 0.56565, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1

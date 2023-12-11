@@ -14,6 +14,7 @@ public class PauseManager : MonoBehaviour
     public GameObject dialogueCanvas;
     public GameObject dialogueUI;
     [HideInInspector] public static bool canPause = true;
+    public AudioClip SFXPaused;
 
     //audio lowpass filter
     public AudioMixerSnapshot normalAudioSnapshot;
@@ -70,6 +71,7 @@ public class PauseManager : MonoBehaviour
         isPaused = true;
         FindObjectOfType<CharacterMovement>().isDisabled = true;
         MobileUIManager.Instance.hideMobileUI();
+        SoundManager.Instance.PlaySound(SFXPaused);
 
         //clear selected object
         EventSystem.current.SetSelectedGameObject(null);

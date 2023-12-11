@@ -514,6 +514,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTipPrefab: {fileID: 1238236228}
+  SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
+  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
 --- !u!1 &107049723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,6 +1091,7 @@ GameObject:
   - component: {fileID: 169027708}
   - component: {fileID: 169027707}
   - component: {fileID: 169027710}
+  - component: {fileID: 169027711}
   m_Layer: 5
   m_Name: Button_No
   m_TagString: Untagged
@@ -1291,6 +1294,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &169027711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169027705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8896a5e2cd4e66a48b0eed517822ce72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
+  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
 --- !u!1001 &170305579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1518,6 +1535,7 @@ MonoBehaviour:
   controlsScreen: {fileID: 1323775443}
   dialogueCanvas: {fileID: 63574385}
   dialogueUI: {fileID: 1088367961}
+  SFXPaused: {fileID: 8300000, guid: fb7fe4ff6a0e6ba499a682212d6acc8f, type: 3}
   normalAudioSnapshot: {fileID: 24500006, guid: b6443362b99be184494a51b939200ca6, type: 2}
   lowpassAudioSnapshot: {fileID: 7644709922124287134, guid: b6443362b99be184494a51b939200ca6, type: 2}
 --- !u!4 &236044795
@@ -2280,6 +2298,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTipPrefab: {fileID: 1982393593}
+  SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
+  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
 --- !u!1 &587561460
 GameObject:
   m_ObjectHideFlags: 0
@@ -2843,6 +2863,7 @@ GameObject:
   - component: {fileID: 833602609}
   - component: {fileID: 833602608}
   - component: {fileID: 833602611}
+  - component: {fileID: 833602612}
   m_Layer: 5
   m_Name: Button_Pause
   m_TagString: Untagged
@@ -2984,6 +3005,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &833602612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833602606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8896a5e2cd4e66a48b0eed517822ce72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
+  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
 --- !u!1 &859007912
 GameObject:
   m_ObjectHideFlags: 0
@@ -3539,6 +3574,7 @@ GameObject:
   - component: {fileID: 1080677808}
   - component: {fileID: 1080677807}
   - component: {fileID: 1080677810}
+  - component: {fileID: 1080677811}
   m_Layer: 5
   m_Name: Button_Yes
   m_TagString: Untagged
@@ -3739,6 +3775,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1080677811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080677805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8896a5e2cd4e66a48b0eed517822ce72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
+  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
 --- !u!1 &1088367961
 GameObject:
   m_ObjectHideFlags: 0
@@ -4572,7 +4622,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.86944443, y: 1.5111111}
+  m_Size: {x: 0.875, y: 1.09375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5626,6 +5676,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTipPrefab: {fileID: 1419689566}
+  SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
+  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
 --- !u!1 &1754038475
 GameObject:
   m_ObjectHideFlags: 0
@@ -12085,8 +12137,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.02700001, y: 0.06985001, z: 0}
-    m_Extent: {x: 1.1407001, y: 0.56025, z: 0}
+    m_Center: {x: 0.028599977, y: 0.06879999, z: 0}
+    m_Extent: {x: 1.1474, y: 0.5622, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1

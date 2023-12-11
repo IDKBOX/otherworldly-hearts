@@ -419,6 +419,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTipPrefab: {fileID: 409240403}
+  SFXHover: {fileID: 0}
+  SFXClick: {fileID: 0}
 --- !u!1 &516967241
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,6 +718,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTipPrefab: {fileID: 409240403}
+  SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
+  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
 --- !u!95 &656606631
 Animator:
   serializedVersion: 5

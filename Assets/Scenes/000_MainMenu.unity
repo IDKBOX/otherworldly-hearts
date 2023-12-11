@@ -252,8 +252,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 14.0845, y: -6.74135, z: 0}
-    m_Extent: {x: 30.7807, y: 25.35985, z: 0}
+    m_Center: {x: 14.0852, y: -6.7350006, z: 0}
+    m_Extent: {x: 30.7841, y: 25.3619, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -527,6 +527,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTipPrefab: {fileID: 413907609}
+  SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
+  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
 --- !u!1001 &186745000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -886,6 +888,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTipPrefab: {fileID: 1036899664}
+  SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
+  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
 --- !u!1 &408850496
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,6 +1059,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTipPrefab: {fileID: 2016238210}
+  SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
+  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
 --- !u!1 &413907609 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3747244695767786479, guid: 1993f10ae79f3e440b50221a02d56a7b, type: 3}
@@ -1078,6 +1084,7 @@ GameObject:
   - component: {fileID: 442261890}
   - component: {fileID: 442261889}
   - component: {fileID: 442261888}
+  - component: {fileID: 442261892}
   m_Layer: 5
   m_Name: Button_Yes
   m_TagString: Untagged
@@ -1278,6 +1285,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442261886}
   m_CullTransparentMesh: 1
+--- !u!114 &442261892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442261886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8896a5e2cd4e66a48b0eed517822ce72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
+  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
 --- !u!1 &469284726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,6 +1312,7 @@ GameObject:
   - component: {fileID: 469284728}
   - component: {fileID: 469284730}
   - component: {fileID: 469284731}
+  - component: {fileID: 469284732}
   m_Layer: 5
   m_Name: Button_No
   m_TagString: Untagged
@@ -1493,6 +1515,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &469284732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469284726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8896a5e2cd4e66a48b0eed517822ce72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
+  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
 --- !u!1 &469495198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,6 +2305,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTipPrefab: {fileID: 1914257740}
+  SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
+  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
 --- !u!1 &766407659
 GameObject:
   m_ObjectHideFlags: 0
@@ -7620,6 +7658,7 @@ GameObject:
   - component: {fileID: 937598160}
   - component: {fileID: 937598162}
   - component: {fileID: 937598163}
+  - component: {fileID: 937598164}
   m_Layer: 5
   m_Name: Button_Yes
   m_TagString: Untagged
@@ -7820,6 +7859,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &937598164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937598158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8896a5e2cd4e66a48b0eed517822ce72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
+  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
 --- !u!1 &1008814421
 GameObject:
   m_ObjectHideFlags: 0
@@ -13007,6 +13060,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTipPrefab: {fileID: 1396869037}
+  SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
+  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
 --- !u!1 &1086368591
 GameObject:
   m_ObjectHideFlags: 0
@@ -13020,6 +13075,7 @@ GameObject:
   - component: {fileID: 1086368595}
   - component: {fileID: 1086368594}
   - component: {fileID: 1086368593}
+  - component: {fileID: 1086368597}
   m_Layer: 5
   m_Name: Button_No
   m_TagString: Untagged
@@ -13222,6 +13278,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086368591}
   m_CullTransparentMesh: 1
+--- !u!114 &1086368597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086368591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8896a5e2cd4e66a48b0eed517822ce72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
+  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
 --- !u!1 &1210854620
 GameObject:
   m_ObjectHideFlags: 0
@@ -23800,6 +23870,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTipPrefab: {fileID: 355297599}
+  SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
+  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
 --- !u!1 &1800781556
 GameObject:
   m_ObjectHideFlags: 0
@@ -24393,6 +24465,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTipPrefab: {fileID: 2016238210}
+  SFXHover: {fileID: 0}
+  SFXClick: {fileID: 0}
 --- !u!1 &2037042819
 GameObject:
   m_ObjectHideFlags: 0

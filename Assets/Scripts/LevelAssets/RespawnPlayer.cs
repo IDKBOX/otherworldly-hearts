@@ -65,6 +65,7 @@ public class RespawnPlayer : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         characterMovement.rb.simulated = true;
         characterMovement.isDisabled = false;
+        characterMovement.rb.velocity = Vector2.zero;
         sceneReloaded = false;
         isDead = false;
     }

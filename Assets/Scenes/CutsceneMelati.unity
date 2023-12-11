@@ -394,6 +394,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7f604baf84c444d8d0f460d2f2091d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SFXSpawn: {fileID: 0}
+  playAudio: 0
+  allowSaveLevel: 0
 --- !u!61 &351539252
 BoxCollider2D:
   m_ObjectHideFlags: 0

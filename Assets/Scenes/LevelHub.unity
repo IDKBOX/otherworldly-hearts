@@ -31271,8 +31271,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.2428999, y: -5.87955, z: 0}
-    m_Extent: {x: 8.1664, y: 11.55605, z: 0}
+    m_Center: {x: 1.2404499, y: -5.8792005, z: 0}
+    m_Extent: {x: 8.15205, y: 11.563101, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -31400,6 +31400,7 @@ MonoBehaviour:
   interactPromptPrefab: {fileID: 1728883581}
   altarEffect: {fileID: 1391369773}
   altarAnimSprite: {fileID: 667142986}
+  SFXAltarAddItem: {fileID: 8300000, guid: 431b3aaa8ad410d40af38b38f1cc7b3e, type: 3}
   afterLevel1: {fileID: 522223577}
   afterLevel2: {fileID: 1422845691}
   afterLevel3: {fileID: 33101394}
@@ -49561,8 +49562,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.2420998, y: -5.8781996, z: 0}
-    m_Extent: {x: 8.1664, y: 11.5654, z: 0}
+    m_Center: {x: 1.2424002, y: -5.8735504, z: 0}
+    m_Extent: {x: 8.1622, y: 11.55805, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -65569,6 +65570,7 @@ MonoBehaviour:
   isLocked: 0
   disableFadeOutMusic: 0
   interactPromptPrefab: {fileID: 1736890599}
+  SFXOpenDoor: {fileID: 0}
 --- !u!4 &5173806309505395544
 Transform:
   m_ObjectHideFlags: 0

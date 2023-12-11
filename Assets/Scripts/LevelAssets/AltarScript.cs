@@ -23,6 +23,7 @@ public class AltarScript : MonoBehaviour
     public GameObject interactPromptPrefab;
     public Animator altarEffect;
     public SpriteRenderer altarAnimSprite;
+    public AudioClip SFXAltarAddItem;
 
     [Header("Dialog Trigger")]
     public DialogueStarter afterLevel1;
@@ -35,6 +36,7 @@ public class AltarScript : MonoBehaviour
     //new input system
     private PlayerControls playerControls;
     private InputAction interact;
+
 
 
     private void Awake()
@@ -80,11 +82,13 @@ public class AltarScript : MonoBehaviour
                 level2Door.UnlockDoor();
                 break;
             case 1:
+                SoundManager.Instance.PlaySound(SFXAltarAddItem);
                 OneItemDialogue.StartDialogue();
                 level3Door.UnlockDoor();
                 altarAnimSprite.sprite = photoSprite;
                 break;
             case 2:
+                SoundManager.Instance.PlaySound(SFXAltarAddItem);
                 TwoItemsDialogue.StartDialogue();
                 altarAnimSprite.sprite = diarySprite;
                 break;

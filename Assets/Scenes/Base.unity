@@ -4442,6 +4442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1401474197}
   - component: {fileID: 1401474200}
+  - component: {fileID: 1401474201}
   m_Layer: 5
   m_Name: DeathCount
   m_TagString: Untagged
@@ -4478,6 +4479,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401474196}
   m_CullTransparentMesh: 1
+--- !u!114 &1401474201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401474196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8850938e4b4337f4394c8d2ce5ee04cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathCount: 0
+  textDeath: {fileID: 438082495}
 --- !u!1 &1405916769
 GameObject:
   m_ObjectHideFlags: 0
@@ -12070,8 +12085,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.033450007, y: 0.06404999, z: 0}
-    m_Extent: {x: 1.14675, y: 0.56984997, z: 0}
+    m_Center: {x: 0.02700001, y: 0.06985001, z: 0}
+    m_Extent: {x: 1.1407001, y: 0.56025, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.1

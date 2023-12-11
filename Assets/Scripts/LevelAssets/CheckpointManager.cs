@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 
 public class CheckpointManager : MonoBehaviour
@@ -6,8 +5,6 @@ public class CheckpointManager : MonoBehaviour
     public static CheckpointManager Instance;
     public Vector2 lastCheckPointPos;
     public string sceneActive;
-    public int DeathCount;
-    public TextMeshProUGUI textDeath;
     [HideInInspector] public bool checkpointActive;
 
     private void Awake()
@@ -16,9 +13,7 @@ public class CheckpointManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            loadDeathCount();
             loadCheckpointData();
-
         }
         else
         {
@@ -34,12 +29,6 @@ public class CheckpointManager : MonoBehaviour
             Debug.Log("CheckpointData Deleted");
             deleteCheckpointData();
             loadCheckpointData();
-        }
-        else if(Input.GetKeyDown(KeyCode.P))
-        {
-            Debug.Log("DeathCount Reset");
-            resetDeathCount();
-            loadDeathCount();
         }
     }
 
@@ -65,22 +54,6 @@ public class CheckpointManager : MonoBehaviour
         PlayerPrefs.SetFloat("checkpointX", lastCheckPointPos.x);
         PlayerPrefs.SetFloat("checkpointY", lastCheckPointPos.y);
         PlayerPrefs.SetInt("canLoadGame", 1);
-    }
-
-    public void saveDeathCount(int count)
-    {
-        PlayerPrefs.SetInt("DeathCount", count);
-    }
-
-    public void loadDeathCount()
-    {
-        PlayerPrefs.GetInt("DeathCount",0);
-        textDeath.text = "" + PlayerPrefs.GetInt("DeathCount");
-    }
-
-    public void resetDeathCount()
-    {
-        PlayerPrefs.SetInt("DeathCount", 0);
     }
 
     public void loadCheckpointData()

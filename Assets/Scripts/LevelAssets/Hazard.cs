@@ -4,11 +4,13 @@ public class Hazard : MonoBehaviour
 {
     private CheckpointManager gm;
     bool hasBeenTriggered;
+    private DeathCounter deathCounter;
 
     private void Awake()
     {
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<CheckpointManager>();
         gm.sceneActive = gameObject.scene.name;
+        deathCounter = GameObject.FindAnyObjectByType<DeathCounter>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -19,8 +21,8 @@ public class Hazard : MonoBehaviour
             RespawnPlayer respawnPlayerScript = FindObjectOfType<RespawnPlayer>();
             respawnPlayerScript.respawnPlayer();
 
-            gm.saveDeathCount((PlayerPrefs.GetInt("DeathCount") + 1 ));
-            gm.textDeath.text = ""+PlayerPrefs.GetInt("DeathCount");
+            deathCounter.saveDeathCount((PlayerPrefs.GetInt("DeathCount") + 1 ));
+            deathCounter.textDeath.text = PlayerPrefs.GetInt("DeathCount").ToString();
         }
     }
 

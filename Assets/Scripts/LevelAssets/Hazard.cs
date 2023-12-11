@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class Hazard : MonoBehaviour
 {
@@ -18,6 +20,9 @@ public class Hazard : MonoBehaviour
             hasBeenTriggered = true;
             RespawnPlayer respawnPlayerScript = FindObjectOfType<RespawnPlayer>();
             respawnPlayerScript.respawnPlayer();
+
+            gm.saveDeathCount((PlayerPrefs.GetInt("DeathCount") + 1 ));
+            gm.textDeath.text = ""+PlayerPrefs.GetInt("DeathCount");
         }
     }
 

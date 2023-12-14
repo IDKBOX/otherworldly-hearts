@@ -365,7 +365,7 @@ public class CharacterMovement : MonoBehaviour
 
     private bool IsWalled()
     {
-        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
+        return Physics2D.OverlapCircle(wallCheck.position, 0.1f, wallLayer);
     }
 
     private void WallSlide ()

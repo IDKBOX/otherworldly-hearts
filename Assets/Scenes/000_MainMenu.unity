@@ -252,8 +252,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 14.0852, y: -6.7350006, z: 0}
-    m_Extent: {x: 30.7841, y: 25.3619, z: 0}
+    m_Center: {x: 14.087101, y: -6.7331495, z: 0}
+    m_Extent: {x: 30.7728, y: 25.356148, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -528,7 +528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toolTipPrefab: {fileID: 413907609}
   SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
-  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
+  SFXClick: {fileID: 8300000, guid: 7b345ad397f74164bab68057b6a98d4a, type: 3}
 --- !u!1001 &186745000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1298,7 +1298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
-  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
+  SFXClick: {fileID: 8300000, guid: 7b345ad397f74164bab68057b6a98d4a, type: 3}
 --- !u!1 &469284726
 GameObject:
   m_ObjectHideFlags: 0

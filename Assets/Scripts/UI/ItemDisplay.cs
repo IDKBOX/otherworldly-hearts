@@ -41,10 +41,10 @@ public class ItemDisplay : MonoBehaviour
         }
 
         //debug, remove on release
-        if (Input.GetKeyDown(KeyCode.I))
+/*        if (Input.GetKeyDown(KeyCode.I))
         {
             Debug.Log("StoryItemDataDeleted");
             PlayerPrefs.DeleteKey("StoryItemData");
-        }
+        }*/
     }
 }

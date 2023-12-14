@@ -11,7 +11,7 @@ public class DeathCounter : MonoBehaviour
         loadDeathCount();
     }
 
-    private void Update()
+/*    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
@@ -19,7 +19,7 @@ public class DeathCounter : MonoBehaviour
             resetDeathCount();
             loadDeathCount();
         }
-    }
+    }*/
 
     public void saveDeathCount(int count)
     {

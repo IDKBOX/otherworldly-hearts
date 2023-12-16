@@ -17,8 +17,8 @@ MonoBehaviour:
   - That pit seems a bit too far to reach...
   - "But worry not human, I\u2019ve lend you my power"
   - Have you noticed that your feet glowing?
-  - While it's glowing, if you press [Space] after jumping, you can perform a double
-    jump!
+  - While it's glowing, if you press the [Jump Button] after jumping, you can perform
+    a double jump!
   - Give it a try!
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
   emotion: 0a00000003000000010000000200000003000000

@@ -15,6 +15,6 @@ MonoBehaviour:
   isDescriptionDialogue: 1
   lines:
   - Try jumping from that wall to the other walls
-  - "Press [Space] when you\u2019re on a wall to perform a wall jump"
+  - "Press the [Jump Button] when you\u2019re on a wall to perform a wall jump"
   characterData: {fileID: 11400000, guid: e5d558acd5761e34f961a96e1fe0e7a0, type: 2}
   emotion: 

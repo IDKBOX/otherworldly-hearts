@@ -13,6 +13,8 @@ public class PauseManager : MonoBehaviour
     public GameObject controlsScreen;
     public GameObject dialogueCanvas;
     public GameObject dialogueUI;
+    [HideInInspector] public static bool canPause = true;
+    public AudioClip SFXPaused;
 
     //audio lowpass filter
     public AudioMixerSnapshot normalAudioSnapshot;
@@ -48,13 +50,16 @@ public class PauseManager : MonoBehaviour
 
     public void PausePressed()
     {
-        if (!isPaused)
+        if (canPause)
         {
-            PauseGame();
-        }
-        else if (isPaused)
-        {
-            ResumeGame();
+            if (!isPaused)
+            {
+                PauseGame();
+            }
+            else if (isPaused)
+            {
+                ResumeGame();
+            }
         }
     }
 
@@ -66,6 +71,7 @@ public class PauseManager : MonoBehaviour
         isPaused = true;
         FindObjectOfType<CharacterMovement>().isDisabled = true;
         MobileUIManager.Instance.hideMobileUI();
+        SoundManager.Instance.PlaySound(SFXPaused);
 
         //clear selected object
         EventSystem.current.SetSelectedGameObject(null);
@@ -105,10 +111,13 @@ public class PauseManager : MonoBehaviour
     IEnumerator StartTransition()
     {
         TransitionManager.Instance.StartTransition();
+        canPause = false;
+
         yield return new WaitForSecondsRealtime(1f);
 
         Time.timeScale = 1f;
         isPaused = false;
+        canPause = true;
         SceneManager.LoadScene(0);
         TransitionManager.Instance.EndTransition();
     }

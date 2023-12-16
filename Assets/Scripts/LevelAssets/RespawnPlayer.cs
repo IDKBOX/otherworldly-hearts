@@ -12,6 +12,9 @@ public class RespawnPlayer : MonoBehaviour
     public GameObject vortexEffect;
     public AudioClip SFXDeath;
 
+    private bool sceneReloaded;
+    private bool isDead;
+
     private void Awake()
     {
         characterMovement = GetComponent<CharacterMovement>();
@@ -27,7 +30,11 @@ public class RespawnPlayer : MonoBehaviour
     public void respawnPlayer()
     {
         CinemachineShake.Instance.ShakeCamera(15, 0.1f);
-        StartCoroutine(StartTransition());
+        if (!isDead)
+        {
+            isDead = true;
+            StartCoroutine(StartTransition());
+        }
     }
 
     IEnumerator StartTransition()
@@ -39,17 +46,27 @@ public class RespawnPlayer : MonoBehaviour
         characterMovement.rb.velocity = Vector2.zero;
         characterMovement.rb.simulated = false;
         TransitionManager.Instance.StartTransition();
+        PauseManager.canPause = false;
         yield return new WaitForSeconds(1f);
 
-        SceneManager.UnloadSceneAsync(gm.sceneActive);
-        SceneManager.LoadScene(gm.sceneActive, LoadSceneMode.Additive);
+        if (!sceneReloaded)
+        {
+            sceneReloaded = true;
+            SceneManager.UnloadSceneAsync(gm.sceneActive);
+            SceneManager.LoadScene(gm.sceneActive, LoadSceneMode.Additive);
+        }
+        
         transform.position = gm.lastCheckPointPos;
         floatingGhost.transform.position = transform.position;
 
-        characterMovement.rb.simulated = true;
         TransitionManager.Instance.EndTransition();
+        PauseManager.canPause = true;
 
         yield return new WaitForSeconds(0.5f);
+        characterMovement.rb.simulated = true;
         characterMovement.isDisabled = false;
+        characterMovement.rb.velocity = Vector2.zero;
+        sceneReloaded = false;
+        isDead = false;
     }
 }

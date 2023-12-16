@@ -6,9 +6,12 @@ public class ButtonToolTipScript : MonoBehaviour, IPointerEnterHandler, IPointer
 {
     public GameObject toolTipPrefab;
     private Coroutine delay;
+    public AudioClip SFXHover;
+    public AudioClip SFXClick;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        SoundManager.Instance.PlaySound(SFXHover);
         delay = StartCoroutine(DelayTooltip());
     }
 
@@ -20,6 +23,7 @@ public class ButtonToolTipScript : MonoBehaviour, IPointerEnterHandler, IPointer
     
     public void OnPointerClick(PointerEventData eventData)
     {
+        SoundManager.Instance.PlaySound(SFXClick);
         toolTipPrefab.SetActive(false);
         StopCoroutine(delay);
     }

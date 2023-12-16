@@ -49,6 +49,10 @@ public class MainMenuScript : MonoBehaviour
             {
                 NewGameConfirmCancel();
             }
+            else if (mainMenuScreen.activeSelf)
+            {
+                ExitConfirmOverlay.SetActive(true);
+            }
         }
     }
 
@@ -56,6 +60,7 @@ public class MainMenuScript : MonoBehaviour
     {
         CheckpointManager.Instance.deleteCheckpointData();
         CheckpointManager.Instance.loadCheckpointData();
+        PlayerPrefs.DeleteKey("DeathCount");
         PlayerPrefs.DeleteKey("StoryItemData");
         StartCoroutine(StartTransition(levelSceneName));
         SoundManager.Instance.FadeOut();

@@ -967,6 +967,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTipPrefab: {fileID: 5971002456433430850}
+  SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
+  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
 --- !u!1 &4354341364460139291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,6 +1512,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTipPrefab: {fileID: 3836079635299427313}
+  SFXHover: {fileID: 8300000, guid: f87027e5d96f76d4fb0fe1e40cf3843f, type: 3}
+  SFXClick: {fileID: 8300000, guid: 67b3f4f9434ce9443ad40c5a9fcb83dc, type: 3}
 --- !u!1 &6504050859120911155
 GameObject:
   m_ObjectHideFlags: 0

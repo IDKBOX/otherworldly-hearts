@@ -6,6 +6,7 @@ public class SpawnPoint : MonoBehaviour
     private GameObject ghost;
     public AudioClip SFXSpawn;
     public bool playAudio;
+    public bool allowSaveLevel = true;
 
     private void Awake()
     {
@@ -18,7 +19,10 @@ public class SpawnPoint : MonoBehaviour
         if (!CheckpointManager.Instance.checkpointActive)
         {
             SpawnPlayer();
-            CheckpointManager.Instance.saveLevel();
+            if (allowSaveLevel)
+            {
+                CheckpointManager.Instance.saveLevel();
+            }
         }
     }
 

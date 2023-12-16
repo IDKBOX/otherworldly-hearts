@@ -9,6 +9,7 @@ TagManager:
   - GM
   - Hazard
   - HazardCollider
+  - DialogueCanvas
   layers:
   - Default
   - TransparentFX

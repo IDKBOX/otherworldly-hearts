@@ -17,6 +17,7 @@ public class IntroRunner : MonoBehaviour
     public Image dialogueImageObjectBG;
     public float textSpeed = 0.05f;
     public AudioClip dialogueSound;
+    public AudioClip MusicIntro;
     public GameObject dialogueTriangle;
     [HideInInspector] public bool isDialogueRunning = false;
     public GameObject cutsceneIntro;
@@ -111,9 +112,11 @@ public class IntroRunner : MonoBehaviour
     //start script
     private IEnumerator Start()
     {
-        yield return new WaitForSeconds(0.65f);
+        yield return new WaitForSeconds(3f);
         ChangeDialogueTween();
         StartDialogue();
+        yield return new WaitForSeconds(0.1f);
+        SoundManager.Instance.PlayMusic(MusicIntro);
         yield return new WaitForSeconds(0.25f);
         allowSkipDialogue = true;
     }

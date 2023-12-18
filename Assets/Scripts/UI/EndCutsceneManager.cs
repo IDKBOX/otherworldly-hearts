@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class EndCutsceneManager : MonoBehaviour
 {
     private GameObject dialogueCanvas;
+    private GameObject level4Manager;
 
     public void ReturnToMainMenu()
     {
@@ -14,6 +15,7 @@ public class EndCutsceneManager : MonoBehaviour
         if (dialogueCanvas != null)
         {
             Destroy(dialogueCanvas);
+            Destroy(level4Manager);
         }
     }
 
@@ -34,5 +36,6 @@ public class EndCutsceneManager : MonoBehaviour
         CheckpointManager.Instance.loadCheckpointData();
         PlayerPrefs.DeleteKey("StoryItemData");
         dialogueCanvas = GameObject.FindGameObjectWithTag("DialogueCanvas");
+        level4Manager = GameObject.FindGameObjectWithTag("Level4Manager");
     }
 }

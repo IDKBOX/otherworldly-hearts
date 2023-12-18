@@ -115,10 +115,9 @@ public class IntroRunner : MonoBehaviour
         yield return new WaitForSeconds(3f);
         ChangeDialogueTween();
         StartDialogue();
-        yield return new WaitForSeconds(0.1f);
-        SoundManager.Instance.PlayMusic(MusicIntro);
-        yield return new WaitForSeconds(0.25f);
         allowSkipDialogue = true;
+        yield return new WaitForSeconds(0.1f);
+        SoundManager.Instance.PlayMusic(MusicIntro);      
     }
 
     //load next scene
